@@ -1,0 +1,50 @@
+[user]
+	name = Augustin Trancart
+	email = augustin.trancart@gmail.com
+[color]
+	ui = auto
+
+	;diff = true
+	;status = true
+	;branch = auto
+	;ui = true
+[core]
+	autocrlf = input
+	editor = vim
+	pager = cat
+[alias]
+	co = checkout
+	ci = commit
+	di = diff
+	ch = cherry
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ar)%Creset'
+	oops = commit --amend -C HEAD
+[diff]
+	mnemonicPrefix = true
+	wordRegex = .
+	tool = meld
+[fetch]
+	recurseSubmodules = on-demand
+[grep]
+	extendedRegexp = true
+[log]
+	abbrevCommit = true
+[merge]
+	tool = vimdiff
+	conflictStyle = diff3
+[mergetool]
+	prompt = false
+[pull]
+	rebase = preserve
+[push]
+	default = upstream
+
+[rerere]
+
+	autoupdate = true
+	enabled = true
+[status]
+	submoduleSummary = true
