@@ -1,5 +1,5 @@
 ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
-DOT_FILES=vimrc gitconfig bashrc
+DOT_FILES=vimrc gitconfig bashrc git_commit_msg.txt
 DOT_FILES_HOME=$(addprefix $(HOME)/.,$(DOT_FILES))
 
 .PHONY: all dot-files

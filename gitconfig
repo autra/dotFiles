@@ -16,12 +16,17 @@
 	co = checkout
 	ci = commit
 	di = diff
+	dist = diff --staged
 	ch = cherry
+	cp = cherry-pick
 	st = status
 	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ar)%Creset'
 	oops = commit --amend -C HEAD
+	fuckthis = reset --hard HEAD~1
+	ohnoo = reset --hard ORIG_HEAD
+	tidy = rebase -i @{upstream}
 [diff]
 	mnemonicPrefix = true
 	wordRegex = .
@@ -48,3 +53,8 @@
 	enabled = true
 [status]
 	submoduleSummary = true
+	showUntrackedFiles = all
+[http]
+	cookiefile = ~/.gitcookies
+[commit]
+	template = ~/.git_commit_msg.txt
