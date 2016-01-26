@@ -20,7 +20,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'sjl/badwolf/'
 NeoBundle 'scrooloose/nerdcommenter'
 " NeoBundle 'ctrlpvim/ctrlp.vim'
-" NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'flazz/vim-colorschemes'
 
 " Required:
 call neobundle#end()
@@ -76,7 +76,7 @@ NeoBundleCheck
       autocmd BufWinEnter * call ResCur()
   augroup END
 
-  " Setting up the directories 
+  " Setting up the directories
   set backup                  " Backups are nice ...
   if has('persistent_undo')
       set undofile                " So is persistent undo ...
@@ -86,7 +86,7 @@ NeoBundleCheck
 
   let mapleader=","
 
-  noremap <leader>q :q<CR> 		
+  noremap <leader>q :q<CR>
 
 " }
 
