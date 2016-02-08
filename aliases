@@ -1,0 +1,25 @@
+#Alias svn
+alias svnst='svnstatus'
+alias svninfo='svn info'
+alias svnrd='svn resolved'
+
+#alias git
+alias gitst='git st'
+alias gitdi='git di'
+alias gitdist='git di --staged'
+
+alias tf='tail -f logs/catalina.out'
+alias ..='cd ..'
+alias ~='cd ~'
+
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias xop='xdg-open'
+
+# Docker
+alias docker-clean='docker rmi $(docker images -a | grep "^<none>" | awk '"'"'BEGIN {FS=" "} ; {print $3}'"'"') && docker rm $(docker ps -q -f status=exited)'
+alias docker-local='export DOCKER_HOST="" && export DOCKER_TLS_VERIFY="" && export DOCKER_CERT_PATH=""'
+alias docker-sumo='export DOCKER_HOST=tcp://sumo.phoxygen.com:2376 && \
+    export DOCKER_TLS_VERIFY=1 && export DOCKER_CERT_PATH=/home/augustin/.docker'

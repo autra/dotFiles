@@ -1,7 +1,9 @@
+# TODO list package dependencies
+# git, vim, oh-my-zsh, spf13(?), 
 ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
 # Add here all the files that needs to be symlinked into ~/.<dot-files>
-DOT_FILES=vimrc gitconfig bashrc git_commit_msg.txt
+DOT_FILES=vimrc gitconfig bashrc git_commit_msg.txt zshrc aliases
 DOT_FILES_HOME=$(addprefix $(HOME)/.,$(DOT_FILES))
 
 .PHONY: all dot-files install-vim install-neobundle
