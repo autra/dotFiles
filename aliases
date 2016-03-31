@@ -23,3 +23,6 @@ alias docker-clean='docker rmi $(docker images -a | grep "^<none>" | awk '"'"'BE
 alias docker-local='export DOCKER_HOST="" && export DOCKER_TLS_VERIFY="" && export DOCKER_CERT_PATH=""'
 alias docker-sumo='export DOCKER_HOST=tcp://sumo.phoxygen.com:2376 && \
     export DOCKER_TLS_VERIFY=1 && export DOCKER_CERT_PATH=/home/augustin/.docker'
+
+# goodies
+alias meteo='curl http://wttr.in/'
