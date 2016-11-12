@@ -18,15 +18,15 @@ dot-files: $(DOT_FILES_HOME)
 $(DOT_FILES_HOME): $(HOME)/.%: $(ROOT_DIR)/%
 	ln -s $(ROOT_DIR)/$* $(HOME)/.$*
 
-# Vim
-install-vim: install-neobundle
+# Vim - instal
+#install-vim: install-spf13
 
-install-neobundle: $(HOME)/.vim/bundle/neobundle.vim
-	vim +NeoBundleInstall +qall
+#install-neobundle: $(HOME)/.vim/bundle/neobundle.vim
+	#vim +NeoBundleInstall +qall
 
-$(HOME)/.vim/bundle/neobundle.vim:
-	mkdir -p ~/.vim/bundle
-	git clone https://github.com/Shougo/neobundle.vim $(HOME)/.vim/bundle/neobundle.vim
+#$(HOME)/.vim/bundle/neobundle.vim:
+	#mkdir -p ~/.vim/bundle
+	#git clone https://github.com/Shougo/neobundle.vim $(HOME)/.vim/bundle/neobundle.vim
 
 # Zsh / Oh My Zsh!
 .PHONY: install-zsh install-zsh-theme
