@@ -1,0 +1,9 @@
+" don't activate group, but activate bundles
+" let g:spf13_bundle_groups=['general', 'writing', 'neocomplete', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
+let g:spf13_bundle_groups=['general', 'programming']
+" disable fast tab switching for now (I don't use tab)
+let g:spf13_no_fastTabs = 1
+" I prefer the highlighting to toggle on with each search
+let g:spf13_clear_search_highlight = 1
+" disable completion until I reactivate neocomplete
+let g:spf13_noninvasive_completion = 1

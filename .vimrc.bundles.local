@@ -1,0 +1,44 @@
+UnBundle 'tpope/vim-surround'
+UnBundle 'tpope/vim-repeat'
+UnBundle 'rhysd/conflict-marker.vim'
+UnBundle 'jiangmiao/auto-pairs'
+UnBundle 'ctrlpvim/ctrlp.vim'
+UnBundle 'tacahiroy/ctrlp-funky'
+UnBundle 'terryma/vim-multiple-cursors'
+UnBundle 'vim-scripts/sessionman.vim'
+UnBundle 'matchit.zip'
+UnBundle 'vim-airline/vim-airline'
+UnBundle 'vim-airline/vim-airline-themes'
+UnBundle 'powerline/fonts'
+UnBundle 'bling/vim-bufferline'
+UnBundle 'easymotion/vim-easymotion'
+UnBundle 'jistr/vim-nerdtree-tabs'
+UnBundle 'flazz/vim-colorschemes'
+UnBundle 'mbbill/undotree'
+UnBundle 'nathanaelkane/vim-indent-guides'
+if !exists('g:spf13_no_views')
+    UnBundle 'vim-scripts/restore_view.vim'
+endif
+UnBundle 'mhinz/vim-signify'
+UnBundle 'tpope/vim-abolish.git'
+UnBundle 'osyo-manga/vim-over'
+UnBundle 'kana/vim-textobj-user'
+UnBundle 'kana/vim-textobj-indent'
+UnBundle 'gcmt/wildfire.vim'
+
+
+UnBundle 'scrooloose/syntastic'
+UnBundle 'mattn/webapi-vim'
+UnBundle 'mattn/gist-vim'
+UnBundle 'scrooloose/nerdcommenter'
+UnBundle 'tpope/vim-commentary'
+UnBundle 'godlygeek/tabular'
+UnBundle 'luochen1990/rainbow'
+if executable('ctags')
+    UnBundle 'majutsushi/tagbar'
+endif
+
+
+" My own bundles
+
+Bundle 'Xuyuanp/nerdtree-git-plugin'
