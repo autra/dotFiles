@@ -1,0 +1,43 @@
+[ui]
+username = Augustin Trancart <augustin.trancart@gmail.com>
+merge = meld
+
+[diff]
+git = 1
+showfunc = 1
+unified = 8
+
+[defaults]
+commit = -v
+qnew = -Ue
+
+[extensions]
+mq = 
+purge = 
+color = 
+rebase = 
+histedit = 
+reviewboard = /home/augustin/.mozbuild/version-control-tools/hgext/reviewboard/client.py
+bzexport = /home/augustin/.mozbuild/version-control-tools/hgext/bzexport
+bzpost = /home/augustin/.mozbuild/version-control-tools/hgext/bzpost
+firefoxtree = /home/augustin/.mozbuild/version-control-tools/hgext/firefoxtree
+bundleclone = /home/augustin/.mozbuild/version-control-tools/hgext/bundleclone
+push-to-try = /home/augustin/.mozbuild/version-control-tools/hgext/push-to-try
+mqext = /home/augustin/.mozbuild/version-control-tools/hgext/mqext
+qimportbz = /home/augustin/.mozbuild/version-control-tools/hgext/qimportbz
+
+[mq]
+plain = True
+
+[paths]
+try = ssh://hg.mozilla.org/try/
+
+[hooks]
+pre-push = read -p 'Are you sure you want to push to remote? (y/n): '; if test "$REPLY" != "y"; then echo 'Push cancelled'; exit 1; fi
+[bugzilla]
+username = augustin.trancart@gmail.com
+apikey = StMrEf9KEigB4rhKDvdtvbxsqsQcKL5hyTzPC1wj
+[hostfingerprints]
+bugzilla.mozilla.org = 7c:7a:c4:6c:91:3b:6b:89:cf:f2:8c:13:b8:02:c4:25:bd:1e:25:17
+bitbucket.org = 46:de:34:e7:9b:18:cd:7f:ae:fd:8b:e3:bc:f4:1a:5e:38:d7:ac:24
+hg.mozilla.org = af:27:b9:34:47:4e:e5:98:01:f6:83:2b:51:c9:aa:d8:df:fb:1a:27
