@@ -104,3 +104,4 @@ PERL_MM_OPT="INSTALL_BASE=/home/augustin/perl5"; export PERL_MM_OPT;
 export USE_CCACHE=1
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export ANSIBLE_NOCOWS=1
