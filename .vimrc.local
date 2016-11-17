@@ -3,3 +3,5 @@
 unlet g:solarized_termcolors
 " don't quit NerdTree when opening a file
 let NERDTreeQuitOnOpen=0
+" I don't use vim-nerdtree-tabs, so let's use NERDTreeToggle instead
+map <c-e> :NERDTreeToggle<CR>
