@@ -40,3 +40,4 @@ endif
 " My own bundles
 
 Bundle 'Xuyuanp/nerdtree-git-plugin'
+Bundle 'editorconfig/editorconfig-vim'
