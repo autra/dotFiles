@@ -17,6 +17,7 @@
 	ci = commit
 	di = diff
 	dist = diff --staged
+	nicedi = diff -w --word-diff-regex=[^[:space:]]
 	ch = cherry
 	cp = cherry-pick
 	st = status
