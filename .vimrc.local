@@ -1,6 +1,6 @@
 " autocmd FileType javascript setlocal expandtab shiftwidth=2 softtabstop=2
 " I find it slightly better not set to 256
-unlet g:solarized_termcolors
+let g:solarized_termcolors=256
 " don't quit NerdTree when opening a file
 let NERDTreeQuitOnOpen=0
 " I don't use vim-nerdtree-tabs, so let's use NERDTreeToggle instead
@@ -8,3 +8,6 @@ map <c-e> :NERDTreeToggle<CR>
 
 " conf for editorconfig plugin
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+" display buffers on top
+let g:airline#extensions#tabline#enabled = 1

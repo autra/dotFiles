@@ -7,3 +7,5 @@ let g:spf13_no_fastTabs = 1
 let g:spf13_clear_search_highlight = 1
 " disable completion until I reactivate neocomplete
 let g:spf13_noninvasive_completion = 1
+" use a good font for airline
+let g:airline_powerline_fonts=1
