@@ -13,7 +13,6 @@ UnBundle 'nathanaelkane/vim-indent-guides'
 if !exists('g:spf13_no_views')
     UnBundle 'vim-scripts/restore_view.vim'
 endif
-UnBundle 'mhinz/vim-signify'
 UnBundle 'tpope/vim-abolish.git'
 UnBundle 'osyo-manga/vim-over'
 UnBundle 'kana/vim-textobj-user'
