@@ -1,3 +1,5 @@
+" no delay before leaving insert mode
+set ttimeoutlen=0
 " autocmd FileType javascript setlocal expandtab shiftwidth=2 softtabstop=2
 " I find it slightly better not set to 256
 let g:solarized_termcolors=256
