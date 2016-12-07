@@ -35,6 +35,9 @@ UnBundle 'groenewege/vim-less'
 UnBundle 'briancollins/vim-jst'
 UnBundle 'kchmck/vim-coffee-script'
 
+UnBundle 'tpope/vim-cucumber'
+UnBundle 'saltstack/salt-vim'
+
 " My own bundles
 
 Bundle 'Xuyuanp/nerdtree-git-plugin'
