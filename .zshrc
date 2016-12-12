@@ -80,8 +80,6 @@ export EDITOR=vim
 
 # DOCKER is swag
 #export DOCKER_TLS_VERIFY=1
-#export DOCKER_HOST=tcp://sumo.phoxygen.com:2376
-#export DOCKER_CERT_PATH=/home/augustin/.docker
 
 # rbenv
 if [[ -d "$HOME/.rbenv/bin" ]]; then
@@ -91,9 +89,6 @@ fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# for ronin
-export GAIA_SOURCE_DIR=~/workspace/gaia/git
 
 PATH="/home/augustin/perl5/bin${PATH+:}${PATH}"; export PATH;
 PERL5LIB="/home/augustin/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
