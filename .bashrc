@@ -105,7 +105,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# rbenv
+if [[ -d "$HOME/.rbenv/bin" ]]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
+
 export GIT_PS1_SHOWDIRTYSTATE=1 GIT_PS1_SHOWSTASHSTATE=1 GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM=verbose GIT_PS1_DESCRIBE_STYLE=branch GIT_PS1_SHOWCOLORHINTS=1
 #export PS1='\u@\h:\W$(__git_ps1 " (%s)")\$ '
