@@ -7,6 +7,7 @@ alias svnrd='svn resolved'
 alias gitst='git st'
 alias gitdi='git di'
 alias gitdist='git di --staged'
+alias lgit='GIT_PAGER=less git'
 
 alias tf='tail -f logs/catalina.out'
 alias ..='cd ..'
