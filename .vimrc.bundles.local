@@ -18,8 +18,6 @@ UnBundle 'kana/vim-textobj-user'
 UnBundle 'kana/vim-textobj-indent'
 UnBundle 'gcmt/wildfire.vim'
 
-
-UnBundle 'scrooloose/syntastic'
 UnBundle 'mattn/webapi-vim'
 UnBundle 'mattn/gist-vim'
 UnBundle 'scrooloose/nerdcommenter'
