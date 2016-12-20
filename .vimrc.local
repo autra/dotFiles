@@ -23,3 +23,11 @@ let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 
 " let's make vim understand eslint errors
 set efm+=%f:%l:%c\ %m\ [%t]
+
+" Multicursors
+let g:multi_cursor_use_default_mapping=0
+" only quit key is changed from default
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<C-r>'
