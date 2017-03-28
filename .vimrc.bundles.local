@@ -7,7 +7,6 @@ UnBundle 'matchit.zip'
 UnBundle 'bling/vim-bufferline'
 UnBundle 'easymotion/vim-easymotion'
 UnBundle 'jistr/vim-nerdtree-tabs'
-UnBundle 'flazz/vim-colorschemes'
 UnBundle 'mbbill/undotree'
 UnBundle 'nathanaelkane/vim-indent-guides'
 if !exists('g:spf13_no_views')
@@ -39,3 +38,17 @@ UnBundle 'saltstack/salt-vim'
 
 Bundle 'Xuyuanp/nerdtree-git-plugin'
 Bundle 'editorconfig/editorconfig-vim'
+Bundle 'pearofducks/ansible-vim'
+Bundle 'jelera/vim-javascript-syntax'
+UnBundle 'pangloss/vim-javascript'
+
+" These plugins slow down startup
+" Bundle 'tikhomirov/vim-glsl'
+" Bundle 'othree/html5.vim'
+
+" I don't need this one right now
+" Bundle 'octol/vim-cpp-enhanced-highlight'
+"
+" This one stupidly clone all docker repo. I'll import the .vim by hand,
+" thanks !
+" Bundle 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
