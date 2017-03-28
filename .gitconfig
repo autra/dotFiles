@@ -9,7 +9,7 @@
 	;branch = auto
 	;ui = true
 [core]
-	autocrlf = input
+    #autocrlf = input
 	editor = vim
 	pager = cat
 [alias]
