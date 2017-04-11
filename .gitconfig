@@ -23,7 +23,7 @@
 	st = status
 	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ar)%Creset'
+	lg = log --graph --pretty=tformat:'%Cred%h%Creset %C(bold blue)%<(20,trunc)%an%Creset %C(auto)%d%Creset %s %Cgreen(%cr) '
 	oops = commit --amend -C HEAD
 	fuckthis = reset --hard HEAD~1
 	ohnoo = reset --hard ORIG_HEAD
