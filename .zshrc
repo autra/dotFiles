@@ -100,3 +100,9 @@ export USE_CCACHE=1
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export ANSIBLE_NOCOWS=1
+
+# added by travis gem
+[ -f /home/augustin/.travis/travis.sh ] && source /home/augustin/.travis/travis.sh
+
+# fix libjvm.so not found for gdalinfo
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/
