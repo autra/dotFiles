@@ -1,61 +1,68 @@
 [user]
-	name = Augustin Trancart
-	email = augustin.trancart@gmail.com
+    name = Augustin Trancart
+    email = augustin.trancart@oslandia.com
 [color]
-	ui = auto
+    ui = auto
 
-	;diff = true
-	;status = true
-	;branch = auto
-	;ui = true
+    ;diff = true
+    ;status = true
+    ;branch = auto
+    ;ui = true
 [core]
     #autocrlf = input
-	editor = vim
-	pager = cat
+    editor = vim
+    pager = cat
+    fileMode = true
 [alias]
-	co = checkout
-	ci = commit
-	di = diff
-	dist = diff --staged
-	nicedi = diff -w --word-diff-regex=[^[:space:]]
-	ch = cherry
-	cp = cherry-pick
-	st = status
-	br = branch
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	lg = log --graph --pretty=tformat:'%Cred%h%Creset %C(bold blue)%<(20,trunc)%an%Creset %C(auto)%d%Creset %s %Cgreen(%cr) '
-	oops = commit --amend -C HEAD
-	fuckthis = reset --hard HEAD~1
-	ohnoo = reset --hard ORIG_HEAD
-	tidy = rebase -i @{upstream}
+    co = checkout
+    ci = commit
+    d = diff
+    dst = diff --staged
+    niced = diff -w --word-diff-regex=[^[:space:]]
+    r = rebase
+    lg = log --graph --pretty=tformat:'%Cred%h%Creset %C(bold blue)%<(20,trunc)%an%Creset %C(auto)%d%Creset %s %Cgreen(%cr) '
+    # git lg master.. -> what I'm going to PR? -> w
+    w = log --graph --pretty=tformat:'%Cred%h%Creset %C(bold blue)%<(20,trunc)%an%Creset %C(auto)%d%Creset %s %Cgreen(%cr) ' origin/master..
+    ch = cherry
+    cp = cherry-pick
+    s = status
+    br = branch
+    # tidy on master
+    t = rebase -i origin/master --autosquash
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    oops = commit --amend -C HEAD
+    fuckthis = reset --hard HEAD~1
+    ohnoo = reset --hard ORIG_HEAD
 [diff]
-	mnemonicPrefix = true
-	wordRegex = .
-	tool = meld
+    mnemonicPrefix = true
+    wordRegex = .
+    tool = meld
 [fetch]
-	recurseSubmodules = on-demand
+    recurseSubmodules = on-demand
 [grep]
-	extendedRegexp = true
+    extendedRegexp = true
 [log]
-	abbrevCommit = true
+    abbrevCommit = true
 [merge]
-	tool = vimdiff
-	conflictStyle = diff3
+    tool = vimdiff
+    conflictStyle = diff3
 [mergetool]
-	prompt = false
+    prompt = false
 [pull]
-	rebase = preserve
+    rebase = preserve
 [push]
-	default = upstream
+    default = upstream
 
 [rerere]
 
-	autoupdate = true
-	enabled = true
+    autoupdate = true
+    enabled = true
 [status]
-	submoduleSummary = true
-	showUntrackedFiles = all
+    submoduleSummary = true
+    showUntrackedFiles = all
 [http]
-	cookiefile = ~/.gitcookies
+    cookiefile = ~/.gitcookies
 [commit]
-	template = ~/.git_commit_msg.txt
+    template = ~/.git_commit_msg.txt
+[branch]
+    autoSetupMerge = false
