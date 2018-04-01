@@ -48,3 +48,6 @@ let g:multi_cursor_quit_key='<C-r>'
 
 " For some reason glsl plugin does not detect .glsl file...
 autocmd! BufNewFile,BufRead *.glsl set filetype=glsl
+
+" react
+let g:jsx_ext_required = 0
