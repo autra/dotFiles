@@ -1,0 +1,20 @@
+\set PROMPT1 '%[%033[1;34m%]%M%[%033[1;0m%]:%[%033[1;31m%]%>%[%033[0m%] %[%033[1;32m%]%n%[%033[1;34m%]@%[%033[1;33m%]%/%[%033[1;0m%]%R%#%x '
+\x auto
+\set ON_ERROR_STOP on
+-- \set ON_ERROR_ROLLBACK interactive
+-- \set HISTFILE ~/.psql_history-:DBNAME
+
+\set VERBOSITY verbose
+
+-- \pset null '⦱'
+\pset null '¤'
+\pset linestyle 'unicode'
+
+\pset unicode_border_linestyle single
+\pset unicode_column_linestyle single
+\pset unicode_header_linestyle double
+
+-- set intervalstyle to 'postgres_verbose';
+
+-- \setenv LESS '-iMFXSx4R'
+\setenv EDITOR 'vim'
