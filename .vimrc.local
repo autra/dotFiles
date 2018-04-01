@@ -1,6 +1,12 @@
 " allow resize split with mouse everywhere
 set ttymouse=xterm2
 
+" Restore ctrl+ arrow keys
+map <ESC>[1;5C <C-Right>
+map! <ESC>[1;5C <C-Right>
+map <ESC>[1;5D <C-Left>
+map! <ESC>[1;5D <C-Left>
+
 " no delay before leaving insert mode
 set ttimeoutlen=0
 " autocmd FileType javascript setlocal expandtab shiftwidth=2 softtabstop=2
