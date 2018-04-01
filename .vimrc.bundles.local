@@ -41,13 +41,13 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'pearofducks/ansible-vim'
 Bundle 'jelera/vim-javascript-syntax'
 UnBundle 'pangloss/vim-javascript'
+Bundle 'mxw/vim-jsx'
 
 " These plugins slow down startup
-" Bundle 'tikhomirov/vim-glsl'
+Bundle 'tikhomirov/vim-glsl'
 " Bundle 'othree/html5.vim'
 
-" I don't need this one right now
-" Bundle 'octol/vim-cpp-enhanced-highlight'
+Bundle 'octol/vim-cpp-enhanced-highlight'
 "
 " This one stupidly clone all docker repo. I'll import the .vim by hand,
 " thanks !
