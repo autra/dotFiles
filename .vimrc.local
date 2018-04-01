@@ -11,6 +11,9 @@ map! <ESC>[1;5D <C-Left>
 set ttimeoutlen=0
 " autocmd FileType javascript setlocal expandtab shiftwidth=2 softtabstop=2
 " I find it slightly better not set to 256
+let g:molokai_original = 1
+let g:rehash256 = 1
+color onedark
 set background=dark
 " don't quit NerdTree when opening a file
 let NERDTreeQuitOnOpen=0
