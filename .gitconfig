@@ -52,9 +52,7 @@
     rebase = preserve
 [push]
     default = upstream
-
 [rerere]
-
     autoupdate = true
     enabled = true
 [status]

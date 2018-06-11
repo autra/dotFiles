@@ -4,16 +4,17 @@ alias svninfo='svn info'
 alias svnrd='svn resolved'
 
 #alias git
-alias gitst='git st'
-alias gitdi='git di'
-alias gitdist='git di --staged'
-alias lgit='GIT_PAGER=less git'
+alias g='git'
+alias gs='git status'
+alias gd='git diff'
+alias gdst='git diff --staged'
+alias lg='GIT_PAGER=less git'
 
 alias tf='tail -f logs/catalina.out'
 alias ..='cd ..'
 alias ~='cd ~'
 
-alias ll='ls -alF'
+alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
 
