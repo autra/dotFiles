@@ -16,6 +16,7 @@ let g:rehash256 = 1
 color onedark
 set background=dark
 set nospell " it disturbs me
+set relativenumber
 
 " don't quit NerdTree when opening a file
 let NERDTreeQuitOnOpen=0
