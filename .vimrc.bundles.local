@@ -34,6 +34,10 @@ UnBundle 'kchmck/vim-coffee-script'
 UnBundle 'tpope/vim-cucumber'
 UnBundle 'saltstack/salt-vim'
 
+" this one doesn't exist any more :-(
+UnBundle 'amirh/HTML-AutoCloseTag'
+Bundle 'vim-scripts/HTML-AutoCloseTag', {'name': 'HTML-AutoCloseTag2'}
+
 " My own bundles
 
 Bundle 'Xuyuanp/nerdtree-git-plugin'
