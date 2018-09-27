@@ -37,6 +37,9 @@
     mnemonicPrefix = true
     wordRegex = .
     tool = meld
+# TODO
+# [interactive]
+#   diffFilter = diff-highlight
 [fetch]
     recurseSubmodules = on-demand
 [grep]

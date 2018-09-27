@@ -57,3 +57,8 @@ Bundle 'octol/vim-cpp-enhanced-highlight'
 " This one stupidly clone all docker repo. I'll import the .vim by hand,
 " thanks !
 " Bundle 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+"
+"
+" TODO LOOOOTs of things to check
+" - other vim distrib : spacevim, evervim, onivim
+" - for html : emmet or sparkup ?
