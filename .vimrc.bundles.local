@@ -46,6 +46,7 @@ Bundle 'pearofducks/ansible-vim'
 Bundle 'jelera/vim-javascript-syntax'
 UnBundle 'pangloss/vim-javascript'
 Bundle 'mxw/vim-jsx'
+Bundle 'cakebaker/scss-syntax.vim'
 
 " These plugins slow down startup
 Bundle 'tikhomirov/vim-glsl'
