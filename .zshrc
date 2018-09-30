@@ -71,7 +71,7 @@ if [ -f ~/.aliases ]; then
 ##
 
 #some environment variable
-export PATH=$PATH:$HOME/bin/
+export PATH=$PATH:$HOME/bin/:$HOME/.local/bin
 
 # mozilla test
 export DM_TRANS=adb
