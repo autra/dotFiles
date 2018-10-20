@@ -126,3 +126,4 @@ export ANSIBLE_NOCOWS=1
 # added by travis gem
 [ -f /home/augustin/.travis/travis.sh ] && source /home/augustin/.travis/travis.sh
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
