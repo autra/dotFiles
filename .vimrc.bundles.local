@@ -62,3 +62,5 @@ Bundle 'octol/vim-cpp-enhanced-highlight'
 " TODO LOOOOTs of things to check
 " - other vim distrib : spacevim, evervim, onivim
 " - for html : emmet or sparkup ?
+"
+Bundle 'jceb/vim-orgmode'
