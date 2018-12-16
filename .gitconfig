@@ -19,6 +19,7 @@
     d = diff
     dst = diff --staged
     niced = diff -w --word-diff-regex=[^[:space:]]
+    wd = diff --word-diff
     r = rebase
     lg = log --graph --pretty=tformat:'%Cred%h%Creset %C(bold blue)%<(20,trunc)%an%Creset %C(auto)%d%Creset %s %Cgreen(%cr) '
     # git lg master.. -> what I'm going to PR? -> w
@@ -29,17 +30,17 @@
     br = branch
     # tidy on master
     t = rebase -i origin/master --autosquash
+    i = icdiff
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     oops = commit --amend -C HEAD
     fuckthis = reset --hard HEAD~1
     ohnoo = reset --hard ORIG_HEAD
 [diff]
     mnemonicPrefix = true
-    wordRegex = .
-    tool = meld
-# TODO
-# [interactive]
-#   diffFilter = diff-highlight
+    renames = copies
+    tool = colordiff
+[difftool "colordiff"]
+    cmd="colordiff --side-by-side $LOCAL $REMOTE"
 [fetch]
     recurseSubmodules = on-demand
 [grep]
