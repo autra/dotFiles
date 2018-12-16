@@ -121,3 +121,6 @@ export ANSIBLE_NOCOWS=1
 [ -f /home/augustin/.travis/travis.sh ] && source /home/augustin/.travis/travis.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
