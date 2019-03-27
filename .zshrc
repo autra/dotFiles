@@ -65,10 +65,9 @@ if [ -f ~/.aliases ]; then
     fi
 
 
-
-
 # Customize to your needs...
-##
+HISTSIZE=500000
+SAVEHIST=100000
 
 #some environment variable
 export PATH=$PATH:$HOME/bin/:$HOME/.local/bin
