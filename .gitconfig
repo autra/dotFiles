@@ -68,3 +68,7 @@
     template = ~/.git_commit_msg.txt
 [branch]
     autoSetupMerge = false
+[url "https://anongit.kde.org/"]
+    insteadOf = kde:
+[url "git@git.kde.org:"]
+    pushInsteadOf = kde:

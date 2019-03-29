@@ -128,3 +128,6 @@ zstyle -e ':completion:*:hosts' hosts 'reply=(
   ${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) 2>/dev/null)"}%%[#| ]*}//,/ }
   ${=${${${${(@M)${(f)"$(cat ~/.ssh/config 2>/dev/null)"}:#Host *}#Host }:#*\**}:#*\?*}}
 )'
+
+# KDE dev
+export PATH=~/repos/kde/src/kdesrc-build:$PATH
