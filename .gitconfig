@@ -11,7 +11,7 @@
 [core]
     #autocrlf = input
     editor = vim
-    pager = cat
+    pager = bat
     fileMode = true
 [alias]
     co = checkout
