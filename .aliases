@@ -34,3 +34,5 @@ alias meteo='curl http://fr.wttr.in/limoges'
 # SIG
 alias setup-gdal-mdb='export CLASSPATH="/home/augustin/workspace/gdal/gdal-2.2.1/jars/commons-lang-2.4.jar:/home/augustin/workspace/gdal/gdal-2.2.1/jars/commons-logging-1.1.1.jar:/home/augustin/workspace/gdal/gdal-2.2.1/jars/jackcess-1.2.14.3.jar"; \
                 export LD_LIBRARY_PATH="/usr/local/lib:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/"'
+
+alias tw='timew'
