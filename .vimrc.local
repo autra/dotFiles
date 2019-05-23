@@ -10,8 +10,6 @@ map! <ESC>[1;5D <C-Left>
 " no delay before leaving insert mode
 set ttimeoutlen=0
 " autocmd FileType javascript setlocal expandtab shiftwidth=2 softtabstop=2
-" I find it slightly better not set to 256
-let g:molokai_original = 1
 let g:rehash256 = 1
 set background=dark
 set nospell " it disturbs me
@@ -59,3 +57,4 @@ autocmd FileType ansible,markdown,vim autocmd BufWritePre <buffer> if !exists('g
 autocmd BufEnter *.md set wrap
 
 color onedark
+
