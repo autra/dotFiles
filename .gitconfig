@@ -13,6 +13,12 @@
     editor = vim
     pager = bat
     fileMode = true
+[pager]
+  log = diff-highlight | bat
+  show = diff-highlight | bat
+  diff = diff-highlight | bat
+[interactive]
+  diffFilter="diff-highlight"
 [alias]
     co = checkout
     ci = commit
