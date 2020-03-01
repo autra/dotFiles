@@ -1,6 +1,8 @@
 [ui]
 username = Augustin Trancart <augustin.trancart@gmail.com>
 merge = meld
+tweakdefaults = true
+interface = curses
 
 [diff]
 git = 1
@@ -14,7 +16,6 @@ qnew = -Ue
 [extensions]
 mq = 
 purge = 
-color = 
 rebase = 
 histedit = 
 reviewboard = /home/augustin/.mozbuild/version-control-tools/hgext/reviewboard/client.py
@@ -25,6 +26,9 @@ bundleclone = /home/augustin/.mozbuild/version-control-tools/hgext/bundleclone
 push-to-try = /home/augustin/.mozbuild/version-control-tools/hgext/push-to-try
 mqext = /home/augustin/.mozbuild/version-control-tools/hgext/mqext
 qimportbz = /home/augustin/.mozbuild/version-control-tools/hgext/qimportbz
+absorb = 
+evolve = /home/augustin/.mozbuild/evolve/hgext3rd/evolve
+blackbox = 
 
 [mq]
 plain = True
@@ -37,7 +41,26 @@ pre-push = read -p 'Are you sure you want to push to remote? (y/n): '; if test "
 [bugzilla]
 username = augustin.trancart@gmail.com
 apikey = StMrEf9KEigB4rhKDvdtvbxsqsQcKL5hyTzPC1wj
-[hostfingerprints]
-bugzilla.mozilla.org = 7c:7a:c4:6c:91:3b:6b:89:cf:f2:8c:13:b8:02:c4:25:bd:1e:25:17
-bitbucket.org = 46:de:34:e7:9b:18:cd:7f:ae:fd:8b:e3:bc:f4:1a:5e:38:d7:ac:24
-hg.mozilla.org = af:27:b9:34:47:4e:e5:98:01:f6:83:2b:51:c9:aa:d8:df:fb:1a:27
+[hostsecurity]
+bitbucket.org:fingerprints = sha256:4e:65:3e:76:0f:81:59:85:5b:50:06:0c:c2:4d:3c:56:53:8b:83:3e:9b:fa:55:26:98:9a:ca:e2:25:03:92:47
+[alias]
+wip = log --graph --rev=wip --template=wip
+smart-annotate = annotate -w --skip ignored_changesets
+[revsetalias]
+wip = (parents(not public()) or not public() or . or (head() and branch(default))) and (not obsolete() or orphan()^) and not closed() and not (fxheads() - date(-90))
+ignored_changesets = desc("ignore-this-changeset") or extdata(get_ignored_changesets)
+[templates]
+wip = '{label("wip.branch", if(branches,"{branches} "))}{label(ifeq(graphnode,"x","wip.obsolete","wip.{phase}"),"{rev}:{node|short}")}{label("wip.user", " {author|user}")}{label("wip.tags", if(tags," {tags}"))}{label("wip.tags", if(fxheads," {fxheads}"))}{if(bookmarks," ")}{label("wip.bookmarks", if(bookmarks,bookmarks))}{label(ifcontains(rev, revset("parents()"), "wip.here"), " {desc|firstline}")}'
+[color]
+wip.bookmarks = yellow underline
+wip.branch = yellow
+wip.draft = green
+wip.here = red
+wip.obsolete = none
+wip.public = blue
+wip.tags = yellow
+wip.user = magenta
+[experimental]
+graphshorten = true
+[extdata]
+get_ignored_changesets = shell:cat `hg root`/.hg-annotate-ignore-revs 2> /dev/null || true
