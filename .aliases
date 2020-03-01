@@ -20,7 +20,7 @@ alias l='ls -CF'
 
 alias xop='xdg-open'
 
-alias chat='python ~/Downloads/pyrnotify.py 4321 & autossh -M 0 -t paco-weechat "tmux attach -t weechat"'
+alias chat='python ~/bin/pyrnotify.py 4321 & autossh -M 0 -t paco-weechat "tmux attach -t weechat"'
 
 # Docker
 alias docker-clean='docker rmi $(docker images -a | grep "^<none>" | awk '"'"'BEGIN {FS=" "} ; {print $3}'"'"') && docker rm $(docker ps -q -f status=exited)'
