@@ -130,4 +130,4 @@ zstyle -e ':completion:*:hosts' hosts 'reply=(
 )'
 
 # KDE dev
-export PATH=~/repos/kde/src/kdesrc-build:$PATH
+export PATH=~/kde/src/kdesrc-build:$PATH
