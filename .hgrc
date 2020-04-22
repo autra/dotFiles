@@ -40,7 +40,6 @@ try = ssh://hg.mozilla.org/try/
 pre-push = read -p 'Are you sure you want to push to remote? (y/n): '; if test "$REPLY" != "y"; then echo 'Push cancelled'; exit 1; fi
 [bugzilla]
 username = augustin.trancart@gmail.com
-apikey = StMrEf9KEigB4rhKDvdtvbxsqsQcKL5hyTzPC1wj
 [hostsecurity]
 bitbucket.org:fingerprints = sha256:4e:65:3e:76:0f:81:59:85:5b:50:06:0c:c2:4d:3c:56:53:8b:83:3e:9b:fa:55:26:98:9a:ca:e2:25:03:92:47
 [alias]
