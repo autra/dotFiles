@@ -1,6 +1,6 @@
 \set QUIET on
 \timing on
--- prompt is of the form:
+-- Format of prompt:
 -- psql://user@host:port/db
 -- => or =# (super user) + a '*' if we currently are in a transaction
 \set PROMPT1 '%[%033[31m%]%[%033[32m%]psql:%[%033[1;36m%]//%n%[%033[34m%]@%[%033[36m%]%M:%>%[%033[33m%]/%/ %[%033[K%]%[%033[0m%]\n%[%033[1;33m%]%R%#%x%[%033[0m%] '
