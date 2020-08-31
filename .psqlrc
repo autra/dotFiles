@@ -1,12 +1,22 @@
-\set PROMPT1 '%[%033[1;34m%]%M%[%033[1;0m%]:%[%033[1;31m%]%>%[%033[0m%] %[%033[1;32m%]%n%[%033[1;34m%]@%[%033[1;33m%]%/%[%033[1;0m%]%R%#%x '
+\set QUIET on
+\timing on
+-- prompt is of the form:
+-- psql://user@host:port/db
+-- => or =# (super user) + a '*' if we currently are in a transaction
+\set PROMPT1 '%[%033[31m%]%[%033[32m%]psql:%[%033[1;36m%]//%n%[%033[34m%]@%[%033[36m%]%M:%>%[%033[33m%]/%/ %[%033[K%]%[%033[0m%]\n%[%033[1;33m%]%R%#%x%[%033[0m%] '
+-- TODO PROMPT2 and PROMPT3 ?
+
+-- TODO test and fix that
+-- \set HISTFILE ~/.psql/.psql_history-:DBNAME
+
+-- extend the row display if the line is too big
 \x auto
+-- stop at first error instead of blindly continuing script
 \set ON_ERROR_STOP on
--- \set ON_ERROR_ROLLBACK interactive
--- \set HISTFILE ~/.psql_history-:DBNAME
+-- on interactive mode, rollback failed query instead of requiring me to rollback the entire transaction to do anything
+\set ON_ERROR_ROLLBACK interactive
 
-\set VERBOSITY verbose
-
--- \pset null '⦱'
+-- display stuff nicely plz
 \pset null '¤'
 \pset linestyle 'unicode'
 
@@ -14,7 +24,96 @@
 \pset unicode_column_linestyle single
 \pset unicode_header_linestyle double
 
--- set intervalstyle to 'postgres_verbose';
+-- human readable date interval
+set intervalstyle to 'postgres_verbose';
 
--- \setenv LESS '-iMFXSx4R'
+-- less options, in order:
+-- - ignore case in search
+-- - display more info in status bar
+-- - less autoquit if output fits in one screen
+-- - don't clear the screen on output
+-- - set tab stop at 4 char
+\setenv LESS '-iMFXx4R'
 \setenv EDITOR 'vim'
+\unset QUIET
+
+-- some goodies :-)
+-- TODO queries that displays objects dependencies
+\echo '\nCurrent Host Server Date Time : '`date` '\n'
+
+\echo 'Administrative queries:\n'
+\echo '\t\t:settings\t\t-- Server Settings'
+\echo '\t\t:conninfo\t\t-- Server connections'
+\echo '\t\t:activity\t\t-- Server activity'
+\echo '\t\t:locks\t\t\t-- Lock info'
+\echo '\t\t:waits\t\t\t-- Waiting queries'
+\echo '\t\t:dbsize\t\t\t-- Database Size'
+\echo '\t\t:tablesize\t\t-- Tables Size'
+\echo '\t\t:uselesscol\t\t-- Useless columns: columns with same value across'
+\echo '\t\t:uptime\t\t\t-- Server uptime'
+\echo '\t\t:cachehit\t\t-- Cache hit ratio'
+\echo '\t\t:indexusage\t\t-- Index usage'
+\echo '\t\t:indexsize\t\t-- Index sizes'
+\echo '\t\t:totalindexsize\t\t-- Total size of all indexes'
+\echo '\t\t:outliers\t\t-- Slowest queries from pg_stat_statements, the server needs to have the pg_stat_statements module loaded, see https://www.postgresql.org/docs/9.4/pgstatstatements.html'
+\echo '\t\t:lastvacuum\t\t\t-- Display tables' last vacuum and analysis time'
+\echo '\t\t:menu\t\t\t-- Help Menu'
+\echo '\t\t\\h\t\t\t-- Help with SQL commands'
+\echo '\t\t\\?\t\t\t-- Help with psql commands\n'
+ 
+\echo 'Development queries:\n'
+\echo '\t\t:sp\t\t\t-- Current Search Path'
+\echo '\t\t:clear\t\t\t-- Clear screen'
+\echo '\t\t:ll\t\t\t-- List\n'
+\echo '\t\t:pwd\t\t\t-- Output current folder\n'
+-- see plan-exporter documentation
+\echo '\t\t:startplanexport\t-- Start exporting explain plan to explain.dalibo.com, you need plan-exporter installed (https://github.com/agneum/plan-exporter)'
+-- some time, the plan exporter stuff messes with the output. Good to know if something odd happen
+\echo '\t\t:stopplanexport\t\t-- Stop exporting explain plan to explain.dalibo.com'
+ 
+-- Administration queries
+ 
+-- also reload psqlrc
+\set menu '\\i ~/.psqlrc'
+ 
+\set settings 'select name, setting,unit,context from pg_settings;'
+ 
+\set locks  'SELECT bl.pid AS blocked_pid, a.usename AS blocked_user, kl.pid AS blocking_pid, ka.usename AS blocking_user, a.query AS blocked_statement FROM pg_catalog.pg_locks bl JOIN pg_catalog.pg_stat_activity a ON bl.pid = a.pid JOIN pg_catalog.pg_locks kl JOIN pg_catalog.pg_stat_activity ka ON kl.pid = ka.pid ON bl.transactionid = kl.transactionid AND bl.pid != kl.pid WHERE NOT bl.granted;'
+ 
+\set conninfo 'select usename, backend_type, count(*) from pg_stat_activity group by usename, backend_type order by usename;'
+ 
+\set activity 'select datname, pid, usename, application_name,client_addr, client_hostname, client_port, query, state from pg_stat_activity;'
+ 
+-- refine the use of wait_event and wait_event_type
+\set waits 'SELECT pid, state, application_name AS source, age(now(),xact_start) AS running_for, wait_event_type, query FROM pg_stat_activity WHERE query <> \'<insufficient privilege>\' AND state <> \'idle\' AND pid <> pg_backend_pid() ORDER BY query_start ASC;'
+ 
+\set dbsize 'select datname, pg_size_pretty(pg_database_size(datname)) dbsize from pg_database order by pg_database_size(datname) desc;'
+ 
+\set tablesize 'SELECT nspname || \'.\' || relname AS \"relation\", pg_size_pretty(pg_relation_size(C.oid)) AS "size" FROM pg_class C LEFT JOIN pg_namespace N ON (N.oid = C.relnamespace) WHERE nspname NOT IN (\'pg_catalog\', \'information_schema\') ORDER BY pg_relation_size(C.oid) DESC LIMIT 40;'
+ 
+\set uselesscol 'SELECT nspname, relname, attname, typname, (stanullfrac*100)::int AS null_percent, case when stadistinct >= 0 then stadistinct else abs(stadistinct)*reltuples end AS \"distinct\", case 1 when stakind1 then stavalues1 when stakind2 then stavalues2 end AS \"values\" FROM pg_class c JOIN pg_namespace ns ON (ns.oid=relnamespace) JOIN pg_attribute ON (c.oid=attrelid) JOIN pg_type t ON (t.oid=atttypid) JOIN pg_statistic ON (c.oid=starelid AND staattnum=attnum) WHERE nspname NOT LIKE E\'pg\\\\_%\' AND nspname != \'information_schema\' AND relkind=\'r\' AND NOT attisdropped AND attstattarget != 0 AND reltuples >= 100 AND stadistinct BETWEEN 0 AND 1 ORDER BY nspname, relname, attname;'
+ 
+\set uptime 'select now() - pg_postmaster_start_time() AS uptime;'
+ 
+\set cachehit 'SELECT \'index hit rate\' AS name, (sum(idx_blks_hit)) / sum(idx_blks_hit + idx_blks_read) AS ratio FROM pg_statio_user_indexes UNION ALL SELECT \'table hit rate\' AS name, sum(heap_blks_hit) / (sum(heap_blks_hit) + sum(heap_blks_read)) AS ratio FROM pg_statio_user_tables;'
+
+\set indexusage 'SELECT relname, CASE idx_scan WHEN 0 THEN \'Insufficient data\' ELSE (100 * idx_scan / (seq_scan + idx_scan))::text END percent_of_times_index_used, n_live_tup rows_in_table FROM pg_stat_user_tables ORDER BY n_live_tup DESC;'
+
+\set indexsize 'SELECT c.relname AS name, pg_size_pretty(sum(c.relpages::bigint*8192)::bigint) AS size FROM pg_class c LEFT JOIN pg_namespace n ON (n.oid = c.relnamespace) WHERE n.nspname NOT IN (\'pg_catalog\', \'information_schema\') AND n.nspname !~ \'^pg_toast\' AND c.relkind=\'i\' GROUP BY c.relname ORDER BY sum(c.relpages) DESC;'
+
+\set totalindexsize 'with sizes as ( SELECT sum(c.relpages::bigint*8192)::bigint AS size FROM pg_class c LEFT JOIN pg_namespace n ON (n.oid = c.relnamespace) WHERE n.nspname NOT IN (\'pg_catalog\', \'information_schema\') AND n.nspname !~ \'^pg_toast\' AND c.relkind=\'i\' GROUP BY c.relname ORDER BY sum(c.relpages) DESC) select pg_size_pretty(sum(size)) as total_index_size from sizes;'
+
+
+\set outliers 'SELECT query AS qry, concat((total_time / calls), \' ms\') as avg_time, interval \'1 millisecond\' * total_time AS exec_time, to_char((total_time/sum(total_time) OVER()) * 100, \'FM90D0\') || \'%\'  AS prop_exec_time, to_char(calls, \'FM999G999G990\') AS ncalls, interval \'1 millisecond\' * (blk_read_time + blk_write_time) AS sync_io_time FROM pg_stat_statements WHERE userid = (SELECT usesysid FROM pg_user WHERE usename = current_user LIMIT 1) ORDER BY total_time DESC LIMIT 10;'
+
+\set lastvacuum 'select relname, last_vacuum, last_analyze from pg_stat_all_tables;'
+
+
+-- Development queries:
+ 
+\set sp 'SHOW search_path;'
+\set clear '\\! clear;'
+\set ll '\\! ls -lrt;'
+\set pwd '\\! pwd'
+\set startplanexport '\\o |  plan-exporter --target=dalibo\n'
+\set stopplanexport '\\o'
