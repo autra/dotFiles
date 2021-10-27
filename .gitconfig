@@ -6,16 +6,17 @@
     ;branch = auto
     ;ui = true
 [core]
-    #autocrlf = input
-    editor = vim
-    pager = bat
-    fileMode = true
+	#autocrlf = input
+	editor = vim
+	pager = delta
+	fileMode = true
 [pager]
-  log = diff-highlight | bat
-  show = diff-highlight | bat
-  diff = diff-highlight | bat
+  #log = diff-highlight | batcat
+  #show = diff-highlight | batcat
+  #diff = diff-highlight | batcat
 [interactive]
-  diffFilter="diff-highlight"
+  #diffFilter="diff-highlight"
+	diffFilter = delta --color-only
 [alias]
     co = checkout
     ci = commit
@@ -39,11 +40,11 @@
     fuckthis = reset --hard HEAD~1
     ohnoo = reset --hard ORIG_HEAD
 [diff]
-    mnemonicPrefix = true
-    renames = copies
-    tool = colordiff
-[difftool "colordiff"]
-    cmd="colordiff --side-by-side $LOCAL $REMOTE"
+	mnemonicPrefix = true
+	renames = copies
+	tool = delta
+#[difftool "colordiff"]
+#    cmd="colordiff --side-by-side $LOCAL $REMOTE"
 [fetch]
     recurseSubmodules = on-demand
 [grep]
@@ -74,7 +75,14 @@
 [url "https://anongit.kde.org/"]
     insteadOf = kde:
 [url "git@git.kde.org:"]
-    pushInsteadOf = kde:
+	pushInsteadOf = kde:
+[delta]
+	features = line-numbers decorations
+	whitespace-error-style = 22 reverse
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
 
 # local modif for email for instance
 [include]
