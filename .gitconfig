@@ -1,6 +1,3 @@
-[user]
-    name = Augustin Trancart
-    email = augustin.trancart@gmail.com
 [color]
     ui = auto
 
@@ -78,3 +75,7 @@
     insteadOf = kde:
 [url "git@git.kde.org:"]
     pushInsteadOf = kde:
+
+# local modif for email for instance
+[include]
+	path = ~/.localgitconfig
