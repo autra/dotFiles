@@ -1,16 +1,20 @@
 \set QUIET on
 \timing on
--- Format of prompt:
--- psql://user@host:port/db
+-- Format of prompt allowing for easy reconnection from psql:
+-- postgresql://user@host:port/bd
 -- => or =# (super user) + a '*' if we currently are in a transaction
-\set PROMPT1 '%[%033[31m%]%[%033[32m%]psql:%[%033[1;36m%]//%n%[%033[34m%]@%[%033[36m%]%M:%>%[%033[33m%]/%/ %[%033[K%]%[%033[0m%]\n%[%033[1;33m%]%R%#%x%[%033[0m%] '
+\set PROMPT1 '%[%033[31m%]%[%033[32m%]postgresql:%[%033[1;36m%]//%n%[%033[34m%]@%[%033[36m%]%M:%>%[%033[33m%]/%/ %[%033[K%]%[%033[0m%]\n%[%033[1;33m%]%R%#%x%[%033[0m%] '
 -- TODO PROMPT2 and PROMPT3 ?
 
 -- TODO test and fix that
 -- \set HISTFILE ~/.psql/.psql_history-:DBNAME
+-- I want you to remember *a lot*
+\set HISTSIZE 1000000
 
 -- extend the row display if the line is too big
 \x auto
+\pset columns 220
+\pset format wrapped
 -- stop at first error instead of blindly continuing script
 \set ON_ERROR_STOP on
 -- on interactive mode, rollback failed query instead of requiring me to rollback the entire transaction to do anything
@@ -25,7 +29,7 @@
 \pset unicode_header_linestyle double
 
 -- human readable date interval
-set intervalstyle to 'postgres_verbose';
+set intervalstyle = 'postgres_verbose';
 
 -- less options, in order:
 -- - ignore case in search
@@ -35,6 +39,7 @@ set intervalstyle to 'postgres_verbose';
 -- - set tab stop at 4 char
 \setenv LESS '-iMFXx4R'
 \setenv EDITOR 'vim'
+\setenv PAGER pspg
 \unset QUIET
 
 -- some goodies :-)
@@ -49,6 +54,7 @@ set intervalstyle to 'postgres_verbose';
 \echo '\t\t:waits\t\t\t-- Waiting queries'
 \echo '\t\t:dbsize\t\t\t-- Database Size'
 \echo '\t\t:tablesize\t\t-- Tables Size'
+\echo '\t\t:tabletotalsize\t\t-- Tables Total Size (including indexes and toasts)'
 \echo '\t\t:uselesscol\t\t-- Useless columns: columns with same value across'
 \echo '\t\t:uptime\t\t\t-- Server uptime'
 \echo '\t\t:cachehit\t\t-- Cache hit ratio'
@@ -91,6 +97,8 @@ set intervalstyle to 'postgres_verbose';
  
 \set tablesize 'SELECT nspname || \'.\' || relname AS \"relation\", pg_size_pretty(pg_relation_size(C.oid)) AS "size" FROM pg_class C LEFT JOIN pg_namespace N ON (N.oid = C.relnamespace) WHERE nspname NOT IN (\'pg_catalog\', \'information_schema\') ORDER BY pg_relation_size(C.oid) DESC LIMIT 40;'
  
+\set tabletotalsize 'SELECT nspname || \'.\' || relname AS "relation", pg_size_pretty(pg_total_relation_size(C.oid)) AS "size" FROM pg_class C LEFT JOIN pg_namespace N ON (N.oid = C.relnamespace) WHERE nspname NOT IN (\'pg_catalog\', \'information_schema\', \'pg_toast\') ORDER BY pg_total_relation_size(C.oid) DESC LIMIT 40;'
+
 \set uselesscol 'SELECT nspname, relname, attname, typname, (stanullfrac*100)::int AS null_percent, case when stadistinct >= 0 then stadistinct else abs(stadistinct)*reltuples end AS \"distinct\", case 1 when stakind1 then stavalues1 when stakind2 then stavalues2 end AS \"values\" FROM pg_class c JOIN pg_namespace ns ON (ns.oid=relnamespace) JOIN pg_attribute ON (c.oid=attrelid) JOIN pg_type t ON (t.oid=atttypid) JOIN pg_statistic ON (c.oid=starelid AND staattnum=attnum) WHERE nspname NOT LIKE E\'pg\\\\_%\' AND nspname != \'information_schema\' AND relkind=\'r\' AND NOT attisdropped AND attstattarget != 0 AND reltuples >= 100 AND stadistinct BETWEEN 0 AND 1 ORDER BY nspname, relname, attname;'
  
 \set uptime 'select now() - pg_postmaster_start_time() AS uptime;'
