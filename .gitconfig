@@ -1,10 +1,11 @@
+# vim: tabstop=4:softtabstop=4:shiftwidth=4:noexpandtab:
 [color]
-    ui = auto
+	ui = auto
 
-    ;diff = true
-    ;status = true
-    ;branch = auto
-    ;ui = true
+	;diff = true
+	;status = true
+	;branch = auto
+	;ui = true
 [core]
 	#autocrlf = input
 	editor = vim
@@ -18,27 +19,27 @@
   #diffFilter="diff-highlight"
 	diffFilter = delta --color-only
 [alias]
-    co = checkout
-    ci = commit
-    d = diff
-    dst = diff --staged
-    dtool = difftool
-    niced = diff -w --word-diff-regex=[^[:space:]]
-    wd = diff --word-diff
-    r = rebase
-    lg = log --graph --pretty=tformat:'%Cred%h%Creset %C(bold blue)%<(20,trunc)%an%Creset %C(auto)%d%Creset %s %Cgreen(%cr) '
-    # git lg master.. -> what I'm going to PR? -> w
-    w = log --graph --pretty=tformat:'%Cred%h%Creset %C(bold blue)%<(20,trunc)%an%Creset %C(auto)%d%Creset %s %Cgreen(%cr) ' origin/HEAD..
-    ch = cherry
-    cp = cherry-pick
-    s = status
-    br = branch
-    # tidy on master
-    t = rebase -i origin/HEAD --autosquash
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    oops = commit --amend -C HEAD
-    fuckthis = reset --hard HEAD~1
-    ohnoo = reset --hard ORIG_HEAD
+	co = checkout
+	ci = commit
+	d = diff
+	dst = diff --staged
+	dtool = difftool
+	niced = diff -w --word-diff-regex=[^[:space:]]
+	wd = diff --word-diff
+	r = rebase
+	lg = log --graph --pretty=tformat:'%Cred%h%Creset %C(bold blue)%<(20,trunc)%an%Creset %C(auto)%d%Creset %s %Cgreen(%cr) '
+	# git lg master.. -> what I'm going to PR? -> w
+	w = log --graph --pretty=tformat:'%Cred%h%Creset %C(bold blue)%<(20,trunc)%an%Creset %C(auto)%d%Creset %s %Cgreen(%cr) ' origin/HEAD..
+	ch = cherry
+	cp = cherry-pick
+	s = status
+	br = branch
+	# tidy on master
+	t = rebase -i origin/HEAD --autosquash
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	oops = commit --amend -C HEAD
+	fuckthis = reset --hard HEAD~1
+	ohnoo = reset --hard ORIG_HEAD
 [diff]
 	mnemonicPrefix = true
 	renames = copies
@@ -46,34 +47,34 @@
 #[difftool "colordiff"]
 #    cmd="colordiff --side-by-side $LOCAL $REMOTE"
 [fetch]
-    recurseSubmodules = on-demand
+	recurseSubmodules = on-demand
 [grep]
-    extendedRegexp = true
+	extendedRegexp = true
 [log]
-    abbrevCommit = true
+	abbrevCommit = true
 [merge]
-    tool = vimdiff
-    conflictStyle = diff3
+	tool = vimdiff
+	conflictStyle = diff3
 [mergetool]
-    prompt = false
+	prompt = false
 [pull]
-    rebase = merges
+	rebase = merges
 [push]
-    default = upstream
+	default = upstream
 [rerere]
-    autoupdate = true
-    enabled = true
+	autoupdate = true
+	enabled = true
 [status]
-    submoduleSummary = true
-    showUntrackedFiles = all
+	submoduleSummary = true
+	showUntrackedFiles = all
 [http]
-    cookiefile = ~/.gitcookies
+	cookiefile = ~/.gitcookies
 [commit]
-    template = ~/.git_commit_msg.txt
+	template = ~/.git_commit_msg.txt
 [branch]
-    autoSetupMerge = false
+	autoSetupMerge = false
 [url "https://anongit.kde.org/"]
-    insteadOf = kde:
+	insteadOf = kde:
 [url "git@git.kde.org:"]
 	pushInsteadOf = kde:
 [delta]
