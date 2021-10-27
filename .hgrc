@@ -63,3 +63,4 @@ wip.user = magenta
 graphshorten = true
 [extdata]
 get_ignored_changesets = shell:cat `hg root`/.hg-annotate-ignore-revs 2> /dev/null || true
+%include ~/.localhgrc
