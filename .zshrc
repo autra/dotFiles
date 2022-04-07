@@ -1,4 +1,5 @@
 # Path to your oh-my-zsh configuration.
+#zmodload zsh/zprof
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -52,7 +53,8 @@ ZSH_THEME="muse-mod"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras github mvn mercurial cp rsync screen svn debian docker vagrant pip repo timewarrior zsh-autosuggestions)
+# make nvm fast
+plugins=(evalcache git git-extras mvn mercurial cp rsync screen svn debian docker vagrant pip repo timewarrior zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 export GIT_PS1_SHOWDIRTYSTATE=1 GIT_PS1_SHOWSTASHSTATE=1 GIT_PS1_SHOWUNTRACKEDFILES=1
@@ -77,14 +79,14 @@ export EDITOR=vim
 # rbenv
 if [[ -d "$HOME/.rbenv/bin" ]]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
+  _evalcache rbenv init -
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # This loads projects' nvmrc, place this after nvm initialization!
-autoload -U add-zsh-hook
+#autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
   local nvmrc_path="$(nvm_find_nvmrc)"
@@ -102,22 +104,19 @@ load-nvmrc() {
     nvm use default
   fi
 }
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+#add-zsh-hook chpwd load-nvmrc
+#load-nvmrc
 
-PATH="/home/augustin/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/home/augustin/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/augustin/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/augustin/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/augustin/perl5"; export PERL_MM_OPT;
+#PATH="/home/augustin/perl5/bin${PATH+:}${PATH}"; export PATH;
+#PERL5LIB="/home/augustin/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+#PERL_LOCAL_LIB_ROOT="/home/augustin/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+#PERL_MB_OPT="--install_base \"/home/augustin/perl5\""; export PERL_MB_OPT;
+#PERL_MM_OPT="INSTALL_BASE=/home/augustin/perl5"; export PERL_MM_OPT;
 
 export USE_CCACHE=1
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export ANSIBLE_NOCOWS=1
-
-# added by travis gem
-[ -f /home/augustin/.travis/travis.sh ] && source /home/augustin/.travis/travis.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -131,3 +130,9 @@ zstyle -e ':completion:*:hosts' hosts 'reply=(
 
 # KDE dev
 export PATH=~/kde/src/kdesrc-build:$PATH
+
+function timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do time $shell -i -c exit; done
+}
+
