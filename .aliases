@@ -1,7 +1,8 @@
-#Alias svn
-alias svnst='svnstatus'
-alias svninfo='svn info'
-alias svnrd='svn resolved'
+# vim: ft=bash
+# prevent term error with ssh
+# TODO find better way ? 
+# see https://unix.stackexchange.com/a/67541/65188
+alias ssh='TERM=screen-256color ssh'
 
 #alias git
 alias g='git'
@@ -21,7 +22,6 @@ alias l='ls -CF'
 
 alias xop='xdg-open'
 
-alias chat='python ~/bin/pyrnotify.py 4321 & autossh -M 0 -t paco-weechat "tmux attach -t weechat"'
 
 # Docker
 alias docker-clean='docker rmi $(docker images -a | grep "^<none>" | awk '"'"'BEGIN {FS=" "} ; {print $3}'"'"') && docker rm $(docker ps -q -f status=exited)'
@@ -32,8 +32,13 @@ alias docker-sumo='export DOCKER_HOST=tcp://sumo.phoxygen.com:2376 && \
 # goodies
 alias meteo='curl http://fr.wttr.in/limoges'
 
-# SIG
-alias setup-gdal-mdb='export CLASSPATH="/home/augustin/workspace/gdal/gdal-2.2.1/jars/commons-lang-2.4.jar:/home/augustin/workspace/gdal/gdal-2.2.1/jars/commons-logging-1.1.1.jar:/home/augustin/workspace/gdal/gdal-2.2.1/jars/jackcess-1.2.14.3.jar"; \
-                export LD_LIBRARY_PATH="/usr/local/lib:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/"'
-
 alias tw='timew'
+
+# workarounds
+alias fix_damn_touchpad='sudo modprobe -r psmouse && sudo modprobe psmouse'
+
+# here will go everything I don't want to version for one reason or another
+if [ -f ~/.local-aliases ]; then
+    . ~/.local-aliases
+fi
+
