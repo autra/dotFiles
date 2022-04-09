@@ -54,13 +54,11 @@ ZSH_THEME="muse-mod"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # make nvm fast
-plugins=(evalcache git git-extras mvn mercurial cp rsync screen svn debian docker vagrant pip repo timewarrior zsh-autosuggestions)
+plugins=(evalcache git gitfast git-extras mvn mercurial cp rsync screen svn debian docker vagrant pip repo timewarrior zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 export GIT_PS1_SHOWDIRTYSTATE=1 GIT_PS1_SHOWSTASHSTATE=1 GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM=verbose GIT_PS1_DESCRIBE_STYLE=branch GIT_PS1_SHOWCOLORHINTS=1
-source $ZSH/plugins/gitfast/git-prompt.sh
-#source $ZSH/plugins/git-prompt/git-prompt.plugin.zsh
 
 if [ -f ~/.aliases ]; then
 	    . ~/.aliases
