@@ -84,7 +84,10 @@ export USE_CCACHE=1
 export PATH="$HOME/.cargo/bin:$PATH"
 export ANSIBLE_NOCOWS=1
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# fzf
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+
 
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
