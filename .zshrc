@@ -61,8 +61,8 @@ export GIT_PS1_SHOWDIRTYSTATE=1 GIT_PS1_SHOWSTASHSTATE=1 GIT_PS1_SHOWUNTRACKEDFI
 export GIT_PS1_SHOWUPSTREAM=verbose GIT_PS1_DESCRIBE_STYLE=branch GIT_PS1_SHOWCOLORHINTS=1
 
 if [ -f ~/.aliases ]; then
-	    . ~/.aliases
-    fi
+  . ~/.aliases
+fi
 
 # Customize to your needs...
 HISTSIZE=500000
@@ -86,7 +86,9 @@ export ANSIBLE_NOCOWS=1
 
 # fzf
 source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+if [ -f /usr/share/doc/fzf/examples/completion.zsh ]; then
+  source /usr/share/doc/fzf/examples/completion.zsh
+fi
 
 
 export GOPATH=$HOME/.go
