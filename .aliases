@@ -32,6 +32,15 @@ alias meteo='curl http://fr.wttr.in/limoges'
 
 alias tw='timew'
 
+function watchthis {
+  watched_files=$1
+  shift
+  while true; do
+    inotifywait -r -e modify -e move -e create -e move_self -e delete -e delete_self "$watched_files" \
+       && eval "$@"
+   done
+}
+
 # workarounds
 alias fix_damn_touchpad='sudo modprobe -r psmouse && sudo modprobe psmouse'
 
