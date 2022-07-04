@@ -94,3 +94,5 @@
 # local modif for email for instance
 [include]
 	path = ~/.localgitconfig
+[init]
+	defaultBranch = main
