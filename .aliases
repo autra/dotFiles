@@ -12,7 +12,7 @@ alias gdst='git diff --staged'
 alias lg='GIT_PAGER=less git'
 alias cdr='cd $(git root)'
 
-alias tf='tail -f logs/catalina.out'
+alias tf='tail -f'
 alias ..='cd ..'
 alias ~='cd ~'
 
@@ -26,8 +26,6 @@ alias xop='xdg-open'
 # Docker
 alias docker-clean='docker rmi $(docker images -a | grep "^<none>" | awk '"'"'BEGIN {FS=" "} ; {print $3}'"'"') && docker rm $(docker ps -q -f status=exited)'
 alias docker-local='export DOCKER_HOST="" && export DOCKER_TLS_VERIFY="" && export DOCKER_CERT_PATH=""'
-alias docker-sumo='export DOCKER_HOST=tcp://sumo.phoxygen.com:2376 && \
-    export DOCKER_TLS_VERIFY=1 && export DOCKER_CERT_PATH=/home/augustin/.docker'
 
 # goodies
 alias meteo='curl http://fr.wttr.in/limoges'
