@@ -39,6 +39,8 @@ default_position = 'top'
 default_height = 30
 
 [[layers]]
+  name = "sudo"
+[[layers]]
 name = "ctrlp"
 
 [[layers]]
