@@ -3,7 +3,7 @@
 -- Format of prompt allowing for easy reconnection from psql:
 -- postgresql://user@host:port/bd
 -- => or =# (super user) + a '*' if we currently are in a transaction
-\set PROMPT1 '%[%033[31m%]%[%033[32m%]postgresql:%[%033[1;36m%]//%n%[%033[34m%]@%[%033[36m%]%M:%>%[%033[33m%]/%/ %[%033[K%]%[%033[0m%]\n%[%033[1;33m%]%R%#%x%[%033[0m%] '
+\set PROMPT1 '%[%033[31m%]%[%033[32m%]postgresql:%[%033[1;36m%]//%n%[%033[34m%]@%[%033[36m%]%M:%>%[%033[33m%]/%/ %[%033[K%]%[%033[0m%](%p) \n%[%033[1;33m%]%R%#%x%[%033[0m%] '
 -- TODO PROMPT2 and PROMPT3 ?
 
 -- TODO test and fix that
