@@ -62,7 +62,7 @@ set intervalstyle = 'postgres_verbose';
 \echo '\t\t:indexsize\t\t-- Index sizes'
 \echo '\t\t:totalindexsize\t\t-- Total size of all indexes'
 \echo '\t\t:outliers\t\t-- Slowest queries from pg_stat_statements, the server needs to have the pg_stat_statements module loaded, see https://www.postgresql.org/docs/9.4/pgstatstatements.html'
-\echo '\t\t:lastvacuum\t\t\t-- Display tables' last vacuum and analysis time'
+\echo '\t\t:lastvacuum\t\t-- Display tables'' last vacuum and analysis time'
 \echo '\t\t:menu\t\t\t-- Help Menu'
 \echo '\t\t\\h\t\t\t-- Help with SQL commands'
 \echo '\t\t\\?\t\t\t-- Help with psql commands\n'
