@@ -30,8 +30,7 @@
 	lg = log --graph --pretty=tformat:'%Cred%h%Creset %C(bold blue)%<(20,trunc)%an%Creset %C(auto)%d%Creset %s %Cgreen(%cr) '
 	# git lg master.. -> what I'm going to PR? -> w
 	w = log --graph --pretty=tformat:'%Cred%h%Creset %C(bold blue)%<(20,trunc)%an%Creset %C(auto)%d%Creset %s %Cgreen(%cr) ' origin/HEAD..
-	ch = cherry
-	cp = cherry-pick
+	ch = cherry-pick
 	s = status
 	br = branch
 	# tidy on master
