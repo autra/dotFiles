@@ -15,8 +15,13 @@ GIT_PROMPT_INFO=$FG[012]
 GIT_PROMPT_PS1_COLOR=$fg_bold[magenta]
 local smiley="%(?,%{$FG[077]%}ᐅ%{$reset_color%},%{$FG[001]%}ᐅ%{$reset_color%})"
 
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+  debian_chroot="($(cat /etc/debian_chroot)) "
+fi
+
 #PROMPT='%{$fg[magenta]%}%n%{$reset_color%}%{$fg[cyan]%}@%{$reset_color%}%{$fg[yellow]%}%m%{$reset_color%}%{$fg[red]%}:%{$reset_color%}%{$PROMPT_SUCCESS_COLOR%}%~%{$reset_color%} %{$GIT_PROMPT_INFO%}$(git_prompt_info)%{$GIT_DIRTY_COLOR%}$(git_prompt_status) %{$reset_color%}${smiley}%{$reset_color%} '
-PROMPT='%{$fg[magenta]%}%n%{$reset_color%}%{$fg[cyan]%}@%{$reset_color%}%{$fg[yellow]%}%m%{$reset_color%}%{$fg[red]%}:%{$reset_color%}%{$PROMPT_SUCCESS_COLOR%}%~%{$reset_color%} %{$GIT_PROMPT_PS1_COLOR%}%$(__git_ps1) %{$reset_color%}${smiley}%{$reset_color%} '
+PROMPT='$debian_chroot%{$fg[magenta]%}%n%{$reset_color%}%{$fg[cyan]%}@%{$reset_color%}%{$fg[yellow]%}%m%{$reset_color%}%{$fg[red]%}:%{$reset_color%}%{$PROMPT_SUCCESS_COLOR%}%~%{$reset_color%} %{$GIT_PROMPT_PS1_COLOR%}%$(__git_ps1) %{$reset_color%}${smiley}%{$reset_color%} '
 
 #RPS1="${return_code}"
 
