@@ -64,6 +64,9 @@ name = "ctrlp"
 [[layers]]
   name = "debug"
   debugger_plugin = "vimspector"
+[[layers]]
+  name = "lang#rust"
+
 
 [[custom_plugins]]
   name = "MaxMEllon/vim-jsx-pretty"

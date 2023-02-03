@@ -49,4 +49,9 @@ function! myspacevim#after() abort
   call dein#add('benjie/local-npm-bin.vim')
   let b:neomake_javascript_eslint_exe = GetNpmBin('eslint')
 
+
+  " rust
+  "
+  call dein#add('puuuuh/vimspector-rust')
+
 endfunction
