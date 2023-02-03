@@ -30,8 +30,8 @@
 # Enable autocomplete layer
 [[layers]]
 name = 'autocomplete'
-auto-completion-return-key-behavior = "complete"
-auto-completion-tab-key-behavior = "smart"
+# auto-completion-return-key-behavior = "complete"
+# auto-completion-tab-key-behavior = "smart"
 
 [[layers]]
 name = 'shell'
@@ -42,13 +42,20 @@ default_height = 30
   name = "sudo"
 [[layers]]
 name = "ctrlp"
-
+[[layers]]
+  name = "lsp"
+  filetypes = [
+    "rust"
+  ]
+  [layers.override_cmd]
+    rust = ["rls"]
 [[layers]]
   name = "lang#javascript"
 [[layers]]
   name = "lang#typescript"
 [[layers]]
   name = "lang#python"
+ python_file_head = []
 [[layers]]
     name = 'lang#c'
     enable_clang_syntax_highlight = true
