@@ -11,6 +11,7 @@ alias gd='git diff'
 alias gdst='git diff --staged'
 alias lg='GIT_PAGER=less git'
 alias cdr='cd $(git root)'
+alias gt='glab'
 
 alias tf='tail -f'
 alias ..='cd ..'

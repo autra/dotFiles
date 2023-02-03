@@ -110,3 +110,9 @@ function timezsh() {
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+# customize pager for glab
+export GLAB_PAGER="less -FX"
+# doesn't work...
+# autoload -U compinit
+# compinit -i
+# _evalcache glab completion -s zsh
