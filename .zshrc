@@ -91,6 +91,12 @@ if [ -f /usr/share/doc/fzf/examples/completion.zsh ]; then
   source /usr/share/doc/fzf/examples/completion.zsh
 fi
 
+# autojump
+if [ -f /usr/share/autojump/autojump.zsh ]; then
+  . /usr/share/autojump/autojump.zsh
+fi
+
+
 
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
