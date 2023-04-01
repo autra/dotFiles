@@ -52,8 +52,6 @@ name = "ctrlp"
 [[layers]]
   name = "lang#javascript"
 [[layers]]
-  name = "lang#typescript"
-[[layers]]
   name = "lang#python"
  python_file_head = []
 [[layers]]
