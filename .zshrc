@@ -90,6 +90,14 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 if [ -f /usr/share/doc/fzf/examples/completion.zsh ]; then
   source /usr/share/doc/fzf/examples/completion.zsh
 fi
+# this, alongside .git in ~/.fdignore, allows fzf to show hidden files tracked by git.
+# it also shows *all* hidden files, but well...
+#
+export FZF_DEFAULT_COMMAND="fd -H"
+export FZF_CTRL_T_COMMAND="fd -H \$dir"
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --theme=ansi {}' --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+# for telescope, workaround for it not showing .gitignore, .gitlab-ci.yml for instance
+alias fd="fd -H"
 
 # autojump
 if [ -f /usr/share/autojump/autojump.zsh ]; then
