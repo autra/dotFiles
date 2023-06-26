@@ -17,6 +17,7 @@ alias tf='tail -f'
 alias ..='cd ..'
 alias ~='cd ~'
 
+alias ls='exa'
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
