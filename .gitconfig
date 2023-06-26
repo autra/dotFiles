@@ -81,10 +81,38 @@
 [delta]
 	features = line-numbers decorations
 	whitespace-error-style = 22 reverse
+	features = hoopoe
 	side-by-side = true
+[delta "hoopoe"]
+    # author: https://github.com/dandavison
+	# copied from https://raw.githubusercontent.com/dandavison/delta/master/themes.gitconfig
+
+    light = true
+    pink = "#ffe0e0"
+    dark-pink = "#ffc0c0"
+    green = "#d0ffd0"
+    dark-green = "#a0efa0"
+    dark-green-2 = "#067a00"
+    minus-style = normal hoopoe.pink
+    minus-emph-style = normal hoopoe.dark-pink
+    minus-non-emph-style = minus-style
+    plus-style = syntax hoopoe.green
+    plus-emph-style = syntax hoopoe.dark-green
+    plus-non-emph-style = plus-style
+    minus-empty-line-marker-style = minus-style
+    plus-empty-line-marker-style = plus-style
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = hoopoe.dark-green-2
+    hunk-header-style = file line-number syntax
+    syntax-theme = GitHub
+    zero-style = syntax
 [delta "decorations"]
-	commit-decoration-style = bold yellow box ul
-	file-style = bold yellow ul
+	; commit-decoration-style = bold yellow box ul
+	; file-style = bold yellow ul
 	file-decoration-style = none
 [filter "lfs"]
 	required = true

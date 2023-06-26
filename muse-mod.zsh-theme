@@ -5,7 +5,7 @@ setopt promptsubst
 
 autoload -U add-zsh-hook
 
-PROMPT_SUCCESS_COLOR=$FG[117]
+PROMPT_SUCCESS_COLOR=$FG[020]
 PROMPT_FAILURE_COLOR=$FG[124]
 PROMPT_VCS_INFO_COLOR=$FG[242]
 PROMPT_PROMPT=$FG[077]
@@ -21,7 +21,8 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 #PROMPT='%{$fg[magenta]%}%n%{$reset_color%}%{$fg[cyan]%}@%{$reset_color%}%{$fg[yellow]%}%m%{$reset_color%}%{$fg[red]%}:%{$reset_color%}%{$PROMPT_SUCCESS_COLOR%}%~%{$reset_color%} %{$GIT_PROMPT_INFO%}$(git_prompt_info)%{$GIT_DIRTY_COLOR%}$(git_prompt_status) %{$reset_color%}${smiley}%{$reset_color%} '
-PROMPT='$debian_chroot%{$fg[magenta]%}%n%{$reset_color%}%{$fg[cyan]%}@%{$reset_color%}%{$fg[yellow]%}%m%{$reset_color%}%{$fg[red]%}:%{$reset_color%}%{$PROMPT_SUCCESS_COLOR%}%~%{$reset_color%} %{$GIT_PROMPT_PS1_COLOR%}%$(__git_ps1) %{$reset_color%}${smiley}%{$reset_color%} '
+# PROMPT='$debian_chroot%{$fg[magenta]%}%n%{$reset_color%}%{$fg[cyan]%}@%{$reset_color%}%{$fg[yellow]%}%m%{$reset_color%}%{$fg[red]%}:%{$reset_color%}%{$PROMPT_SUCCESS_COLOR%}%~%{$reset_color%} %{$GIT_PROMPT_PS1_COLOR%}%$(__git_ps1) $(git_prompt_info)%{$reset_color%}${smiley}%{$reset_color%} '
+PROMPT='$debian_chroot%{$fg[magenta]%}%n%{$reset_color%}%{$fg[cyan]%}@%{$reset_color%}%{$fg[yellow]%}%m%{$reset_color%}%{$fg[red]%}:%{$reset_color%}%{$PROMPT_SUCCESS_COLOR%}%~%{$reset_color%} %{$GIT_PROMPT_PS1_COLOR%} $(git_prompt_info)%{$reset_color%}${smiley}%{$reset_color%} '
 
 #RPS1="${return_code}"
 

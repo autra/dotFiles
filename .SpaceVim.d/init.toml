@@ -15,8 +15,27 @@
     # set spacevim theme. by default colorscheme layer is not loaded,
     # if you want to use more colorscheme, please load the colorscheme
     # layer
-    colorscheme = "molokai"
-    colorscheme_bg = "dark"
+    # TODO find a way to dynamically switch
+    # dark theme
+    # colorscheme = "molokai"
+    # ou srcery
+    # colorscheme_bg = "dark"
+    # light theme
+    # plus joli
+    # colorscheme = "one"
+    # hybrid, meilleur contrast mais kaki :-/
+    # material, le vert des commentaires et string n'a pas assez de contraste
+    # spacevim, bon contraste, mais rose beurk
+    # autumnleaf -> ok, mais trop de couleur similaire
+    # bclear, pas assez de contraste
+    # colorscheme = "one"
+    # good contrast, color not great
+    # colorscheme = "autumnleaf"
+    # TO TEST
+    # colorscheme = "delek" 
+    # not bad but not a lot of contrast
+    colorscheme = "base16-github"
+    colorscheme_bg = "light"
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
     enable_guicolors = true
@@ -28,6 +47,9 @@
     enable_tabline_filetype_icon = true
     enable_statusline_mode = false
     windows_smartclose = ''
+    # by default spacevim binds jk to esc in *insert* mode :-O
+    escape_key_binding = ''
+
 
 # Enable autocomplete layer
 [[layers]]
