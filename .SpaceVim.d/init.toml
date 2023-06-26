@@ -105,5 +105,8 @@ name = "telescope"
   name = "MaxMEllon/vim-jsx-pretty"
   merged = false
 [[custom_plugins]]
+  name = 'sagi-z/vimspectorpy'
+  hook_post_update= 'call vimspectorpy#update()'
+[[custom_plugins]]
   # good icons for at least telescope
   name = 'nvim-tree/nvim-web-devicons'
