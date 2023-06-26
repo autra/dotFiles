@@ -1,9 +1,6 @@
 function! myspacevim#before() abort
   let g:python3_host_prog = "/usr/bin/python3"
   " let g:python_host_prog = "/usr/bin/python"
-  autocmd BufRead,BufNewFile *.py set expandtab
-  autocmd BufRead,BufNewFile *.py set tabstop=4           " use 4 spaces to represent tab
-  autocmd BufRead,BufNewFile *.py set shiftwidth=4           " use 4 spaces to represent tab
   
   " Default to static completion for SQL
   " until I take the time to look at the dbext plugin
