@@ -65,7 +65,10 @@ default_height = 30
 [[layers]]
   name = "sudo"
 [[layers]]
-name = "ctrlp"
+# for telescope and other stuff
+name = "treesitter" 
+[[layers]]
+name = "telescope"
 [[layers]]
   name = "lsp"
   filetypes = [
@@ -100,3 +103,6 @@ name = "ctrlp"
 [[custom_plugins]]
   name = "MaxMEllon/vim-jsx-pretty"
   merged = false
+[[custom_plugins]]
+  # good icons for at least telescope
+  name = 'nvim-tree/nvim-web-devicons'
