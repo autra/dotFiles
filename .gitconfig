@@ -39,11 +39,12 @@
 	oops = commit --amend -C HEAD
 	fuckthis = reset --hard HEAD~1
 	ohnoo = reset --hard ORIG_HEAD
-	fixup = !git commit --fixup `git log origin/HEAD..HEAD --oneline | fzf --ansi --preview=\"git show $(echo {1} | awk '{print $1}')\"  | awk '{print $1}'`
+	fixup = !git commit --fixup `git log origin/HEAD..HEAD --oneline | fzf --ansi --preview=\"git show --color=always $(echo {1} | awk '{print $1}')\"  | awk '{print $1}'`
 
 [diff]
 	mnemonicPrefix = true
 	renames = copies
+	colorMoved = true
 	tool = delta
 #[difftool "colordiff"]
 #    cmd="colordiff --side-by-side $LOCAL $REMOTE"
