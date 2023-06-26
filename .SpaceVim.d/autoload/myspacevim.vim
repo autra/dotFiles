@@ -10,7 +10,8 @@ endfunction
 function! myspacevim#after() abort
 
 " general {
-    set autochdir
+    " doesn't work well with telescope
+    " set autochdir
 " }
 
 " Vim UI {
