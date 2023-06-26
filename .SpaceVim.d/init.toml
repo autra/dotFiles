@@ -99,6 +99,8 @@ name = "telescope"
   debugger_plugin = "vimspector"
 [[layers]]
   name = "lang#rust"
+[[layers]]
+  name = "lang#rst"
 
 
 [[custom_plugins]]
