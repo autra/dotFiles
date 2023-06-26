@@ -87,6 +87,8 @@ name = "telescope"
   name = "git"
   git-plugin = "fugitive"
 [[layers]]
+  name = 'VersionControl'
+[[layers]]
   name = "colorscheme"
 [[layers]]
   name = "lang#markdown"
