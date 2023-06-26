@@ -71,9 +71,8 @@ name = "treesitter"
 name = "telescope"
 [[layers]]
   name = "lsp"
-  filetypes = [
-    "rust"
-  ]
+  enabled_clients = ['pylsp', 'rls']
+  filetypes = ["rust"]
   [layers.override_cmd]
     rust = ["rls"]
 [[layers]]
