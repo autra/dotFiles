@@ -112,3 +112,5 @@ name = "telescope"
 [[custom_plugins]]
   # good icons for at least telescope
   name = 'nvim-tree/nvim-web-devicons'
+[[custom_plugins]]
+  name = 'chriskempson/base16-vim'

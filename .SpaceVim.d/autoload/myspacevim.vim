@@ -56,6 +56,6 @@ function! myspacevim#after() abort
   " colorscheme
   " onehalf colorscheme
   call dein#add('sonph/onehalf', #{ rtp: './vim' })
-  call dein#add('chriskempson/base16-vim')
+  " call dein#add('chriskempson/base16-vim')
 
 endfunction
