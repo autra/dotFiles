@@ -26,6 +26,8 @@ alias l='ls -CF'
 
 alias xop='xdg-open'
 
+alias bat='bat --theme=ansi'
+
 
 # Docker
 alias docker-clean='docker rmi $(docker images -a | grep "^<none>" | awk '"'"'BEGIN {FS=" "} ; {print $3}'"'"') && docker rm $(docker ps -q -f status=exited)'
