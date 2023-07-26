@@ -40,6 +40,7 @@
 	fuckthis = reset --hard HEAD~1
 	ohnoo = reset --hard ORIG_HEAD
 	fixup = !git commit --fixup `git log origin/HEAD..HEAD --oneline | fzf --ansi --preview=\"git show --color=always $(echo {1} | awk '{print $1}')\"  | awk '{print $1}'`
+	itsme = commit -C HEAD --amend --reset-author
 
 [diff]
 	mnemonicPrefix = true
