@@ -126,6 +126,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 # customize pager for glab
 export GLAB_PAGER="less -FX"
+export GLAMOUR_STYLE="light"
 # doesn't work...
 # autoload -U compinit
 # compinit -i
