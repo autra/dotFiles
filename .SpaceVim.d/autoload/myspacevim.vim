@@ -39,13 +39,13 @@ function! myspacevim#after() abort
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 
   " eslint: always execute the local one
-  let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
+  " let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 
   "
   call dein#add('CaffeineViking/vim-glsl')
   " use local eslint exec
-  call dein#add('benjie/local-npm-bin.vim')
-  let b:neomake_javascript_eslint_exe = GetNpmBin('eslint')
+  " call dein#add('benjie/local-npm-bin.vim')
+  " let b:neomake_javascript_eslint_exe = GetNpmBin('eslint')
 
 
   " rust
