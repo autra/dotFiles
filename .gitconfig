@@ -41,6 +41,8 @@
 	ohnoo = reset --hard ORIG_HEAD
 	fixup = !git commit --fixup `git log origin/HEAD..HEAD --oneline | fzf --ansi --preview=\"git show --color=always $(echo {1} | awk '{print $1}')\"  | awk '{print $1}'`
 	itsme = commit -C HEAD --amend --reset-author
+	b = !git branch | fzf --ansi --preview=\"git w --color=always {1}\" --multi | xargs
+	sw = !git checkout $(git branch | fzf --ansi --preview=\"git w --color=always {1}\")
 
 [diff]
 	mnemonicPrefix = true
