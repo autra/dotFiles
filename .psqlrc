@@ -123,5 +123,5 @@ set intervalstyle = 'postgres_verbose';
 \set clear '\\! clear;'
 \set ll '\\! ls -lrt;'
 \set pwd '\\! pwd'
-\set startplanexport '\\o |  plan-exporter --target=dalibo\n'
+\set startplanexport '\\o |  plan-exporter --target=dalibo --auto-confirm\n'
 \set stopplanexport '\\o'
