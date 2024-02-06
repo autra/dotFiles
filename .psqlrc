@@ -38,7 +38,7 @@ set intervalstyle = 'postgres_verbose';
 -- - don't clear the screen on output
 -- - set tab stop at 4 char
 \setenv LESS '-iMFXx4R'
-\setenv EDITOR 'vim'
+\setenv EDITOR 'lvim'
 \setenv PAGER pspg
 \unset QUIET
 
