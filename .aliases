@@ -5,7 +5,6 @@
 alias ssh='TERM=screen-256color ssh'
 alias vim='lvim'
 alias vi='lvim'
-alias nvim='lvim'
 
 #alias git
 alias g='git'
