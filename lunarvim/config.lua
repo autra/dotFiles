@@ -119,12 +119,23 @@ require("vstask").setup({
   json_parser = require('json5').parse
 })
 
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup {
---   { command = "eslint", filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" }}
--- }
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  { command = "prettier", filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue" }},
+  -- { command = "sqlfluff", filetypes = { "sql" }}
+}
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  {
+   command = "sqlfluff",
+   filetypes = {"sql"},
+   extra_args = {"--dialect", "postgres"}
+  }
+}
 require'lspconfig'.ansiblels.setup{}
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.eslint.setup{}
-require'lspconfig'.sqlls.setup{}
--- require'lspconfig'.pylsp.setup{}
+require'lspconfig'.sqls.setup{}
+require'lspconfig'.volar.setup{}
+require'lspconfig'.pyright.setup{}
+require'lspconfig'.dockerls.setup{}
