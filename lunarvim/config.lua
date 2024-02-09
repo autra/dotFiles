@@ -43,7 +43,18 @@ lvim.plugins = {
         build = './install.sh'
       }
     },
-  }
+  },
+  {
+    "hedyhli/outline.nvim",
+    lazy = true,
+    cmd = { "Outline", "OutlineOpen" },
+    keys = { -- Example mapping to toggle outline
+      { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
+    },
+    opts = {
+      -- Your setup opts here
+    },
+  },
 }
 lvim.colorscheme = "base16-github"
 -- key bindings
