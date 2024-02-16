@@ -128,6 +128,8 @@ linters.setup {
   },
   { name = "mypy" }
 }
+
+-- language servers setup
 require'lspconfig'.ansiblels.setup{}
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.eslint.setup{}
@@ -135,3 +137,4 @@ require'lspconfig'.sqls.setup{}
 require'lspconfig'.volar.setup{}
 require'lspconfig'.pylsp.setup{}
 require'lspconfig'.dockerls.setup{}
+require'lspconfig'.bashls.setup{}
