@@ -116,6 +116,7 @@ require("vstask").setup({
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "prettier", filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue" }},
+  { command = "black", filetypes = { "python" }},
   -- { command = "sqlfluff", filetypes = { "sql" }}
 }
 local linters = require "lvim.lsp.null-ls.linters"
@@ -124,12 +125,13 @@ linters.setup {
    command = "sqlfluff",
    filetypes = {"sql"},
    extra_args = {"--dialect", "postgres"}
-  }
+  },
+  { name = "mypy" }
 }
 require'lspconfig'.ansiblels.setup{}
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.eslint.setup{}
 require'lspconfig'.sqls.setup{}
 require'lspconfig'.volar.setup{}
-require'lspconfig'.pyright.setup{}
+require'lspconfig'.pylsp.setup{}
 require'lspconfig'.dockerls.setup{}
