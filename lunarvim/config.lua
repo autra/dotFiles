@@ -42,6 +42,13 @@ lvim.plugins = {
       -- Your setup opts here
     },
   },
+  {
+    "yorickpeterse/nvim-window",
+    keys = {
+      { "<leader>m", "<cmd>lua require('nvim-window').pick()<cr>", desc = "nvim-window: Jump to window" },
+    },
+    config = true,
+  },
 }
 lvim.colorscheme = "base16-github"
 -- key bindings
