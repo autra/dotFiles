@@ -3,6 +3,9 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 --
+
+vim.g.python3_host_prog="~/.venvs/nvim"
+
 lvim.plugins = {
  -- { "lunarvim/colorschemes" },
   { "chriskempson/base16-vim" },
