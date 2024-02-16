@@ -9,19 +9,6 @@ lvim.plugins = {
   { "tpope/vim-abolish" },
   { "tpope/vim-fugitive" },
   {
-    'wfxr/minimap.vim',
-    build = "cargo install --locked code-minimap",
-    -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
-    config = function ()
-      vim.cmd ("let g:minimap_width = 10")
-      vim.cmd ("let g:minimap_auto_start = 1")
-      vim.cmd ("let g:minimap_auto_start_win_enter = 1")
-      vim.cmd ("let g:minimap_git_colors = 1")
-      vim.cmd ("let g:minimap_enable_highlight_colorgroup = 1")
-      vim.cmd ("let g:minimap_highlight_search = 1")
-    end,
-  },
-  {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     build = "cd app && yarn install",
