@@ -131,3 +131,5 @@ export GLAMOUR_STYLE="light"
 # autoload -U compinit
 # compinit -i
 # _evalcache glab completion -s zsh
+
+if [ -e /home/augustin/.nix-profile/etc/profile.d/nix.sh ]; then . /home/augustin/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
