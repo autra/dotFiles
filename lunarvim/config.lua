@@ -129,7 +129,8 @@ linters.setup {
    filetypes = {"sql"},
    extra_args = {"--dialect", "postgres"}
   },
-  { name = "mypy" }
+  { name = "mypy" },
+  -- { name = "flake8" },
 }
 
 -- language servers setup
@@ -138,7 +139,17 @@ require'lspconfig'.tsserver.setup{}
 require'lspconfig'.eslint.setup{}
 require'lspconfig'.sqls.setup{}
 require'lspconfig'.volar.setup{}
-require'lspconfig'.pylsp.setup{}
+require'lspconfig'.pylsp.setup{
+  configurationSources = {"flake8"},
+  plugins = {
+    flake8 = {
+      enabled = true,
+      maxLineLengh = 120,
+		  ignore = "E501",
+    },
+    pycodestyle = { enabled = false },
+  }
+}
 require'lspconfig'.dockerls.setup{}
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.nil_ls.setup{}
