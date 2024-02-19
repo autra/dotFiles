@@ -4,7 +4,7 @@
 -- Discord: https://discord.com/invite/Xb9B4Ny
 --
 
-vim.g.python3_host_prog="~/.venvs/nvim"
+vim.g.python3_host_prog="~/.venvs/nvim/bin/python"
 
 lvim.plugins = {
  -- { "lunarvim/colorschemes" },
