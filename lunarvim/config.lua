@@ -141,3 +141,4 @@ require'lspconfig'.volar.setup{}
 require'lspconfig'.pylsp.setup{}
 require'lspconfig'.dockerls.setup{}
 require'lspconfig'.bashls.setup{}
+require'lspconfig'.nil_ls.setup{}
