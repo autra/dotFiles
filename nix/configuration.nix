@@ -28,7 +28,7 @@
 
   boot.initrd.luks.devices."luks-744d533a-b7b0-4454-9b49-321247ecca82".keyFile = "/crypto_keyfile.bin";
   boot.initrd.luks.devices."luks-9643cb5a-1256-460c-8ad9-6748ff272a39".keyFile = "/crypto_keyfile.bin";
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos-vm"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary

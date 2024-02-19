@@ -1,7 +1,7 @@
 {
   description = "My first flake!";
 
-  input = {
+  inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
   };
 
@@ -9,7 +9,7 @@
     let lib = nixpkgs.lib;
     in {
       nixosConfigurations = {
-        augustin-Oslandia-vm = lib.nixosSystem {
+        nixos-vm = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [ ./configuration.nix ];
         };
