@@ -96,6 +96,9 @@
     glab
     lazygit
 
+    # python
+    virtualenv
+
     firefox
     neofetch
     zsh
