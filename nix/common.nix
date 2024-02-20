@@ -106,6 +106,9 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.augustin = {
+    # TODO home manager? 
+    # TODO link dotfiles ?
+    # TODO how to deploy git-scripts ?
     shell = pkgs.zsh;
     isNormalUser = true;
     description = "Augustin";
