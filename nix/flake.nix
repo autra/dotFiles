@@ -11,7 +11,7 @@
       nixosConfigurations = {
         nixos-vm = lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ ./common.nix ];
+          modules = [ ./hardware-configuration-nixos-vm.nix ./common.nix ];
         };
       };
     };
