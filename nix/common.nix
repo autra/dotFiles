@@ -46,7 +46,7 @@
   services.xserver = {
     layout = "fr";
     xkbVariant = "bepo_afnor";
-    xkbOptions = "ctrl:swapescape";
+    xkbOptions = "caps:swapescape";
   };
 
   # Configure console keymap
@@ -81,12 +81,21 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     curl
-    git
     lsb-release
+
+    # editor
     neovim
+
+    # git
+    git
+    git-extras
+    tig
+    delta
+    glab
+    lazygit
+
     firefox
     neofetch
     zsh
