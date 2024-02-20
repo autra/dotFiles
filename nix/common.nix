@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
     ];
 
   # configure nix itself
@@ -18,22 +18,7 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-  boot.initrd.luks.devices."luks-9643cb5a-1256-460c-8ad9-6748ff272a39".device = "/dev/disk/by-uuid/9643cb5a-1256-460c-8ad9-6748ff272a39";
-  # Setup keyfile
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
-  };
-
-  boot.loader.grub.enableCryptodisk=true;
-
-  boot.initrd.luks.devices."luks-744d533a-b7b0-4454-9b49-321247ecca82".keyFile = "/crypto_keyfile.bin";
-  boot.initrd.luks.devices."luks-9643cb5a-1256-460c-8ad9-6748ff272a39".keyFile = "/crypto_keyfile.bin";
-  networking.hostName = "nixos-vm"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
