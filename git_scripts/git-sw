@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 colnum=$(tput cols)
 separator=$(eval $(echo printf '"\-%0.s"' {1..$colnum}))
-branch=$(git for-each-ref| grep heads | cut -f2 | cut -d'/' -f3 | fzf --ansi --preview="git w --color=always {1}; echo $separator; git wd --color=always {1}") 
+branch=$(git for-each-ref | sed -En 's;^.+heads/(.+)$;\1;p' | fzf --ansi --preview="git lg --color=always origin/HEAD..{1}; echo $separator; git d --color=always origin/HEAD...{1}") 
 if [ $? == 0 ]; then
   git checkout "$branch"
 else 

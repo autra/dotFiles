@@ -82,6 +82,7 @@ fi
 
 export USE_CCACHE=1
 
+# already in zprofile TODO version it
 export PATH="$HOME/.cargo/bin:$PATH"
 export ANSIBLE_NOCOWS=1
 
