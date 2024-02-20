@@ -1,7 +1,7 @@
 [Appearance]
 AntiAliasFonts=true
 BoldIntense=true
-ColorScheme=Kantix
+ColorScheme=Kantix2
 Font=FiraCode Nerd Font,10,-1,5,50,0,0,0,0,0
 UseFontLineChararacters=false
 
