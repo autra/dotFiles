@@ -1,12 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  # TODO only ok for non nixos 
-  targets.genericLinux.enable = true;
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = builtins.getEnv "USER";
-  home.homeDirectory = builtins.getEnv "HOME";
+  home.username = "augustin";
+  home.homeDirectory = /home/augustin;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -15,7 +13,7 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "23.11"; # Please read the comment before changing.
+  home.stateVersion = "24.05"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -38,16 +36,7 @@
     # '')
     # prerequisite
     fira-code-nerdfont 
-    # git utilities
-    git
-    git-extras
-    tig
-    glab
-    delta
     # shell
-    bc # my tmux config depends on it
-    tmux
-    zsh
     oh-my-zsh
     fd
     fzf
@@ -59,6 +48,10 @@
     powerline-symbols
     # editors
     lunarvim
+    kate
+    # desktop utilitis
+    thunderbird
+    nextcloud-client
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -76,8 +69,6 @@
     "~/bin/git-sw".source = ~/dotFiles/git_scripts/git-sw;
     "~/bin/git-delete-branches".source = ~/dotFiles/git_scripts/git-delete-branches;
 
-
-    # TODO link git_scripts to ~/bin
 
     # shells
     ".aliases".source = ~/dotFiles/.aliases;
