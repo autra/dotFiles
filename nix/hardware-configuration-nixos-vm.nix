@@ -6,29 +6,18 @@
 {
   imports = [ ];
 
-  boot.loader.grub.device = "/dev/sda";
-  boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "ehci_pci" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "ehci_pci" "ahci" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/2058343a-e422-48b8-b6a4-767e9ad3455e";
+    { device = "/dev/disk/by-uuid/631bde44-39c0-4a51-a076-96c6de3e9c53";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-744d533a-b7b0-4454-9b49-321247ecca82".device = "/dev/disk/by-uuid/744d533a-b7b0-4454-9b49-321247ecca82";
-  boot.initrd.luks.devices."luks-9643cb5a-1256-460c-8ad9-6748ff272a39".device = "/dev/disk/by-uuid/9643cb5a-1256-460c-8ad9-6748ff272a39";
-  # Setup keyfile
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
-  };
-  boot.loader.grub.enableCryptodisk=true;
-  boot.initrd.luks.devices."luks-744d533a-b7b0-4454-9b49-321247ecca82".keyFile = "/crypto_keyfile.bin";
-  boot.initrd.luks.devices."luks-9643cb5a-1256-460c-8ad9-6748ff272a39".keyFile = "/crypto_keyfile.bin";
-
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/da745b37-d5d9-4b41-aa6a-92f5d1f16cbb"; }
+    [ { device = "/dev/disk/by-uuid/65b78d45-1a48-4345-8a18-7c410a42a406"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
