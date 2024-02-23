@@ -11,6 +11,8 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  boot.loader.grub.device = "/dev/sda";
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/631bde44-39c0-4a51-a076-96c6de3e9c53";
       fsType = "ext4";
