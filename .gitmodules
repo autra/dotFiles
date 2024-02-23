@@ -1,0 +1,15 @@
+[submodule "evalcache"]
+	path = zsh_custom/plugins/evalcache
+	url = https://github.com/mroth/evalcache
+[submodule "timewarrior"]
+	path = zsh_custom/plugins/timewarrior
+	url = https://github.com/svenXY/timewarrior
+[submodule "zsh-autosuggestions"]
+	path = zsh_custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "jq-zsh-plugins"]
+	path = zsh_custom/plugins/jq
+	url = https://github.com/reegnz/jq-zsh-plugin
+[submodule "zsh-syntax-highlighting"]
+	path = zsh_custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
