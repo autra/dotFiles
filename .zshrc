@@ -56,7 +56,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(evalcache git gitfast git-extras mvn mercurial cp rsync screen svn debian docker vagrant pip repo timewarrior zsh-autosuggestions jq)
+plugins=(evalcache git gitfast git-extras mvn mercurial cp rsync screen svn debian docker vagrant pip repo timewarrior zsh-autosuggestions jq zsh-syntax-highlighting autojump)
 
 source $ZSH/oh-my-zsh.sh
 export GIT_PS1_SHOWDIRTYSTATE=1 GIT_PS1_SHOWSTASHSTATE=1 GIT_PS1_SHOWUNTRACKEDFILES=1
@@ -100,13 +100,6 @@ export FZF_CTRL_T_COMMAND="fd -H \$dir"
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --theme=ansi {}' --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 # for telescope, workaround for it not showing .gitignore, .gitlab-ci.yml for instance
 alias fd="fd -H"
-
-# autojump
-if [ -f /usr/share/autojump/autojump.zsh ]; then
-  . /usr/share/autojump/autojump.zsh
-fi
-
-
 
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
