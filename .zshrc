@@ -9,30 +9,7 @@ ZSH_CUSTOM=~/dotFiles/zsh_custom
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="awesomepanda"
-#
-#ZSH_THEME="3den"
-#ZSH_THEME="Soliah"
-#ZSH_THEME="af-magic"
-#ZSH_THEME="afowler"
-#ZSH_THEME="alanpeabody"
-#ZSH_THEME="bira"
-#ZSH_THEME="blinks"
-#ZSH_THEME="dogenpunk"
-#ZSH_THEME="dpoggi"
-#ZSH_THEME="fishy"
-#ZSH_THEME="fletcherm"
-#ZSH_THEME="gentoo"
-#ZSH_THEME="kolo"
-#ZSH_THEME="kphoen"
-#ZSH_THEME="mikeh"
-#ZSH_THEME="mortalscumbag"
-#ZSH_THEME="muse"
 ZSH_THEME="muse-mod"
-#ZSH_THEME="pygmalion"
-#ZSH_THEME="re5et"
-#ZSH_THEME="rkj-repos"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
