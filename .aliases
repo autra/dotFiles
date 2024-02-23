@@ -19,8 +19,8 @@ alias tf='tail -f'
 alias ..='cd ..'
 alias ~='cd ~'
 
-alias ls='exa --icons'
-alias ll='ls -alFh'
+alias ls='eza --icons=auto'
+alias ll='ls -alhF'
 alias la='ls -A'
 alias l='ls -CF'
 
