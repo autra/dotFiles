@@ -1,3 +1,7 @@
+if [ -e ~/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then 
+  . ~/.nix-profile/etc/profile.d/hm-session-vars.sh; 
+fi # added by Nix installer
+
 THEME_BG=light
 # THEME_BG=dark
 # Path to your oh-my-zsh configuration.
@@ -10,10 +14,6 @@ ZSH_CUSTOM=~/dotFiles/zsh_custom
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="muse-mod"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -65,9 +65,14 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export ANSIBLE_NOCOWS=1
 
 # fzf
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-if [ -f /usr/share/doc/fzf/examples/completion.zsh ]; then
-  source /usr/share/doc/fzf/examples/completion.zsh
+if [ -n "${commands[fzf-share]}" ]; then
+  source "$(fzf-share)/key-bindings.zsh"
+  source "$(fzf-share)/completion.zsh"
+else 
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+  if [ -f /usr/share/doc/fzf/examples/completion.zsh ]; then
+    source /usr/share/doc/fzf/examples/completion.zsh
+  fi
 fi
 # this, alongside .git in ~/.fdignore, allows fzf to show hidden files tracked by git.
 # it also shows *all* hidden files, but well...
@@ -103,7 +108,5 @@ export GLAMOUR_STYLE="light"
 # autoload -U compinit
 # compinit -i
 # _evalcache glab completion -s zsh
-
-if [ -e /home/augustin/.nix-profile/etc/profile.d/nix.sh ]; then . /home/augustin/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 eval "$(starship init zsh)"
