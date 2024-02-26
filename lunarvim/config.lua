@@ -146,7 +146,7 @@ linters.setup {
    filetypes = {"sql"},
    extra_args = {"--dialect", "postgres"}
   },
-  { name = "mypy" },
+  -- { name = "mypy" },
   -- { name = "flake8" },
 }
 
