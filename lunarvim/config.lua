@@ -5,6 +5,22 @@
 --
 
 vim.g.python3_host_prog="~/.venvs/nvim/bin/python"
+vim.opt.background="light"
+
+-- lualine
+local custom_ppl = require'lualine.themes.papercolor_light'
+custom_ppl.normal.c.bg = '#183691'
+custom_ppl.normal.b.bg = '#0086b5'
+lvim.builtin.lualine.options.theme = custom_ppl
+-- lvim.builtin.lualine.options.theme = "papercolor_light"
+-- require('lualine').setup {
+--   options = { theme  = custom_ppl }
+-- }
+
+-- automatically install python syntax highlighting
+lvim.builtin.treesitter.ensure_installed = {
+  "python",
+}
 
 lvim.plugins = {
  -- { "lunarvim/colorschemes" },
