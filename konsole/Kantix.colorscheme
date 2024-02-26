@@ -8,13 +8,13 @@ Color=255,255,255
 Color=255,255,255
 
 [Color0]
-Color=0,0,0
+Color=255,255,255
 
 [Color0Faint]
-Color=192,192,192
+Color=188,188,188
 
 [Color0Intense]
-Color=0,0,0
+Color=188,188,188
 
 [Color1]
 Color=178,24,24
@@ -44,13 +44,13 @@ Color=139,203,203
 Color=21,154,154
 
 [Color4]
-Color=48,79,213
+Color=0,95,135
 
 [Color4Faint]
-Color=142,142,224
+Color=109,194,225
 
 [Color4Intense]
-Color=48,79,213
+Color=0,95,135
 
 [Color5]
 Color=178,24,178
@@ -62,28 +62,28 @@ Color=224,142,224
 Color=178,24,178
 
 [Color6]
-Color=208,133,42
+Color=236,131,32
 
 [Color6Faint]
-Color=208,178,143
+Color=255,205,155
 
 [Color6Intense]
-Color=208,133,42
+Color=236,131,32
 
 [Color7]
-Color=208,180,42
+Color=0,0,0
 
 [Color7Faint]
-Color=200,183,106
+Color=140,140,140
 
 [Color7Intense]
-Color=208,180,42
+Color=0,0,0
 
 [Foreground]
 Color=0,0,0
 
 [ForegroundFaint]
-Color=0,0,0
+Color=84,84,84
 
 [ForegroundIntense]
 Color=0,0,0
@@ -91,6 +91,6 @@ Color=0,0,0
 [General]
 Blur=false
 ColorRandomization=false
-Description=Kantix2
+Description=Kantix
 Opacity=1
 Wallpaper=
