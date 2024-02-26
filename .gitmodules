@@ -13,3 +13,6 @@
 [submodule "zsh-syntax-highlighting"]
 	path = zsh_custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "nix-zsh-completions"]
+	path = zsh_custom/plugins/nix-zsh-completions
+	url = https://github.com/nix-community/nix-zsh-completions
