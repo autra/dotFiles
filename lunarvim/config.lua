@@ -164,9 +164,12 @@ require'lspconfig'.pylsp.setup{
       maxLineLengh = 120,
 		  ignore = "E501",
     },
+    pylsp_mypy = { enabled = true },
     pycodestyle = { enabled = false },
   }
 }
 require'lspconfig'.dockerls.setup{}
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.nil_ls.setup{}
+require'lspconfig'.clangd.setup{}
+
