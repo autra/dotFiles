@@ -51,7 +51,7 @@ in {
     # editors
     lunarvim
     kate
-    # desktop utilitis
+    # desktop utilities
     thunderbird
     nextcloud-client
   ];

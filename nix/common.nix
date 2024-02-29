@@ -113,10 +113,13 @@
       # python
       virtualenv
 
-      firefox
       neofetch
       zsh
       tmux
+
+      # desktop
+      thunderbird
+      firefox
     ];
 
     programs.zsh.enable = true;
