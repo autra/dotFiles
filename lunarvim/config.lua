@@ -6,6 +6,7 @@
 
 vim.g.python3_host_prog="~/.venvs/nvim/bin/python"
 vim.opt.background="light"
+vim.opt.wrap=true
 
 -- lualine
 local custom_ppl = require'lualine.themes.papercolor_light'
