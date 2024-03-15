@@ -9,7 +9,7 @@ ZSH_CUSTOM=~/dotFiles/zsh_custom
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="muse-mod"
+# ZSH_THEME="muse-mod"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -105,3 +105,5 @@ export GLAMOUR_STYLE="light"
 # _evalcache glab completion -s zsh
 
 if [ -e /home/augustin/.nix-profile/etc/profile.d/nix.sh ]; then . /home/augustin/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+eval "$(starship init zsh)"
