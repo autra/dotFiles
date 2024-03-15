@@ -47,6 +47,10 @@ function watchthis {
    done
 }
 
+
+alias cwifi='nmcli -f "SSID,IN-USE,FREQ,RATE,BARS,SECURITY" -c yes dev wifi list |  fzf --ansi | cut -d" " -f1 | xargs nmcli dev wifi connect'
+alias cvpn='nmcli -c yes connection show | grep --color=no vpn | cut -d" " -f1 | fzf | xargs nmcli connection up '
+
 # workarounds
 alias fix_damn_touchpad='sudo modprobe -r psmouse && sudo modprobe psmouse'
 
