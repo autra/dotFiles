@@ -157,18 +157,19 @@ require'lspconfig'.tsserver.setup{}
 require'lspconfig'.eslint.setup{}
 require'lspconfig'.sqls.setup{}
 require'lspconfig'.volar.setup{}
-require'lspconfig'.pylsp.setup{
-  configurationSources = {"flake8"},
-  plugins = {
-    flake8 = {
-      enabled = true,
-      maxLineLengh = 120,
-		  ignore = "E501",
-    },
-    pylsp_mypy = { enabled = true },
-    pycodestyle = { enabled = false },
-  }
-}
+-- require'lspconfig'.pylsp.setup{
+--   configurationSources = {"flake8"},
+--   plugins = {
+--     flake8 = {
+--       enabled = true,
+--       maxLineLengh = 120,
+-- 		  ignore = "E501",
+--     },
+--     pylsp_mypy = { enabled = true },
+--     pycodestyle = { enabled = false },
+--   }
+-- }
+require'lspconfig'.pyright.setup{}
 require'lspconfig'.dockerls.setup{}
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.nil_ls.setup{}
