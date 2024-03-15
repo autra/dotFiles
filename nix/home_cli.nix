@@ -8,7 +8,7 @@ let
   pgenvPath = fetchGit {
     url = "https://github.com/theory/pgenv";
     ref = "master";
-  }
+  };
 in {
 
   # Home Manager needs a bit of information about you and the paths it should
