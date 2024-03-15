@@ -5,6 +5,10 @@ let
     url = "https://github.com/ohmyzsh/ohmyzsh.git";
     ref = "master";
   };
+  pgenvPath = fetchGit {
+    url = "https://github.com/theory/pgenv";
+    ref = "master";
+  }
 in {
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -40,20 +44,16 @@ in {
     fira-code-nerdfont 
     # shell
     oh-my-zsh
-    fd
-    fzf
     autojump
-    bat
-    jq
     # powerline
     powerline
     powerline-symbols
     # editors
     lunarvim
-    kate
-    # desktop utilities
-    thunderbird
-    nextcloud-client
+    # pg
+    pspg
+    pgcli
+
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -88,12 +88,14 @@ in {
     ".bashrc".source = ~/dotFiles/.bashrc;
     ".zshrc".source = ~/dotFiles/.zshrc;
     ".oh-my-zsh".source = ohMyZshPath;
-    # TODO zsh plugins
-    # tmux
     ".tmux.conf".source = ~/dotFiles/.tmux.conf;
     # TODO clone tpm ?
+
+    # pgclients
+    ".pgenv".source = pgenvPath;
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
 }

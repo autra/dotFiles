@@ -92,6 +92,14 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
+      # utils
+      unzip
+      htop
+      iotop
+      tree
+      nethogs
+      progress
+
       xclip
       wget
       curl
@@ -99,6 +107,14 @@
       dua
       dysk
       eza
+      fd
+      fzf
+      bat
+      jq
+      neofetch
+
+      # shell
+      tmux
 
       # editor
       neovim
@@ -114,16 +130,10 @@
       # python
       virtualenv
 
-      neofetch
-      zsh
-      tmux
+      # postgres
+      postgresql_16
 
-      # desktop
-      thunderbird
-      firefox
     ];
-
-    programs.zsh.enable = true;
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.${config.mine.common.user} = {
@@ -135,6 +145,7 @@
       description = config.mine.common.user;
       extraGroups = [ "networkmanager" "wheel" ];
     };
+    programs.zsh.enable = true;
 
 
     # Some programs need SUID wrappers, can be configured further or are
