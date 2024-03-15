@@ -11,9 +11,15 @@
       nixosConfigurations = {
         nixos-vm = lib.nixosSystem {
           system = "x86_64-linux";
-          # TODO dynamize user?
-          # mine.common.user = "augustin";
-          modules = [ ./hardware-configuration-nixos-vm.nix ./common.nix ];
+          modules = [ ./nixos-vm-config.nix ./common.nix ];
+        };
+        augustin-Oslandia = lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./augustin-oslandia-config.nix ./common.nix];
+        };
+        augustin-perso = lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./augustin-perso-config.nix ./common.nix];
         };
       };
     };
