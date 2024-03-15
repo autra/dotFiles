@@ -174,4 +174,6 @@ require'lspconfig'.dockerls.setup{}
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.nil_ls.setup{}
 require'lspconfig'.clangd.setup{}
+require'lspconfig'.solargraph.setup{}
+require'lspconfig'.rust_analyzer.setup{}
 
