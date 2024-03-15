@@ -7,6 +7,8 @@
     kate
     # desktop utilities
     nextcloud-client
+    thunderbird
+    firefox
   ];
 
   home.file = {
