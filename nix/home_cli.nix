@@ -45,6 +45,7 @@ in {
     # shell
     oh-my-zsh
     autojump
+    starship
     # powerline
     powerline
     powerline-symbols
