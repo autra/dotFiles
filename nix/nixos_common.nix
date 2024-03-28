@@ -100,18 +100,16 @@
       nethogs
       progress
 
-      xclip
       wget
       curl
       lsb-release
       dua
       dysk
-      eza
       fd
-      fzf
       bat
       jq
       neofetch
+      ripgrep
 
       # shell
       tmux
@@ -123,16 +121,9 @@
       git
       git-extras
       tig
-      delta
-      glab
-      lazygit
 
       # python
       virtualenv
-
-      # postgres
-      postgresql_16
-
     ];
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
