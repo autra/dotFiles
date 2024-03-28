@@ -78,6 +78,7 @@
 	rebase = merges
 [push]
 	default = upstream
+	autoSetupRemote = true
 [rerere]
 	autoupdate = true
 	enabled = true
