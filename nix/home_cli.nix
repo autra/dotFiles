@@ -29,15 +29,15 @@ let
       else
         "none";
   };
-  osladoc = import /home/augustin/repos/Communication/pandoc;
+  # osladoc = import /home/augustin/repos/Communication/pandoc;
 in rec {
 
-  targets.genericLinux.enable = true;
+  # targets.genericLinux.enable = true;
 
-  nix = {
-    package = pkgs.nix;
-    settings.experimental-features = [ "nix-command" "flakes" ];
-  };
+  # nix = {
+  #   package = pkgs.nix;
+  #   settings.experimental-features = [ "nix-command" "flakes" ];
+  # };
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "augustin";
@@ -116,7 +116,7 @@ in rec {
     gdal
 
     # oslandia
-    osladoc.osladoc
+    # osladoc.osladoc
 
   ];
 
