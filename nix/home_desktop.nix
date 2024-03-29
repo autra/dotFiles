@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
-{
+rec {
+  home.homeDirectory = "/home/augustin";
   imports = [ ./home_cli.nix ];
 
   home.packages = with pkgs; [
@@ -26,7 +27,7 @@
   ];
 
   home.file = {
-    ".local/share/konsole/mine.profile".source = ~/dotFiles/konsole/mine.profile;
-    ".local/share/konsole/Kantix.colorscheme".source = ~/dotFiles/konsole/Kantix.colorscheme;
+    ".local/share/konsole/mine.profile".source = home.homeDirectory + "/dotFiles/konsole/mine.profile";
+    ".local/share/konsole/Kantix.colorscheme".source = home.homeDirectory + "/dotFiles/konsole/Kantix.colorscheme";
   };
 }

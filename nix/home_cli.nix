@@ -30,7 +30,7 @@ let
         "none";
   };
   osladoc = import /home/augustin/repos/Communication/pandoc;
-in {
+in rec {
 
   targets.genericLinux.enable = true;
 
@@ -41,7 +41,7 @@ in {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "augustin";
-  home.homeDirectory = /home/augustin;
+  home.homeDirectory = "/home/augustin";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -128,27 +128,27 @@ in {
     # # symlink to the Nix store copy.
 
     # SCMS
-    ".gitconfig".source = ~/dotFiles/.gitconfig;
-    ".git_commit_msg.txt".source = ~/dotFiles/.git_commit_msg.txt;
-    ".hgrc".source = ~/dotFiles/.hgrc;
+    ".gitconfig".source = home.homeDirectory + "/dotFiles/.gitconfig";
+    ".git_commit_msg.txt".source = home.homeDirectory + "/dotFiles/.git_commit_msg.txt";
+    ".hgrc".source = home.homeDirectory + "/dotFiles/.hgrc";
     # git scripts
-    "bin/git-sw".source = ~/dotFiles/git_scripts/git-sw;
-    "bin/git-delete-branches".source = ~/dotFiles/git_scripts/git-delete-branches;
+    "bin/git-sw".source = home.homeDirectory + "/dotFiles/git_scripts/git-sw";
+    "bin/git-delete-branches".source = home.homeDirectory + "/dotFiles/git_scripts/git-delete-branches";
 
     # Editor
-    ".config/lvim/config.lua".source = ~/dotFiles/lunarvim/config.lua;
+    ".config/lvim/config.lua".source = home.homeDirectory + "/dotFiles/lunarvim/config.lua";
 
     # shells
-    ".aliases".source = ~/dotFiles/.aliases;
-    ".bashrc".source = ~/dotFiles/.bashrc;
-    ".zshrc".source = ~/dotFiles/.zshrc;
+    ".aliases".source = home.homeDirectory + "/dotFiles/.aliases";
+    ".bashrc".source = home.homeDirectory + "/dotFiles/.bashrc";
+    ".zshrc".source = home.homeDirectory + "/dotFiles/.zshrc";
     ".oh-my-zsh".source = ohMyZshPath;
-    ".tmux.conf".source = ~/dotFiles/.tmux.conf;
-    "~/.tmux/plugins/tpm".source = tpmPath;
+    ".tmux.conf".source = home.homeDirectory + "/dotFiles/.tmux.conf";
+    # ".tmux/plugins/tpm".source = tpmPath;
 
     # pgclients
-    ".psqlrc".source = ~/dotFiles/.psqlrc;
-    ".pspgconf".source = ~/dotFiles/.pspgconf;
+    ".psqlrc".source = home.homeDirectory + "/dotFiles/.psqlrc";
+    ".pspgconf".source = home.homeDirectory + "/dotFiles/.pspgconf";
     ".pgenv".source = pgenvPath;
     "bin/plan-exporter".source = "${planExporterPath}/plan-exporter";
   };

@@ -33,7 +33,17 @@
       nixosConfigurations = {
         nixos-vm = lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ ./nixos-vm-config.nix ./nixos_common.nix ./devops.nix ./home_desktop.nix ];
+          modules = [ 
+            ./nixos-vm-config.nix 
+            ./nixos_common.nix 
+            ./devops.nix
+            home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              home-manager.users.augustin = import ./home_desktop.nix;
+            }
+          ];
         };
         augustin-Oslandia2 = lib.nixosSystem {
           system = "x86_64-linux";
