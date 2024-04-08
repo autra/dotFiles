@@ -151,6 +151,9 @@ in rec {
     ".pspgconf".source = home.homeDirectory + "/dotFiles/.pspgconf";
     ".pgenv".source = pgenvPath;
     "bin/plan-exporter".source = "${planExporterPath}/plan-exporter";
+
+    # rust
+    ".rustup/settings.toml".source = home.homeDirectory + "/dotFiles/rustup_settings.toml";
   };
 
   # Let Home Manager install and manage itself.
