@@ -1,7 +1,3 @@
-# Edit this configration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, lib, pkgs, ... }:
 
 {
@@ -46,42 +42,12 @@
       LC_TELEPHONE = "fr_FR.UTF-8";
       LC_TIME = "fr_FR.UTF-8";
     };
-    # Enable the X11 windowing system.
-    services.xserver.enable = true;
-
-    # Enable the KDE Plasma Desktop Environment.
-    services.xserver.displayManager.sddm.enable = true;
-    services.xserver.desktopManager.plasma5.enable = true;
-
-    # Configure keymap in X11
-    services.xserver = {
-      layout = "fr";
-      xkbVariant = "bepo";
-      xkbOptions = "caps:swapescape";
-    };
 
     # Configure console keymap
     console.keyMap = "fr";
 
     # Enable CUPS to print documents.
     services.printing.enable = true;
-
-    # Enable sound with pipewire.
-    sound.enable = true;
-    hardware.pulseaudio.enable = false;
-    security.rtkit.enable = true;
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      # If you want to use JACK applications, uncomment this
-      #jack.enable = true;
-
-      # use the example session manager (no others are packaged yet so this is enabled by default,
-      # no need to redefine it in your config for now)
-      #media-session.enable = true;
-    };
 
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
@@ -93,6 +59,7 @@
     # $ nix search wget
     environment.systemPackages = with pkgs; [
       # utils
+      file
       unzip
       htop
       iotop

@@ -9,11 +9,11 @@
     };
   };
 
-  outputs = {self, nixpkgs, home-manager, ...}: 
+  outputs = {self, nixpkgs, home-manager, ...}:
     let lib = nixpkgs.lib;
     in {
 
-      # Non nixos 
+      # Non nixos
       homeConfigurations = {
         augustin-Oslandia = home-manager.lib.homeManagerConfiguration {
           # pkgs = nixpkgs.legacyPackages.${system};
@@ -33,9 +33,10 @@
       nixosConfigurations = {
         nixos-vm = lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ 
-            ./nixos-vm-config.nix 
-            ./nixos_common.nix 
+          modules = [
+            ./nixos-vm-config.nix
+            ./nixos_common.nix
+            ./kde.nix
             ./devops.nix
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
@@ -45,10 +46,25 @@
             }
           ];
         };
+        carlos = lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./carlos-config.nix
+            ./nixos_common.nix
+            ./devops.nix
+            home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              home-manager.users.augustin = import ./home_cli.nix;
+            }
+          ];
+        };
         augustin-Oslandia2 = lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ 
+          modules = [
             ./nixos_common.nix
+            ./kde.nix
             ./devops.nix
             ./home_desktop.nix
           ];
