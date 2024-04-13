@@ -63,10 +63,16 @@
         augustin-Oslandia2 = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
+	    ./augustin-Oslandia2-config.nix
             ./nixos_common.nix
             ./kde.nix
             ./devops.nix
-            ./home_desktop.nix
+            home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              home-manager.users.augustin = import ./home_cli.nix;
+            }
           ];
         };
       };
