@@ -13,11 +13,6 @@
     # configure nix itself
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-    # Bootloader.
-    # TODO how to dynamize that? (cf also the device in hardware-config)
-    boot.loader.grub.enable = true;
-    boot.loader.grub.useOSProber = true;
-
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Enable networking

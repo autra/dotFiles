@@ -8,11 +8,12 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "xhci_pci" "usb_storage" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "xhci_pci" "usb_storage" "usbhid" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-  boot.loader.grub.device = "/dev/sdb"; # or "nodev" for efi only
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   fileSystems."/" =
     { device = "/dev/disk/by-label/NIXROOT";
@@ -21,11 +22,11 @@
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-label/NIXBOOT";
-      fsType = "ext2";
+      fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-label/SWAP"; }
+    [ { device = "/dev/disk/by-label/swap"; }
     ];
 
   networking.hostName = "carlos"; # Define your hostname.
@@ -36,8 +37,6 @@
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp4s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
-
-  time.timeZone = "Europe/Paris";
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
