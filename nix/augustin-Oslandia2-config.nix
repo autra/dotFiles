@@ -13,8 +13,9 @@
   boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/e732018a-166e-4a7b-a3af-214c6eb78acf";
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.loader.grub.device = "nodev";
-  boot.loader.grub.efiSupport = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
 
   fileSystems."/" =
     { device = "/dev/disk/by-label/NIXROOT";
@@ -34,6 +35,7 @@
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+  networking.hostName = "augustin-Oslandia2";
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp193s0f3u2u1.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp1s0.useDHCP = lib.mkDefault true;
@@ -41,5 +43,4 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  networking.hostName = "augustin-Oslandia2";
 }
