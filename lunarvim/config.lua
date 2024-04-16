@@ -69,7 +69,11 @@ lvim.plugins = {
     },
     config = true,
   },
+  { "mfussenegger/nvim-dap-python" },
+  { "puremourning/vimspector" }
 }
+lvim.builtin.dap.active = true
+require('dap-python').setup('~/.venvs/debugpy/bin/python')
 lvim.colorscheme = "base16-github"
 -- key bindings
 lvim.keys.normal_mode["<Leader><TAB>"] = ":e #<Enter>"
