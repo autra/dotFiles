@@ -143,7 +143,7 @@ in rec {
     ".bashrc".source = home.homeDirectory + "/dotFiles/.bashrc";
     ".zshrc".source = home.homeDirectory + "/dotFiles/.zshrc";
     ".oh-my-zsh".source = ohMyZshPath;
-    ".config/starship.toml".source = home.homeDirectory + "dotFiles/starship.toml";
+    ".config/starship.toml".source = home.homeDirectory + "/dotFiles/starship.toml";
     ".tmux.conf".source = home.homeDirectory + "/dotFiles/.tmux.conf";
     ".tmux/plugins/tpm".source = tpmPath;
 
