@@ -152,6 +152,10 @@ linters.setup {
 }
 
 -- language servers setup
+-- TODO does not work?
+lvim.lsp.installer.setup.automatic_installation = {
+  exclude = {}
+}
 require'lspconfig'.ansiblels.setup{}
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.eslint.setup{}
