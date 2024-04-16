@@ -18,8 +18,7 @@
         augustin-Oslandia = home-manager.lib.homeManagerConfiguration {
           # pkgs = nixpkgs.legacyPackages.${system};
           pkgs = import nixpkgs { system = "x86_64-linux"; };
-          # targets.genericLinux.enable = true;
-          modules = [ ./home_cli.nix ];
+          modules = [ ./other_os_common.nix ./home_cli.nix ];
         };
         carlos = home-manager.lib.homeManagerConfiguration {
           system = "x86_64-linux";
@@ -30,6 +29,8 @@
           system = "x86_64-linux";
         };
       };
+
+      # nixos
       nixosConfigurations = {
         nixos-vm = lib.nixosSystem {
           system = "x86_64-linux";
