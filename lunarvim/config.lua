@@ -9,11 +9,11 @@ vim.opt.background="light"
 vim.opt.wrap=true
 
 -- lualine
-local custom_ppl = require'lualine.themes.papercolor_light'
-custom_ppl.normal.c.bg = '#183691'
-custom_ppl.normal.b.bg = '#0086b5'
-lvim.builtin.lualine.options.theme = custom_ppl
--- lvim.builtin.lualine.options.theme = "papercolor_light"
+-- local custom_ppl = require'lualine.themes.papercolor_light'
+-- custom_ppl.normal.c.bg = '#183691'
+-- custom_ppl.normal.b.bg = '#0086b5'
+-- lvim.builtin.lualine.options.theme = custom_ppl
+lvim.builtin.lualine.options.theme = "base16"
 -- require('lualine').setup {
 --   options = { theme  = custom_ppl }
 -- }
