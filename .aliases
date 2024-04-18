@@ -20,9 +20,9 @@ alias ..='cd ..'
 alias ~='cd ~'
 
 alias ls='eza --icons=auto'
-alias ll='ls -alhF'
+alias ll='ls -alh'
 alias la='ls -A'
-alias l='ls -CF'
+alias l='ls'
 
 alias xop='xdg-open'
 
