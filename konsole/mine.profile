@@ -6,7 +6,7 @@ Font=FiraCode Nerd Font,10,-1,5,50,0,0,0,0,0
 UseFontLineChararacters=false
 
 [General]
-Command=/bin/zsh
+Command=/usr/bin/env zsh
 DimWhenInactive=false
 Environment=TERM=xterm-256color
 Name=mine
