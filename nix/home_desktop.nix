@@ -33,8 +33,13 @@ rec {
     keepassxc
     meld
     qgis
-    # tlp
+    openshot-qt
+    libsForQt5.kdenlive
+    tlp
     # tlp-rdw
+    # pinentry-qt
+
+    screenkey
   ];
 
   home.file = {
