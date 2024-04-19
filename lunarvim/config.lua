@@ -4,7 +4,9 @@
 -- Discord: https://discord.com/invite/Xb9B4Ny
 --
 
-vim.g.python3_host_prog="~/.venvs/nvim/bin/python"
+-- NOTE: on nixos, we already have an isolated python for lvim.
+-- So I *probably* need this on other oses?
+-- vim.g.python3_host_prog="~/.venvs/nvim/bin/python"
 vim.opt.background="light"
 vim.opt.wrap=true
 
