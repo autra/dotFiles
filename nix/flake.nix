@@ -72,7 +72,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.users.augustin = import ./home_cli.nix;
+              home-manager.users.augustin = import ./home_oslandia.nix;
             }
           ];
         };
