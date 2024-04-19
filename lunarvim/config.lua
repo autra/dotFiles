@@ -144,6 +144,7 @@ formatters.setup {
   { command = "prettier", filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue" }},
   { command = "black", filetypes = { "python" }},
   { command = "isort", filetypes = { "python" }},
+  { command = "nixpkgs-fmt", filetypes = { "nix" }},
   -- { command = "sqlfluff", filetypes = { "sql" }}
 }
 local linters = require "lvim.lsp.null-ls.linters"
