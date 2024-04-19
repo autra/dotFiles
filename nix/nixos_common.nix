@@ -55,6 +55,7 @@
     environment.systemPackages = with pkgs; [
       # utils
       file
+      killall
       unzip
       htop
       iotop
