@@ -8,6 +8,8 @@ rec {
     xclip
     kate
     # desktop utilities
+    libreoffice
+    onlyoffice-bin
     nextcloud-client
     thunderbird
     firefox
