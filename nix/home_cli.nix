@@ -96,6 +96,7 @@ in rec {
     delta
     glab
     lazygit
+    git-crypt
     onefetch
     # pg
     pspg
