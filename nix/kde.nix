@@ -25,4 +25,13 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+
+  programs.kdeconnect.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    libsForQt5.kcolorchooser
+    libsForQt5.plasma-browser-integration
+  ];
+    
+
 }
