@@ -91,9 +91,6 @@
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.${config.mine.common.user} = {
-      # TODO home manager? 
-      # TODO link dotfiles ?
-      # TODO how to deploy git-scripts ?
       shell = pkgs.zsh;
       isNormalUser = true;
       description = config.mine.common.user;
