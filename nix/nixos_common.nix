@@ -39,7 +39,7 @@
     };
 
     # Configure console keymap
-    console.keyMap = "fr";
+    console.useXkbConfig = true;
 
     # Enable CUPS to print documents.
     services.printing.enable = true;
