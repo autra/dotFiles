@@ -120,7 +120,6 @@ in rec {
     gnupg
     gpg-tui
 
-    # python311
     # python311Packages.pynvim
     nodejs_20
 
