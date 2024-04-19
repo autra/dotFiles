@@ -54,6 +54,15 @@ alias cvpn='nmcli -c yes connection show | grep --color=no vpn | cut -d" " -f1 |
 # workarounds
 alias fix_damn_touchpad='sudo modprobe -r psmouse && sudo modprobe psmouse'
 
+function s {
+    if [ -e package.json ]; then
+        target=$(jq -r '.scripts|to_entries[]|((.key))' package.json | fzf)
+        npm run $target
+    else
+        echo "❗ no package.json"
+    fi
+}
+
 # here will go everything I don't want to version for one reason or another
 if [ -f ~/.local-aliases ]; then
     . ~/.local-aliases
