@@ -64,7 +64,7 @@
         augustin-Oslandia2 = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-	    ./augustin-Oslandia2-config.nix
+            ./augustin-Oslandia2-config.nix
             ./nixos_common.nix
             ./kde.nix
             ./devops.nix
