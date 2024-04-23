@@ -54,6 +54,7 @@
     # $ nix search wget
     environment.systemPackages = with pkgs; [
       # utils
+      lshw
       file
       killall
       unzip
