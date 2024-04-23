@@ -42,6 +42,8 @@ rec {
     # pinentry-qt
 
     screenkey
+    peek
+    zeal
   ];
 
   home.file = {
