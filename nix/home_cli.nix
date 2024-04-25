@@ -115,6 +115,7 @@ in rec {
 
     # sig
     gdal
+    pdal
 
     # gpg
     gnupg
