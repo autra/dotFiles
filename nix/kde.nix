@@ -32,6 +32,7 @@
     libsForQt5.kcalc
     libsForQt5.kcolorchooser
     libsForQt5.plasma-browser-integration
+    kup
   ];
     
 
