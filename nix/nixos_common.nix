@@ -55,6 +55,7 @@
     environment.systemPackages = with pkgs; [
       # utils
       lshw
+      lm_sensors
       file
       killall
       unzip
