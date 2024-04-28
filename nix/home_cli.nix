@@ -90,6 +90,8 @@ in rec {
     # editors
     neovim
     lunarvim
+    # needed by clangd lsp server
+    clang-tools_17
     # git 
     git-lfs
     delta
