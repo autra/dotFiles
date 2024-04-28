@@ -91,6 +91,14 @@
       virtualenv
     ];
 
+    # doc
+    documentation = { 
+      dev.enable = true;
+      man.enable = true;
+      info.enable = true;
+      doc.enable = true;
+    };
+
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.${config.mine.common.user} = {
       shell = pkgs.zsh;
