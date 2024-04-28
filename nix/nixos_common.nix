@@ -125,9 +125,11 @@
 
     # Open ports in the firewall.
     # networking.firewall.allowedTCPPorts = [ ... ];
-    # networking.firewall.allowedUDPPorts = [ ... ];
-    # Or disable the firewall altogether.
-    # networking.firewall.enable = false;
+    networking.firewall.allowedUDPPortRanges = [ 
+      # that's what fedora does (also for TCP) and I need this to make upnp work at home
+      { from = 1025; to = 65535; }
+    ];
+    networking.firewall.enable = true;
 
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
