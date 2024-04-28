@@ -105,6 +105,7 @@
       isNormalUser = true;
       description = config.mine.common.user;
       extraGroups = [ "networkmanager" "wheel" ];
+      initialPassword = "test";
     };
     programs.zsh.enable = true;
 
