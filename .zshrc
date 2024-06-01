@@ -36,8 +36,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(evalcache git gitfast git-extras mvn mercurial cp rsync screen svn debian docker vagrant pip repo timewarrior zsh-autosuggestions jq zsh-syntax-highlighting autojump)
 
 source $ZSH/oh-my-zsh.sh
-export GIT_PS1_SHOWDIRTYSTATE=1 GIT_PS1_SHOWSTASHSTATE=1 GIT_PS1_SHOWUNTRACKEDFILES=1
-export GIT_PS1_SHOWUPSTREAM=verbose GIT_PS1_DESCRIBE_STYLE=branch GIT_PS1_SHOWCOLORHINTS=1
 
 if [ -f ~/.aliases ]; then
   . ~/.aliases
