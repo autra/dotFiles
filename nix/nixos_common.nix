@@ -54,6 +54,7 @@
     # $ nix search wget
     environment.systemPackages = with pkgs; [
       # utils
+      inetutils
       lshw
       lm_sensors
       file
@@ -87,8 +88,7 @@
       git-extras
       tig
 
-      # python
-      virtualenv
+
     ];
 
     # doc

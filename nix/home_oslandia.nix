@@ -45,6 +45,7 @@ in
     qtpass
     timewarrior
     libnotify
+    cloudcompare
   ];
 
   systemd.user.services.pyrnotify = {

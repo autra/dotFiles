@@ -44,6 +44,9 @@ rec {
     screenkey
     peek
     zeal
+    libsForQt5.kamoso
+    github-desktop
+    vscode.fhs
   ];
 
   home.file = {

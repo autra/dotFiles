@@ -60,6 +60,7 @@ in rec {
     # util
     autossh
     bup # kde includes kup, which is a frontend integration into settings
+    ipcalc
 
     # monitoring
     ctop
@@ -71,6 +72,8 @@ in rec {
     eza
     # utils
     tokei
+    dogdns
+    imagemagick
     # powerline
     powerline
     powerline-symbols
@@ -85,6 +88,9 @@ in rec {
     glab
     lazygit
     git-crypt
+    pre-commit
+    git-filter-repo
+    #
     onefetch
     # pg
     pspg
@@ -94,6 +100,10 @@ in rec {
     # - pgxnclient
     # - pgxn 
     # with nix?
+
+    # c++
+    ccache
+    llvmPackages.bintools
 
     # rust
     rustup
@@ -110,12 +120,20 @@ in rec {
     gpg-tui
 
     # python311Packages.pynvim
+    # node
     nodejs_20
 
     sieve-connect
 
     ffmpeg
+    pdftk
     pkgs.nodePackages."http-server"
+
+    # search duckduckgo from cli
+    ddgr
+
+    khal
+    vdirsyncer
 
   ];
 
