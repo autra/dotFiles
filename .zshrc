@@ -96,8 +96,12 @@ function timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do time $shell -i -c exit; done
 }
+
+# node & co
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+# needs npm set prefix ~/.npm-global or ~/.npmrc
+export PATH="$HOME/.npm-global/bin/:$PATH"
 
 # customize pager for glab
 export GLAB_PAGER="less -FX"

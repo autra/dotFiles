@@ -168,6 +168,9 @@ in rec {
 
     # rust
     ".rustup/settings.toml".source = home.homeDirectory + "/dotFiles/rustup_settings.toml";
+
+    # npm
+    ".npmrc".source = home.homeDirectory + "/dotFiles/.npmrc";
   };
 
   # Let Home Manager install and manage itself.
