@@ -68,6 +68,7 @@
             ./nixos_common.nix
             ./kde.nix
             ./devops.nix
+            ./pg.nix
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
