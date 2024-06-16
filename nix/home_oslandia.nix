@@ -6,6 +6,7 @@ let
     url = "https://raw.githubusercontent.com/weechat/scripts/master/python/pyrnotify.py";
     hash = "sha256-sC9R3c8zpSaiBZCbs6guUVvLVCUIC4J97Bw72d1r6a8=";
   };
+  pyrnotify_port = "4321";
   # TODO is is really worthy? :-D
   # maybe I should just install python3 in system or home
   create_python3_script_from_file = 
@@ -51,16 +52,19 @@ in
   systemd.user.services.pyrnotify = {
     Unit = {
       Description = "Pyrnotify daemon for weechat";
-      After = "network.target";
     };
 
     Service = {
       Type = "simple";
       WorkingDirectory = "/home/augustin";
-      ExecStart = "${pkgs.python3}/bin/python ${pyrnotify} 4321";
-      Restart = "on-failure";
+      ExecStart = "${pkgs.python3}/bin/python ${pyrnotify} ${pyrnotify_port}";
+      # I prefer not to have automatic restart because it will probably not work anyway
+      # Restart = "on-failure";
       SyslogIdentifier = "pyrnotify";
       Environment = "DISPLAY=:0";
+    };
+    Install = {
+      WantedBy=["default.target"];
     };
   };
 }
