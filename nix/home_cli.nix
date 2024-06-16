@@ -109,6 +109,7 @@ in rec {
     rustup
 
     # python
+    (python3.withPackages(ps: with ps; [ debugpy ]))
     virtualenv
 
     # sig
