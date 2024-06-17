@@ -5,14 +5,14 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
+    variant = "bepo";
+    options = "caps:swapescape";
     layout = "fr";
-    xkbVariant = "bepo";
-    xkbOptions = "caps:swapescape";
   };
 
   # Enable sound with pipewire.

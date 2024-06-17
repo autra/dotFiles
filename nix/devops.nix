@@ -2,7 +2,7 @@
 {
   config.environment.systemPackages = with pkgs; [
     lxc
-    lxd
+    lxd-lts
     vagrant
     ansible
 
@@ -30,7 +30,6 @@
   config.users.extraGroups.vboxusers.members = [ config.mine.common.user ];
   config.virtualisation.virtualbox.host.enableExtensionPack = true;
   config.virtualisation.virtualbox.guest.enable = true;
-  config.virtualisation.virtualbox.guest.x11 = true;
 
   # docker
   config.virtualisation.docker.enable = true;
