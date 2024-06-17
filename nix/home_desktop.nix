@@ -53,4 +53,10 @@ rec {
     ".local/share/konsole/mine.profile".source = home.homeDirectory + "/dotFiles/konsole/mine.profile";
     ".local/share/konsole/Kantix.colorscheme".source = home.homeDirectory + "/dotFiles/konsole/Kantix.colorscheme";
   };
+
+  programs.kitty = {
+    enable = true;
+    # TODO do my own theme because nothing suits me :-O
+    theme = "GitHub Light";
+  };
 }
