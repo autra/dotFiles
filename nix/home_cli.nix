@@ -80,6 +80,7 @@ in rec {
     # editors
     neovim
     lunarvim
+    gnumake
     # needed by clangd lsp server
     clang-tools_17
     # git 
