@@ -14,7 +14,11 @@
   boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/e732018a-166e-4a7b-a3af-214c6eb78acf";
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    device = "nodev";
+  };
   boot.loader.efi.canTouchEfiVariables = true;
 
 

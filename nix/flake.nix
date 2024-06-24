@@ -7,9 +7,12 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    grub2-themes = {
+      url = "github:vinceliuice/grub2-themes";
+    };
   };
 
-  outputs = {self, nixpkgs, home-manager, ...}:
+  outputs = {self, nixpkgs, home-manager, grub2-themes, ...}:
     let lib = nixpkgs.lib;
     in {
 
@@ -64,6 +67,7 @@
         augustin-Oslandia2 = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
+            grub2-themes.nixosModules.default
             ./augustin-Oslandia2-config.nix
             ./nixos_common.nix
             ./kde.nix
