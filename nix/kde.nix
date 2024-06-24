@@ -29,10 +29,12 @@
   programs.kdeconnect.enable = true;
 
   environment.systemPackages = with pkgs; [
-    libsForQt5.kcalc
-    libsForQt5.kcolorchooser
-    libsForQt5.plasma-browser-integration
+    kdePackages.kcalc
+    kdePackages.kcolorchooser
+    kdePackages.plasma-browser-integration
     kup
+    wl-clipboard
+    networkmanager-fortisslvpn
   ];
     
 
