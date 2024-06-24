@@ -91,6 +91,7 @@ in rec {
     git-crypt
     pre-commit
     git-filter-repo
+    devenv
     #
     onefetch
     # pg
