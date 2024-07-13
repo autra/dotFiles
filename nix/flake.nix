@@ -7,12 +7,13 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mynixpkgs.url = "github:autra/nixpkgs/dev";
     grub2-themes = {
       url = "github:vinceliuice/grub2-themes";
     };
   };
 
-  outputs = {self, nixpkgs, home-manager, grub2-themes, ...}:
+  outputs = {self, nixpkgs, home-manager, grub2-themes, mynixpkgs, ...}:
     let lib = nixpkgs.lib;
     in {
 
@@ -78,6 +79,7 @@
               home-manager.useUserPackages = true;
 
               home-manager.users.augustin = import ./home_oslandia.nix;
+              home-manager.extraSpecialArgs = { mypkgs=mynixpkgs.legacyPackages."x86_64-linux"; };
             }
           ];
         };

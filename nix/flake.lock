@@ -25,11 +25,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1718530513,
-        "narHash": "sha256-BmO8d0r+BVlwWtMLQEYnwmngqdXIuyFzMwvmTcLMee8=",
+        "lastModified": 1720042825,
+        "narHash": "sha256-A0vrUB6x82/jvf17qPCpxaM+ulJnD8YZwH9Ci0BsAzE=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a1fddf0967c33754271761d91a3d921772b30d0e",
+        "rev": "e1391fb22e18a36f57e6999c7a9f966dc80ac073",
         "type": "github"
       },
       "original": {
@@ -39,13 +39,29 @@
         "type": "github"
       }
     },
+    "mynixpkgs": {
+      "locked": {
+        "lastModified": 1720633196,
+        "narHash": "sha256-nuzu5k9Ysqcr0ko7TNvt54jsFA0AWm6vcVloPPhFFpM=",
+        "owner": "autra",
+        "repo": "nixpkgs",
+        "rev": "33d78454b53f9df6fe27cc81036ea764bc81a455",
+        "type": "github"
+      },
+      "original": {
+        "owner": "autra",
+        "ref": "dev",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1718649619,
-        "narHash": "sha256-LvVGT4aJP1eHL21yILlEegtM60m1gpuE+8uOoHLPxaM=",
+        "lastModified": 1720644594,
+        "narHash": "sha256-QEwmVKV6gx3pyBXzPtQMpoI6mB0bzK7OrcICACEEIFc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "6315f5a66be2ebbaba33eac02f7503b718cbad5e",
+        "rev": "c06f41ce443a79dc6bcb996b4e71cd0a40a86b0b",
         "type": "github"
       },
       "original": {
@@ -57,11 +73,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1718437845,
-        "narHash": "sha256-ZT7Oc1g4I4pHVGGjQFnewFVDRLH5cIZhEzODLz9YXeY=",
+        "lastModified": 1720553833,
+        "narHash": "sha256-IXMiHQMtdShDXcBW95ctA+m5Oq2kLxnBt7WlMxvDQXA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "752c634c09ceb50c45e751f8791cb45cb3d46c9e",
+        "rev": "249fbde2a178a2ea2638b65b9ecebd531b338cf9",
         "type": "github"
       },
       "original": {
@@ -74,6 +90,7 @@
       "inputs": {
         "grub2-themes": "grub2-themes",
         "home-manager": "home-manager",
+        "mynixpkgs": "mynixpkgs",
         "nixpkgs": "nixpkgs_2"
       }
     }

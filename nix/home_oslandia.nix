@@ -1,5 +1,5 @@
 # specific for oslandia
-{ config, pkgs, ... }:
+{ config, pkgs, mypkgs, ... }:
 let
   # TODO extract in its own package
   pyrnotify = pkgs.fetchurl {
@@ -47,6 +47,7 @@ in
     timewarrior
     libnotify
     cloudcompare
+    (mypkgs.freecad.override { ifcSupport = true; })
   ];
 
   systemd.user.services.pyrnotify = {
