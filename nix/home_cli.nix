@@ -182,7 +182,17 @@ in rec {
   };
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-  programs.starship.enable = true;
+  programs = {
+    home-manager.enable = true;
+    starship.enable = true;
 
+    direnv = {
+        enable = true;
+        enableBashIntegration = true; # see note on other shells below
+        enableZshIntegration = true;
+        nix-direnv = {
+          enable = true;
+        };
+      };
+  };
 }
