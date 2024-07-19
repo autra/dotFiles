@@ -47,6 +47,7 @@ rec {
     libsForQt5.kamoso
     github-desktop
     vscode.fhs
+    obs-studio
   ];
 
   home.file = {
