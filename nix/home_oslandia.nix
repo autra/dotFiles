@@ -48,6 +48,7 @@ in
     libnotify
     cloudcompare
     (mypkgs.freecad.override { ifcSupport = true; })
+    blender
   ];
 
   systemd.user.services.pyrnotify = {
