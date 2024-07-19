@@ -81,13 +81,19 @@
     ];
 
     # Enable CUPS to print documents.
-    services.printing.enable = true;
+    services.printing = {
+      enable = true;
+      drivers = with pkgs; [ hplip hplipWithPlugin cnijfilter_4_00 ];
+    };
+    # enable printer discovery (among other things?)
+    services.avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
 
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
-
-    # Allow unfree packages
-    nixpkgs.config.allowUnfree = true;
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
@@ -143,7 +149,7 @@
       shell = pkgs.zsh;
       isNormalUser = true;
       description = config.mine.common.user;
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "lp"];
       initialPassword = "test";
     };
     programs.zsh.enable = true;
