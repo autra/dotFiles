@@ -41,7 +41,7 @@ rec {
     # tlp-rdw
     # pinentry-qt
 
-    screenkey
+    showmethekey
     peek
     zeal
     libsForQt5.kamoso
