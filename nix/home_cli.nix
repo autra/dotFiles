@@ -16,10 +16,6 @@ let
     ref = "refs/tags/v3.1.0";
     allRefs = true;
   };
-  pgenvPath = fetchGit {
-    url = "https://github.com/theory/pgenv";
-    ref = "master";
-  };
   planExporterPath = fetchTarball {
     url = "https://github.com/agneum/plan-exporter/releases/download/v0.0.6/plan-exporter-0.0.6-${arch}.tar.gz";
     sha256 = if arch == "linux-amd64" then
@@ -98,7 +94,6 @@ in rec {
     pspg
     pgcli
     # do I need:
-    # - pgenv
     # - pgxnclient
     # - pgxn 
     # with nix?
@@ -171,7 +166,6 @@ in rec {
     # pgclients
     ".psqlrc".source = home.homeDirectory + "/dotFiles/.psqlrc";
     ".pspgconf".source = home.homeDirectory + "/dotFiles/.pspgconf";
-    ".pgenv".source = pgenvPath;
     "bin/plan-exporter".source = "${planExporterPath}/plan-exporter";
 
     # rust
