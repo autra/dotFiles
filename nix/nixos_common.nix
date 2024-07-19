@@ -85,6 +85,8 @@
       enable = true;
       drivers = with pkgs; [ hplip hplipWithPlugin cnijfilter_4_00 ];
     };
+    hardware.sane.enable = true; # enables support for SANE scanners
+    hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
     # enable printer discovery (among other things?)
     services.avahi = {
       enable = true;
@@ -149,7 +151,7 @@
       shell = pkgs.zsh;
       isNormalUser = true;
       description = config.mine.common.user;
-      extraGroups = [ "networkmanager" "wheel" "lp"];
+      extraGroups = [ "networkmanager" "wheel" "scanner" "lp"];
       initialPassword = "test";
     };
     programs.zsh.enable = true;
