@@ -25,6 +25,15 @@
     # configure nix itself
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+    programs.nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 30d --keep 20";
+      flake = "/home/augustin/dotFiles/nix";
+    };
+    # test nix-ld
+    # programs.nix-ld.enable = true;
+
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Enable networking
