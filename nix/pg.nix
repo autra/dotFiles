@@ -6,7 +6,7 @@
     ensureUsers = [{ 
       name = config.mine.common.user;
       ensureDBOwnership = true;
-      ensureSuperuser = true;
+      ensureClauses.superuser = true;
     }];
     authentication = pkgs.lib.mkOverride 10 ''
       #type database  DBuser  auth-method
