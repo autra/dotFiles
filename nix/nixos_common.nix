@@ -12,6 +12,16 @@
   config = {
     # enable some shortcut with alt+print_scr+key. (h to get help in journalctl)
     boot.kernel.sysctl."kernel.sysrq" = 1;
+    # for nixos build-vms
+    virtualisation.vmVariant = {
+      # following configuration is added only when building VM with build-vm
+      virtualisation = {
+        useEFIBoot = true;
+        memorySize =  2048; # Use 2048MiB memory.
+        cores = 3;         
+      };
+    };
+
     # configure nix itself
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
