@@ -6,7 +6,7 @@
       type = lib.types.str;
       default = "augustin";
       example = "augustin";
-      description = lib.mdDoc "The user to configure for this system";
+      description = "The user to configure for this system";
     };
   };
   config = {
