@@ -48,8 +48,12 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  services.fprintd.enable = true;
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+
+  # f16 has a fingerprint reader
+  services.fprintd.enable = true;
+  # and it can use fwupd, cf https://wiki.nixos.org/wiki/Fwupd
+  services.fwupd.enable = true;
 }
