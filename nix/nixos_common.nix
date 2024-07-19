@@ -61,6 +61,24 @@
 
     # Configure console keymap
     console.useXkbConfig = true;
+    console.colors = [
+      "FFFFFF" # black
+      "8c8c8c" # darkgrey
+      "18b218" # darkred, the "OK" at startup, the g and u x of eza 
+      "e08e8e" # red
+      "128612" # darkgreen
+      "ffcd9b" # green
+      "ec8320" # brown
+      "005f87" # yellow
+      "b21818" # darkblue
+      "6dc2e1" # blue
+      "b218b2" # darmagenta
+      "e08ee0" # magenta
+      "159a9a" # darkcyan
+      "8bcbcb" # cyan
+      "bcbcbc" # lightgrey
+      "000000" # white
+    ];
 
     # Enable CUPS to print documents.
     services.printing.enable = true;
