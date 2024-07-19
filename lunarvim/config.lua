@@ -183,8 +183,9 @@ require'lspconfig'.pylsp.setup{}
 -- require'lspconfig'.pyright.setup{}
 require'lspconfig'.dockerls.setup{}
 require'lspconfig'.bashls.setup{}
-require'lspconfig'.nil_ls.setup{}
+require'lspconfig'.rnix.setup{}
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.solargraph.setup{}
 require'lspconfig'.rust_analyzer.setup{}
+require'lspconfig'.cssls.setup{}
 
