@@ -83,6 +83,7 @@ in rec {
     git-lfs
     delta
     glab
+    gh
     lazygit
     git-crypt
     pre-commit
