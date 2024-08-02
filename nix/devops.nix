@@ -36,4 +36,8 @@
   config.users.users.${config.mine.common.user} = {
     extraGroups = [ "docker" ];
   };
+
+  # lxc/lxd
+  config.virtualisation.lxc.enable = true;
+  config.virtualisation.lxd.enable = true;
 }
