@@ -34,11 +34,29 @@
 
   # docker
   config.virtualisation.docker.enable = true;
-  config.users.users.${config.mine.common.user} = {
-    extraGroups = [ "docker" ];
-  };
 
   # lxc/lxd
   config.virtualisation.lxc.enable = true;
   config.virtualisation.lxd.enable = true;
+
+
+  config.virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      package = pkgs.qemu_kvm;
+      runAsRoot = true;
+      swtpm.enable = true;
+      ovmf = {
+        enable = true;
+        packages = [
+          (pkgs.OVMF.override {
+            secureBoot = true;
+            tpmSupport = true;
+          }).fd
+        ];
+      };
+    };
+  };
+
+  config.users.users.${config.mine.common.user}.extraGroups = [ "docker" "libvirtd" ];
 }
