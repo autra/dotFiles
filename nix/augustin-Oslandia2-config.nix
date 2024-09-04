@@ -56,4 +56,9 @@
   services.fprintd.enable = true;
   # and it can use fwupd, cf https://wiki.nixos.org/wiki/Fwupd
   services.fwupd.enable = true;
+
+  # TODO correct position?
+  stylix.enable = true;
+  stylix.image = ./5120x2880.png;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
 }

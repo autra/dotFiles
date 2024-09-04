@@ -35,6 +35,8 @@ in
 {
   imports = [ ./home_desktop.nix ];
 
+  stylix.enable = true;
+
   home.file = {
     ".timewarrior/extensions/".source = "${tw_extensions}/bin";
   };

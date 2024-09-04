@@ -11,9 +11,10 @@
     grub2-themes = {
       url = "github:vinceliuice/grub2-themes";
     };
+    stylix.url = "github:danth/stylix/release-24.05";
   };
 
-  outputs = {self, nixpkgs, home-manager, grub2-themes, mynixpkgs, ...}:
+  outputs = {self, nixpkgs, home-manager, grub2-themes, mynixpkgs, stylix, ...}:
     let lib = nixpkgs.lib;
     in {
 
@@ -68,7 +69,8 @@
         augustin-Oslandia2 = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            grub2-themes.nixosModules.default
+            stylix.nixosModules.stylix
+            # grub2-themes.nixosModules.default
             ./augustin-Oslandia2-config.nix
             ./nixos_common.nix
             ./kde.nix
