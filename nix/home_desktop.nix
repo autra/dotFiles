@@ -12,6 +12,7 @@ rec {
     onlyoffice-bin
     nextcloud-client
     thunderbird
+    signal-desktop
     firefox
     firefox-devedition-bin
 #     (firefox-devedition-bin.overrideAttrs (e: {
