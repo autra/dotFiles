@@ -101,6 +101,7 @@
     # $ nix search wget
     environment.systemPackages = with pkgs; [
       # utils
+      ntfs3g
       inetutils
       lshw
       lm_sensors
