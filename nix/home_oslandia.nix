@@ -35,7 +35,16 @@ in
 {
   imports = [ ./home_desktop.nix ];
 
-  stylix.enable = true;
+  stylix = {
+    enable = true;
+
+    fonts.sizes = {
+      applications = 10;
+      desktop = 10;
+      popups = 10;
+      terminal = 10;
+    };
+  };
 
   home.file = {
     ".timewarrior/extensions/".source = "${tw_extensions}/bin";

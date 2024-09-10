@@ -58,7 +58,14 @@
   services.fwupd.enable = true;
 
   # TODO correct position?
-  stylix.enable = true;
-  stylix.image = ./5120x2880.png;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+  stylix = {
+    enable = true;
+    # TODO redo that
+    image = ./5120x2880.png;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    cursor = {
+      name = "breeze";
+      size = 24;
+    };
+  };
 }

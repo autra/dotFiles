@@ -58,7 +58,8 @@ rec {
 
   programs.kitty = {
     enable = true;
-    # TODO do my own theme because nothing suits me :-O
-    theme = "GitHub Light";
+    settings = {
+      enable_audio_bell = false;
+    };
   };
 }

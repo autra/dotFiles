@@ -76,7 +76,8 @@ lvim.plugins = {
 }
 lvim.builtin.dap.active = true
 require('dap-python').setup('~/.venvs/debugpy/bin/python')
-lvim.colorscheme = "base16-github"
+-- lvim.colorscheme = "base16-github"
+lvim.colorscheme = "base16-gruvbox-dark-hard"
 -- key bindings
 lvim.keys.normal_mode["<Leader><TAB>"] = ":e #<Enter>"
 lvim.keys.normal_mode["<C-p>"] = "<cmd>Telescope git_files<CR>"
