@@ -189,4 +189,5 @@ require'lspconfig'.clangd.setup{}
 require'lspconfig'.solargraph.setup{}
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.cssls.setup{}
+require'lspconfig'.remark_ls.setup{}
 
