@@ -32,7 +32,7 @@
       flake = "/home/augustin/dotFiles/nix";
     };
     # test nix-ld
-    # programs.nix-ld.enable = true;
+    programs.nix-ld.enable = true;
 
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
