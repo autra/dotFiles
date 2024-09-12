@@ -75,7 +75,16 @@ in rec {
     powerline-symbols
     # editors
     neovim
-    lunarvim
+    (lunarvim.overrideAttrs(e: {
+      # for markdownpreview
+      runtimeDeps = e.runtimeDeps ++ [ 
+        # for markdownpreview
+        yarn 
+        # for sqls
+        gcc 
+      ];
+    }))
+
     gnumake
     # needed by clangd lsp server
     clang-tools_17
