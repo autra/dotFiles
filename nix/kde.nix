@@ -34,6 +34,7 @@
     kdePackages.plasma-browser-integration
     kdePackages.skanpage
     kdePackages.skanlite
+    kdePackages.partitionmanager
     kup
     wl-clipboard
     networkmanager-fortisslvpn
