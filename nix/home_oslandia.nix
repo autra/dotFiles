@@ -44,6 +44,11 @@ in
       popups = 10;
       terminal = 10;
     };
+
+    fonts.monospace = {
+      name = "FiraCode Nerd Font";
+      package = pkgs.fira-code-nerdfont;
+    };
   };
 
   home.file = {
