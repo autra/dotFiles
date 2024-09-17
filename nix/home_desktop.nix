@@ -49,6 +49,7 @@ rec {
     github-desktop
     vscode.fhs
     obs-studio
+    rustdesk
   ];
 
   home.file = {
