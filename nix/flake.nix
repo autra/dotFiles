@@ -47,6 +47,7 @@
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
 
               home-manager.users.augustin = import ./home_desktop.nix;
             }
@@ -79,6 +80,7 @@
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
 
               home-manager.users.augustin = import ./home_oslandia.nix;
               home-manager.extraSpecialArgs = { mypkgs=mynixpkgs.legacyPackages."x86_64-linux"; };
