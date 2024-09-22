@@ -93,7 +93,8 @@
       nssmdns4 = true;
       openFirewall = true;
       ipv4 = true;
-      ipv6 = true;
+      # apparently ipv6 often timeout, and we need to disable it
+      ipv6 = false;
     };
 
     # Enable touchpad support (enabled default in most desktopManager).
