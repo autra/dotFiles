@@ -106,6 +106,7 @@
       # utils
       ntfs3g
       inetutils
+      pciutils
       lshw
       lm_sensors
       file
