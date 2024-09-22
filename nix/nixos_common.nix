@@ -92,6 +92,8 @@
       enable = true;
       nssmdns4 = true;
       openFirewall = true;
+      ipv4 = true;
+      ipv6 = true;
     };
 
     # Enable touchpad support (enabled default in most desktopManager).
