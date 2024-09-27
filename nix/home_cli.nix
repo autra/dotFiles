@@ -70,6 +70,7 @@ in rec {
     tokei
     dogdns
     imagemagick
+    exiftool
     # powerline
     powerline
     powerline-symbols

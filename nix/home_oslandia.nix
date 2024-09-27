@@ -60,6 +60,7 @@ in
   home.packages = with pkgs; [
     pass
     qtpass
+    pwgen
     timewarrior
     libnotify
     cloudcompare
