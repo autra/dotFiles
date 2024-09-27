@@ -33,7 +33,7 @@ let
   };
 in
 {
-  imports = [ ./home_desktop.nix ];
+  imports = [ ./home_desktop.nix ./home_3d.nix ];
 
   stylix = {
     enable = true;
