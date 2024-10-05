@@ -1,5 +1,8 @@
 # Inserts a blank line between shell prompts
-add_newline = false
+
+# currently, when in a nix-shell (?) inside tmux TAB messes up the display with the following line
+# add_newline = false
+add_newline = true
 # default_module_prefix = '<'
 # default_module_suffix = '> '
 
