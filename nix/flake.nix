@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.05";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,9 +15,29 @@
     stylix.url = "github:danth/stylix/release-24.05";
   };
 
-  outputs = {self, nixpkgs, home-manager, grub2-themes, mynixpkgs, stylix, ...}:
+  outputs = {self, nixpkgs, home-manager, grub2-themes, mynixpkgs, stylix, nixos-hardware, ...}:
     let lib = nixpkgs.lib;
     in {
+      # sd images
+      images = {
+        pi = (self.nixosConfigurations.pi.extendModules {
+          modules = [
+            "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-raspberrypi.nix"
+            { 
+              disabledModules = [ "profiles/base.nix" ];
+              nixpkgs.config.allowUnsupportedSystem = true;
+              nixpkgs.hostPlatform = {
+                system = "armv6l-linux";
+                gcc = {
+                  arch = "armv6k";
+                  fpu = "vfp";
+                };
+              };
+              nixpkgs.buildPlatform.system = "x86_64-linux"; 
+            }
+          ];
+        }).config.system.build.sdImage;
+      };
 
       # Non nixos
       homeConfigurations = {
@@ -41,6 +62,7 @@
           system = "x86_64-linux";
           modules = [
             ./nixos-vm-config.nix
+            ./nixos_minimal.nix
             ./nixos_common.nix
             ./kde.nix
             ./devops.nix
@@ -57,6 +79,7 @@
           system = "x86_64-linux";
           modules = [
             ./carlos-config.nix
+            ./nixos_minimal.nix
             ./nixos_common.nix
             ./devops.nix
             home-manager.nixosModules.home-manager {
@@ -73,6 +96,7 @@
             stylix.nixosModules.stylix
             # grub2-themes.nixosModules.default
             ./augustin-Oslandia2-config.nix
+            ./nixos_minimal.nix
             ./nixos_common.nix
             ./kde.nix
             ./devops.nix
@@ -84,6 +108,22 @@
 
               home-manager.users.augustin = import ./home_oslandia.nix;
               home-manager.extraSpecialArgs = { mypkgs=mynixpkgs.legacyPackages."x86_64-linux"; };
+            }
+          ];
+        };
+        pi = nixpkgs.lib.nixosSystem {
+          system = "armv6l-linux";
+          modules = [
+            # override the system, see README
+            # stylix.nixosModules.stylix
+            ./raspi-hardware.nix
+            ./nixos_minimal.nix
+            home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+
+              # home-manager.users.augustin = import ./home_cli.nix;
             }
           ];
         };
