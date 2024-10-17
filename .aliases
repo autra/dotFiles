@@ -28,10 +28,13 @@ alias xop='xdg-open'
 
 alias bat='bat --theme=ansi'
 
-
 # Docker
 alias docker-clean='docker rmi $(docker images -a | grep "^<none>" | awk '"'"'BEGIN {FS=" "} ; {print $3}'"'"') && docker rm $(docker ps -q -f status=exited)'
 alias docker-local='export DOCKER_HOST="" && export DOCKER_TLS_VERIFY="" && export DOCKER_CERT_PATH=""'
+
+# nixpkgs
+alias reviewthispr='nix run .#nixpkgs-review pr -- $(gh pr view  | grep number | cut -f2) --post-result'
+alias reviewthiscommit='nix run .#nixpkgs-review rev HEAD'
 
 # goodies
 alias meteo='curl http://fr.wttr.in/limoges'
