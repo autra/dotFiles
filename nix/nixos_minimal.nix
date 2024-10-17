@@ -112,6 +112,8 @@
       git-extras
       tig
 
+      p7zip
+
 
     ];
 

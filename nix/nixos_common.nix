@@ -24,6 +24,10 @@
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
 
+    programs.steam.enable = true;
+    
+    # TODO I'd like this to be in home-manager...
+    programs.ccache.enable = true;
 
     # Enable networkmanager
     networking.networkmanager.enable = true;

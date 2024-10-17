@@ -112,7 +112,6 @@ in rec {
     # with nix?
 
     # c++
-    ccache
     llvmPackages.bintools
 
     # rust
