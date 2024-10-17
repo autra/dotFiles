@@ -146,6 +146,11 @@ in rec {
     khal
     vdirsyncer
 
+    graphviz
+
+    # yazi, mediainfo, exiftool, mpv, but use xdg-open for yazi
+    # also, alias it to y
+
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
