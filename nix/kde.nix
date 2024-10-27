@@ -35,6 +35,7 @@
     kdePackages.skanpage
     kdePackages.skanlite
     kdePackages.partitionmanager
+    kdePackages.dolphin-plugins
     kup
     wl-clipboard
     networkmanager-fortisslvpn
