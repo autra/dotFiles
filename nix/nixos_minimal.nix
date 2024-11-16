@@ -94,6 +94,7 @@
       tree
       nethogs
       progress
+      inotify-tools
 
       wget
       curl
