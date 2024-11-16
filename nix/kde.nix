@@ -28,17 +28,18 @@
 
   programs.kdeconnect.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    kdePackages.kcalc
-    kdePackages.kcolorchooser
-    kdePackages.plasma-browser-integration
-    kdePackages.skanpage
-    kdePackages.skanlite
-    kdePackages.partitionmanager
-    kdePackages.dolphin-plugins
-    kup
-    wl-clipboard
-    networkmanager-fortisslvpn
+  environment.systemPackages = with pkgs.kdePackages; [
+    kcalc
+    kcolorchooser
+    plasma-browser-integration
+    skanpage
+    skanlite
+    partitionmanager
+    dolphin-plugins
+    ktorrent
+    pkgs.kup
+    pkgs.wl-clipboard
+    pkgs.networkmanager-fortisslvpn
   ];
     
 
