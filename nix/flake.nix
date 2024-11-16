@@ -9,13 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mynixpkgs.url = "github:autra/nixpkgs/dev";
-    grub2-themes = {
-      url = "github:vinceliuice/grub2-themes";
-    };
     stylix.url = "github:danth/stylix/release-24.05";
   };
 
-  outputs = {self, nixpkgs, home-manager, grub2-themes, mynixpkgs, stylix, nixos-hardware, ...}:
+  outputs = {self, nixpkgs, home-manager, mynixpkgs, stylix, nixos-hardware, ...}:
     let lib = nixpkgs.lib;
     in {
       # sd images
@@ -94,7 +91,6 @@
           system = "x86_64-linux";
           modules = [
             stylix.nixosModules.stylix
-            # grub2-themes.nixosModules.default
             ./augustin-Oslandia2-config.nix
             ./nixos_minimal.nix
             ./nixos_common.nix
