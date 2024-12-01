@@ -9,21 +9,12 @@ rec {
     kate
     # desktop utilities
     libreoffice
-    onlyoffice-bin
     nextcloud-client
     thunderbird
     signal-desktop
     firefox
     firefox-devedition-bin
-#     (firefox-devedition-bin.overrideAttrs (e: {
-#       desktopItem = e.desktopItem // {
-#         # actions.new-window.exec = "${launcherName} -P 1q8jo0jp.dev-edition-fixed --new-window %U";
-#         actions = "foo";
-#       };
 
-# # Update the install script to use the new .desktop entry
-#       buildCommand = builtins.replaceStrings [ "${e.desktopItem}" ] [ "${desktopItem}" ] e.buildCommand;
-#     })) 
     brave
     vlc
     calibre
@@ -39,8 +30,6 @@ rec {
     openshot-qt
     libsForQt5.kdenlive
     tlp
-    # tlp-rdw
-    # pinentry-qt
 
     showmethekey
     peek
