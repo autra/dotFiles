@@ -182,6 +182,7 @@ require'lspconfig'.pylsp.setup{}
 --   }
 -- }
 -- require'lspconfig'.pyright.setup{}
+require'lspconfig'.mypy.setup{}
 require'lspconfig'.dockerls.setup{}
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.rnix.setup{}
