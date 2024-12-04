@@ -43,6 +43,11 @@
           pkgs = import nixpkgs { system = "x86_64-linux"; };
           modules = [ ./other_os_common.nix ./home_cli.nix ];
         };
+        "augustin@augustin-Oslandia2" = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs { system = "x86_64-linux"; };
+          extraSpecialArgs = { mypkgs=mynixpkgs.legacyPackages."x86_64-linux"; };
+          modules = [ stylix.homeManagerModules.stylix ./stylix_common.nix ./home_oslandia.nix ];
+        };
         carlos = home-manager.lib.homeManagerConfiguration {
           system = "x86_64-linux";
           pkgs = import nixpkgs { system = "x86_64-linux"; };

@@ -1,9 +1,15 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib,... }:
 
 rec {
   home.homeDirectory = "/home/augustin";
   imports = [ ./home_cli.nix ];
-
+ 
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "vscode"
+    "code"
+    "libsciter"
+  ];
+          
   home.packages = with pkgs; [
     xclip
     kate
