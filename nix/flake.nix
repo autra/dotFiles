@@ -96,20 +96,21 @@
           system = "x86_64-linux";
           modules = [
             stylix.nixosModules.stylix
+            ./stylix_common.nix
             ./augustin-Oslandia2-config.nix
             ./nixos_minimal.nix
             ./nixos_common.nix
             ./kde.nix
             ./devops.nix
             ./pg.nix
-            home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
+            # home-manager.nixosModules.home-manager {
+            #   home-manager.useGlobalPkgs = true;
+            #   home-manager.useUserPackages = true;
+            #   home-manager.backupFileExtension = "backup";
 
-              home-manager.users.augustin = import ./home_oslandia.nix;
-              home-manager.extraSpecialArgs = { mypkgs=mynixpkgs.legacyPackages."x86_64-linux"; };
-            }
+            #   home-manager.users.augustin = import ./home_oslandia.nix;
+            #   home-manager.extraSpecialArgs = { mypkgs=mynixpkgs.legacyPackages."x86_64-linux"; };
+            # }
           ];
         };
         pi = nixpkgs.lib.nixosSystem {
