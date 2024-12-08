@@ -27,6 +27,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.plugins = {
  -- { "lunarvim/colorschemes" },
+  { "ObserverOfTime/coloresque.vim"},
   { "chriskempson/base16-vim" },
   { "tpope/vim-abolish" },
   { "tpope/vim-fugitive" },
