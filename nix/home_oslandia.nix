@@ -35,22 +35,6 @@ in
 {
   imports = [ ./home_desktop.nix ./home_3d.nix ];
 
-  stylix = {
-    enable = true;
-
-    fonts.sizes = {
-      applications = 10;
-      desktop = 10;
-      popups = 10;
-      terminal = 10;
-    };
-
-    fonts.monospace = {
-      name = "FiraCode Nerd Font";
-      package = pkgs.fira-code-nerdfont;
-    };
-  };
-
   home.file = {
     ".timewarrior/extensions/".source = "${tw_extensions}/bin";
   };
