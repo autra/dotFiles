@@ -157,8 +157,12 @@ linters.setup {
    filetypes = {"sql"},
    extra_args = {"--dialect", "postgres"}
   },
-  { name = "mypy" },
-  -- { name = "flake8" },
+  { 
+    command = "mypy", 
+    filetypes = { "python" },
+    extra_args = { "--follow-imports=silent" },
+  },
+  { name = "flake8" },
 }
 
 -- language servers setup
@@ -184,7 +188,7 @@ require'lspconfig'.pylsp.setup{}
 --   }
 -- }
 -- require'lspconfig'.pyright.setup{}
-require'lspconfig'.mypy.setup{}
+-- require'lspconfig'.mypy.setup{}
 require'lspconfig'.dockerls.setup{}
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.rnix.setup{}

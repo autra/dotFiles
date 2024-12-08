@@ -98,8 +98,8 @@
 [delta]
 	features = line-numbers decorations
 	whitespace-error-style = 22 reverse
-	; features = hoopoe
-	features = gruvmax-fang
+	features = hoopoe
+	; features = gruvmax-fang
 	side-by-side = true
 [delta "hoopoe"]
     # author: https://github.com/dandavison
