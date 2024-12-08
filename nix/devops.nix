@@ -3,7 +3,7 @@
   config.environment.systemPackages = with pkgs; [
     lxc
     lxd-lts
-    vagrant
+    (vagrant.override {withLibvirt=false;})
     ansible
     # libvirt
 
