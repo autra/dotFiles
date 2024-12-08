@@ -2,14 +2,14 @@
   description = "atr's config";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.05";
+    nixpkgs.url = "nixpkgs/nixos-24.11";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mynixpkgs.url = "github:autra/nixpkgs/dev";
-    stylix.url = "github:danth/stylix/release-24.05";
+    stylix.url = "github:danth/stylix/release-24.11";
   };
 
   outputs = {self, nixpkgs, home-manager, mynixpkgs, stylix, nixos-hardware, ...}:

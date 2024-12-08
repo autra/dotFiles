@@ -6,7 +6,7 @@
   ];
   config.services.postgresql = {
     enable = true;
-    extraPlugins = with pkgs.postgresql.pkgs; [ postgis ];
+    extensions = with pkgs.postgresql.pkgs; [ postgis ];
     ensureDatabases = [ config.mine.common.user ];
     ensureUsers = [{ 
       name = config.mine.common.user;
