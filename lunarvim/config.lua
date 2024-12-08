@@ -198,3 +198,6 @@ require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.cssls.setup{}
 require'lspconfig'.remark_ls.setup{}
 
+
+-- config
+vim.g.coloresque_extra_filetypes = { "nix" }
