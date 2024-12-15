@@ -1,50 +1,41 @@
-[Background]
-Color=255,255,255
-
-[BackgroundFaint]
-Color=255,255,255
-
-[BackgroundIntense]
-Color=255,255,255
-
 [Color0]
-Color=255,255,255
+Color=188,188,188 # base02 (Black / Selection Background)
 
 [Color0Faint]
-Color=188,188,188
+Color=234,234,234 # base01 (Lighter Background)
 
 [Color0Intense]
-Color=188,188,188
+Color=79,79,79 # base03 (Comments / Dimmed Foreground)
 
 [Color1]
-Color=178,24,24
+Color=194,17,17 # base08 (Red / Error)
 
 [Color1Faint]
-Color=224,142,142
+Color=234,142,142
 
 [Color1Intense]
-Color=178,24,24
+Color=194,17,17
 
 [Color2]
-Color=24,178,24
+Color=23,179,111 # base0B (Green / Success)
 
 [Color2Faint]
-Color=142,224,142
+Color=138,177,125
 
 [Color2Intense]
-Color=24,178,24
+Color=23,179,111
 
 [Color3]
-Color=236,131,32
+Color=236,131,31 # base0A (Yellow / Highlight)
 
 [Color3Faint]
 Color=255,205,155
 
 [Color3Intense]
-Color=236,131,32
+Color=236,131,31
 
 [Color4]
-Color=0,95,135
+Color=0,95,135 # base0D (Blue / Information)
 
 [Color4Faint]
 Color=109,194,225
@@ -53,40 +44,49 @@ Color=109,194,225
 Color=0,95,135
 
 [Color5]
-Color=178,24,178
+Color=179,23,101 # base0E (Purple / Keywords)
 
 [Color5Faint]
 Color=224,142,224
 
 [Color5Intense]
-Color=178,24,178
+Color=179,23,101
 
 [Color6]
-Color=21,154,154
+Color=42,157,143 # base0C (Cyan / Special)
 
 [Color6Faint]
 Color=139,203,203
 
 [Color6Intense]
-Color=21,154,154
+Color=42,157,143
 
 [Color7]
-Color=0,0,0
+Color=75,75,75 # base06 (White / Brighter Foreground)
 
 [Color7Faint]
-Color=140,140,140
+Color=140,140,140 # base07 (Lightest Foreground)
 
 [Color7Intense]
-Color=0,0,0
+Color=24,24,24 # base05 (Default Foreground)
+
+[Background]
+Color=255,255,255 # base00 (Background)
+
+[BackgroundFaint]
+Color=234,234,234 # base01 (Lighter Background)
+
+[BackgroundIntense]
+Color=255,255,255 # base00 (Background)
 
 [Foreground]
-Color=0,0,0
+Color=24,24,24 # base05 (Default Foreground)
 
 [ForegroundFaint]
-Color=84,84,84
+Color=84,84,84 # base03 (Comments / Dimmed Foreground)
 
 [ForegroundIntense]
-Color=0,0,0
+Color=0,0,0 # base04 (Darker Foreground)
 
 [General]
 Blur=false
