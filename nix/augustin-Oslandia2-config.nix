@@ -7,8 +7,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-      "${builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; }}/framework/16-inch/7040-amd"
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "usbhid" "sd_mod" ];

@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.11";
-    nixos-hardware.url = "github:nixos/nixos-hardware";
+    nixos-hardware.url = "github:nixos/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -95,6 +95,7 @@
         augustin-Oslandia2 = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
+            nixos-hardware.nixosModules.framework-16-7040-amd
             stylix.nixosModules.stylix
             ./stylix_common.nix
             ./augustin-Oslandia2-config.nix
