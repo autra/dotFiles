@@ -7,19 +7,6 @@
 -- NOTE: on nixos, we already have an isolated python for lvim.
 -- So I *probably* need this on other oses?
 -- vim.g.python3_host_prog="~/.venvs/nvim/bin/python"
-vim.opt.background="light"
-vim.opt.wrap=true
-
--- lualine
--- local custom_ppl = require'lualine.themes.papercolor_light'
--- custom_ppl.normal.c.bg = '#183691'
--- custom_ppl.normal.b.bg = '#0086b5'
--- lvim.builtin.lualine.options.theme = custom_ppl
-lvim.builtin.lualine.options.theme = "base16"
--- require('lualine').setup {
---   options = { theme  = custom_ppl }
--- }
-
 -- automatically install python syntax highlighting
 lvim.builtin.treesitter.ensure_installed = {
   "python",
@@ -28,7 +15,8 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.plugins = {
  -- { "lunarvim/colorschemes" },
   { "ObserverOfTime/coloresque.vim"},
-  { "chriskempson/base16-vim" },
+  -- { "chriskempson/base16-vim" },
+  { dir = "~/repos/base16-vim"},
   { "tpope/vim-abolish" },
   { "tpope/vim-fugitive" },
   {
@@ -77,8 +65,27 @@ lvim.plugins = {
 }
 lvim.builtin.dap.active = true
 require('dap-python').setup('~/.venvs/debugpy/bin/python')
+
+-- colors !!
 -- lvim.colorscheme = "base16-github"
-lvim.colorscheme = "base16-gruvbox-dark-hard"
+-- require("themes.kantix").load_syntax()
+-- lvim.colorscheme = "base16-gruvbox-dark-hard"
+lvim.colorscheme = "base16-kantix"
+
+-- vim.opt.background="dark"
+vim.opt.background="light"
+vim.opt.wrap=true
+
+-- lualine
+-- local custom_ppl = require'lualine.themes.papercolor_light'
+-- custom_ppl.normal.c.bg = '#183691'
+-- custom_ppl.normal.b.bg = '#0086b5'
+-- lvim.builtin.lualine.options.theme = custom_ppl
+lvim.builtin.lualine.options.theme = "base16"
+-- require('lualine').setup {
+--   options = { theme  = custom_ppl }
+-- }
+
 -- key bindings
 lvim.keys.normal_mode["<Leader><TAB>"] = ":e #<Enter>"
 lvim.keys.normal_mode["<C-p>"] = "<cmd>Telescope git_files<CR>"
