@@ -3,8 +3,9 @@
   config.environment.systemPackages = with pkgs; [
     lxc
     lxd-lts
-    (vagrant.override {withLibvirt=false;})
+    vagrant
     ansible
+    virt-manager
     # libvirt
 
     # for vagrant shared folders
