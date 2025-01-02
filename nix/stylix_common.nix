@@ -30,7 +30,7 @@
         base01 = "eaeaea"; # #eaeaea # Lighter Background
         base02 = "bcbcbc"; # #bcbcbc # Selection Background
         base03 = "797979"; # #545454 # Comments/Dimmed Foreground
-        base04 = "000000"; # #000000 # Darker Foreground
+        base04 = "484848"; # #000000 # Darker Foreground
         base05 = "181818"; # #181818 # Default Foreground
         base06 = "4b4b4b"; # #4b4b4b # Brighter Foreground
         base07 = "8c8c8c"; # #8c8c8c # Lightest Foreground
