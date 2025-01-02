@@ -150,7 +150,7 @@ require("vstask").setup({
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-  { command = "prettier", filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue", "yaml" }},
+  { command = "prettier", filetypes = { "html", "css", "less", "sass", "typescript", "typescriptreact", "javascript", "javascriptreact", "vue", "yaml" }},
   { command = "black", filetypes = { "python" }},
   { command = "isort", filetypes = { "python" }},
   { command = "nixpkgs-fmt", filetypes = { "nix" }},
