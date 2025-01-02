@@ -98,9 +98,57 @@
 [delta]
 	features = line-numbers decorations
 	whitespace-error-style = 22 reverse
-	features = hoopoe
+	features = kantix
 	; features = gruvmax-fang
 	side-by-side = true
+[delta "kantix"]
+	# author: myself ;-)
+	# general appearance
+	light = true
+    syntax-theme = gruvbox-light
+    # File
+    file-style = "#000000" bold
+    file-added-label = [+]
+    file-copied-label = [==]
+    file-modified-label = [*]
+    file-removed-label = [-]
+    file-renamed-label = [->]
+    ; file-decoration-style = "#434C5E" ul
+    file-decoration-style = "#000000" ul
+    # No hunk headers
+    hunk-header-style = omit
+    # Line numbers
+    line-numbers = true
+    line-numbers-left-style = "#8c8c8c"
+    line-numbers-right-style = "#8c8c8c"
+    line-numbers-minus-style = "#c21111"
+    line-numbers-plus-style = "#17b36f"
+    line-numbers-zero-style = "#8c8c8c"
+    line-numbers-left-format = " {nm:>3} │"
+    line-numbers-right-format = " {np:>3} │"
+    # Diff contents
+    inline-hint-style = syntax
+    minus-style = syntax "#ff9b9b"
+    minus-emph-style = syntax "#ee7676"
+    minus-non-emph-style = syntax auto
+    plus-style = syntax "#7aefb4"
+    plus-emph-style = syntax "#17b36f"
+    plus-non-emph-style = syntax auto
+    whitespace-error-style = "#ec831f" reverse
+    # Commit hash
+    commit-decoration-style = normal box
+    commit-style = "#ffffff" bold
+    # Blame
+    blame-code-style = syntax
+    blame-format = "{author:>18} ({commit:>8}) {timestamp:<13} "
+    blame-palette = "#000000" "#1d2021" "#282828" "#3c3836"
+    # Merge conflicts
+    merge-conflict-begin-symbol = ⌃
+    merge-conflict-end-symbol = ⌄
+    merge-conflict-ours-diff-header-style = "#FABD2F" bold
+    merge-conflict-theirs-diff-header-style = "#FABD2F" bold overline
+    merge-conflict-ours-diff-header-decoration-style = ''
+    merge-conflict-theirs-diff-header-decoration-style = ''
 [delta "hoopoe"]
     # author: https://github.com/dandavison
 	# copied from https://raw.githubusercontent.com/dandavison/delta/master/themes.gitconfig
@@ -108,7 +156,7 @@
     light = true
     pink = "#ffe0e0"
     dark-pink = "#ffc0c0"
-    green = "#d0ffd0"
+    green = "#17B36F"
     dark-green = "#a0efa0"
     dark-green-2 = "#067a00"
     minus-style = normal hoopoe.pink
