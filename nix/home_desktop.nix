@@ -14,7 +14,9 @@ rec {
     xclip
     kate
     # desktop utilities
-    libreoffice
+    libreoffice-qt
+    hunspell
+    hunspellDicts.fr-moderne
     nextcloud-client
     thunderbird
     signal-desktop
