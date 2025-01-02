@@ -228,6 +228,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1717179513,
+        "narHash": "sha256-vboIEwIQojofItm2xGCdZCzW96U85l9nDW3ifMuAIdM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "63dacb46bf939521bdc93981b4cbb7ecb58427a0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "24.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1733550349,
         "narHash": "sha256-NcGumB4Lr6KSDq+nIqXtNA8QwAQKDSZT7N9OTGWbTrs=",
         "owner": "NixOS",
@@ -242,12 +258,32 @@
         "type": "github"
       }
     },
+    "osladoc": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1734181981,
+        "narHash": "sha256-HMIpVD/Mu5Y7VNHUhQcpAiA9L+1luYylsdC1ma5NV+0=",
+        "ref": "2-ajout-d-une-option-template-pour-specifier-un-template-custom-pour-projet-notamment",
+        "rev": "074b578f8ee63a461e5d009a9af819dd0d2afb50",
+        "revCount": 176,
+        "type": "git",
+        "url": "ssh://git@git.oslandia.net:10022/Oslandia/technique/osladoc"
+      },
+      "original": {
+        "ref": "2-ajout-d-une-option-template-pour-specifier-un-template-custom-pour-projet-notamment",
+        "type": "git",
+        "url": "ssh://git@git.oslandia.net:10022/Oslandia/technique/osladoc"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "mynixpkgs": "mynixpkgs",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "osladoc": "osladoc",
         "stylix": "stylix"
       }
     },
@@ -261,7 +297,7 @@
         "flake-utils": "flake-utils",
         "gnome-shell": "gnome-shell",
         "home-manager": "home-manager_2",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs_3",
         "systems": "systems",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",

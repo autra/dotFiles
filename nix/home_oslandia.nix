@@ -1,5 +1,5 @@
 # specific for oslandia
-{ config, pkgs, mypkgs, ... }:
+{ config, pkgs, mypkgs, osladoc, ... }:
 let
   # TODO extract in its own package
   pyrnotify = pkgs.fetchurl {
@@ -50,6 +50,7 @@ in
     cloudcompare
     (mypkgs.freecad.override { ifcSupport = true; })
     blender
+    osladoc.default
   ];
 
   systemd.user.services.pyrnotify = {
