@@ -64,31 +64,32 @@
 
     environment.systemPackages = with pkgs; [
       # utils
-      ntfs3g
-      inetutils
-      pciutils
-      lshw
-      lm_sensors
-      file
-      killall
-      unzip
-      htop
-      iotop
-      tree
-      nethogs
-      progress
-      inotify-tools
-
-      wget
+      bat
       curl
-      lsb-release
       dua
       dysk
       fd
-      bat
+      file
+      htop
+      inetutils
+      inotify-tools
+      iotop
       jq
+      killall
+      lm_sensors
+      lsb-release
+      lshw
+      lsof
       neofetch
+      nethogs
+      ntfs3g
+      p7zip
+      pciutils
+      progress
       ripgrep
+      tree
+      unzip
+      wget
 
       # shell
       tmux
@@ -101,7 +102,6 @@
       git-extras
       tig
 
-      p7zip
 
 
     ];
