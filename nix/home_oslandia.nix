@@ -51,6 +51,7 @@ in
     (pkgsMaster.freecad.override { ifcSupport = true; })
     blender
     osladoc.default
+    seer
   ];
 
   systemd.user.services.pyrnotify = {
