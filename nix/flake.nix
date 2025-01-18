@@ -8,12 +8,12 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    mynixpkgs.url = "github:autra/nixpkgs/dev";
+    nixpkgsMaster.url = "github:nixos/nixpkgs/master";
     stylix.url = "github:danth/stylix/release-24.11";
     osladoc.url = "git+ssh://git@git.oslandia.net:10022/Oslandia/technique/osladoc?ref=2-ajout-d-une-option-template-pour-specifier-un-template-custom-pour-projet-notamment";
   };
 
-  outputs = {self, nixpkgs, home-manager, mynixpkgs, stylix, nixos-hardware, osladoc, ...}:
+  outputs = {self, nixpkgs, home-manager, nixpkgsMaster, stylix, nixos-hardware, osladoc, ...}:
     let lib = nixpkgs.lib;
     in {
       # sd images
@@ -47,7 +47,7 @@
         "augustin@augustin-Oslandia2" = home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs { system = "x86_64-linux"; };
           extraSpecialArgs = { 
-            mypkgs=mynixpkgs.legacyPackages."x86_64-linux"; 
+            pkgsMaster=nixpkgsMaster.legacyPackages."x86_64-linux"; 
             osladoc=osladoc.packages."x86_64-linux";
           };
           modules = [ stylix.homeManagerModules.stylix ./stylix_common.nix ./home_oslandia.nix ];
@@ -114,7 +114,7 @@
             #   home-manager.backupFileExtension = "backup";
 
             #   home-manager.users.augustin = import ./home_oslandia.nix;
-            #   home-manager.extraSpecialArgs = { mypkgs=mynixpkgs.legacyPackages."x86_64-linux"; };
+            #   home-manager.extraSpecialArgs = { pkgsMaster=nixpkgsMaster.legacyPackages."x86_64-linux"; };
             # }
           ];
         };

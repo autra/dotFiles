@@ -1,5 +1,5 @@
 # specific for oslandia
-{ config, pkgs, mypkgs, osladoc, ... }:
+{ config, pkgs, pkgsMaster, osladoc, ... }:
 let
   # TODO extract in its own package
   pyrnotify = pkgs.fetchurl {
@@ -48,7 +48,7 @@ in
     timewarrior
     libnotify
     cloudcompare
-    (mypkgs.freecad.override { ifcSupport = true; })
+    (pkgsMaster.freecad.override { ifcSupport = true; })
     blender
     osladoc.default
   ];
