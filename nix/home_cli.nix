@@ -85,6 +85,7 @@ in rec {
         yarn 
         # for sqls
         gcc 
+        go
       ];
     }))
 
