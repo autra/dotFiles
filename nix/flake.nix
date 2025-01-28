@@ -13,7 +13,7 @@
     osladoc.url = "git+ssh://git@git.oslandia.net:10022/Oslandia/technique/osladoc?ref=2-ajout-d-une-option-template-pour-specifier-un-template-custom-pour-projet-notamment";
   };
 
-  outputs = {self, nixpkgs, home-manager, nixpkgsMaster, stylix, nixos-hardware, osladoc, ...}:
+  outputs = { self, nixpkgs, home-manager, nixpkgsMaster, stylix, nixos-hardware, osladoc, ... }:
     let lib = nixpkgs.lib;
     in {
       # sd images
@@ -21,7 +21,7 @@
         pi = (self.nixosConfigurations.pi.extendModules {
           modules = [
             "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-raspberrypi.nix"
-            { 
+            {
               disabledModules = [ "profiles/base.nix" ];
               nixpkgs.config.allowUnsupportedSystem = true;
               nixpkgs.hostPlatform = {
@@ -31,7 +31,7 @@
                   fpu = "vfp";
                 };
               };
-              nixpkgs.buildPlatform.system = "x86_64-linux"; 
+              nixpkgs.buildPlatform.system = "x86_64-linux";
             }
           ];
         }).config.system.build.sdImage;
@@ -46,9 +46,9 @@
         };
         "augustin@augustin-Oslandia2" = home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs { system = "x86_64-linux"; };
-          extraSpecialArgs = { 
-            pkgsMaster=nixpkgsMaster.legacyPackages."x86_64-linux"; 
-            osladoc=osladoc.packages."x86_64-linux";
+          extraSpecialArgs = {
+            pkgsMaster = nixpkgsMaster.legacyPackages."x86_64-linux";
+            osladoc = osladoc.packages."x86_64-linux";
           };
           modules = [ stylix.homeManagerModules.stylix ./stylix_common.nix ./home_oslandia.nix ];
         };
@@ -72,7 +72,8 @@
             ./nixos_common.nix
             ./kde.nix
             ./devops.nix
-            home-manager.nixosModules.home-manager {
+            home-manager.nixosModules.home-manager
+            {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
@@ -88,7 +89,8 @@
             ./nixos_minimal.nix
             ./nixos_common.nix
             ./devops.nix
-            home-manager.nixosModules.home-manager {
+            home-manager.nixosModules.home-manager
+            {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
@@ -125,7 +127,8 @@
             # stylix.nixosModules.stylix
             ./raspi-hardware.nix
             ./nixos_minimal.nix
-            home-manager.nixosModules.home-manager {
+            home-manager.nixosModules.home-manager
+            {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
