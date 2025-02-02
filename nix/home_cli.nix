@@ -150,6 +150,7 @@ in rec {
 
     # yazi, mediainfo, exiftool, mpv, but use xdg-open for yazi
     # also, alias it to y
+    # nix-search-tv when it reaches master
 
   ];
 
