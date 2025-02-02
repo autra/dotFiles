@@ -50,7 +50,12 @@
             pkgsMaster = nixpkgsMaster.legacyPackages."x86_64-linux";
             osladoc = osladoc.packages."x86_64-linux";
           };
-          modules = [ stylix.homeManagerModules.stylix ./stylix_common.nix ./home_oslandia.nix ];
+          modules = [ 
+            stylix.homeManagerModules.stylix 
+            ./stylix_common.nix 
+            ./home_oslandia.nix 
+            ./home_android.nix
+          ];
         };
         carlos = home-manager.lib.homeManagerConfiguration {
           system = "x86_64-linux";
