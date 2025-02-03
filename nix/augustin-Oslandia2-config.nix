@@ -65,7 +65,9 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   # f16 has a fingerprint reader
-  services.fprintd.enable = true;
+  # but it doesn't work very well (I need to periodically enroll my fingerprints so that it keeps working)
+  # and probably creates subtle bugs (I cannot login with password until the fingerprint has been attempted, I need to click on "unlock" in some cases on the lock screen...)
+  services.fprintd.enable = false;
   # and it can use fwupd, cf https://wiki.nixos.org/wiki/Fwupd
   services.fwupd.enable = true;
 
