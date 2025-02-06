@@ -2,6 +2,7 @@
 
 {
   config = {
+    boot.plymouth.enable = true;
     # Enable CUPS to print documents.
     # for hplip
     nixpkgs.config.allowUnfree = true;

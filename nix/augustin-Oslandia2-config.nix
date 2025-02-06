@@ -30,7 +30,6 @@
     # allows to test cross-compilation sometimes
     binfmt.emulatedSystems = [ "aarch64-linux" ];
 
-    plymouth.enable = true;
   };
 
   fileSystems."/" =
