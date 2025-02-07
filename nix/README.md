@@ -1,8 +1,8 @@
 # How to use
 
-I use [nh](https://github.com/viperML/nh)
+I use [nh](https://github.com/viperML/nh) but nixos-rebuild direct use is of course totally possible.
 
-To rebuild system
+To rebuild my system
 
 ```sh
 nh os switch -a -- --cores 2 --max-jobs 3
@@ -14,6 +14,8 @@ To rebuild home env:
 nh home switch -a -b backup -- --impure
 ```
 
-## With flake
+To build my pi image:
 
-nixos-rebuild --flake .#
+```sh
+nix build .#images.pi 
+```
