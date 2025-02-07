@@ -137,7 +137,7 @@
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
 
-              # home-manager.users.augustin = import ./home_cli.nix;
+              home-manager.users.augustin = import ./home_cli.nix;
             }
           ];
         };
