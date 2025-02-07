@@ -20,17 +20,24 @@
     #   };
     # };
   };
-    nixpkgs.overlays = [
-      (final: super: {
-        makeModulesClosure = x:
-          super.makeModulesClosure (x // { allowMissing = true; });
-      })
-    ];
+  nixpkgs.overlays = [
+    (final: super: {
+      makeModulesClosure = x:
+        super.makeModulesClosure (x // { allowMissing = true; });
+    })
+  ];
 
   nixpkgs.config.platform = lib.systems.platforms.raspberrypi;
 
   # cpufrequtils doesn't build on ARM
   powerManagement.enable = lib.mkDefault false;
+
+  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+  # (the default) this is the recommended approach. When using systemd-networkd it's
+  # still possible to use this option, but it's recommended to use it in conjunction
+  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+  networking.hostName = "pi";
+  networking.useDHCP = lib.mkDefault true;
 
   services.openssh.enable = lib.mkDefault true;
 }
