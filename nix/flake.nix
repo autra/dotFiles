@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.11";
+    nixpkgsMaster.url = "nixpkgs/master";
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -12,26 +13,27 @@
     osladoc.url = "git+ssh://git@git.oslandia.net:10022/Oslandia/technique/osladoc?ref=2-ajout-d-une-option-template-pour-specifier-un-template-custom-pour-projet-notamment";
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, nixos-hardware, osladoc, ... }:
+  outputs = { self, nixpkgs, nixpkgsMaster, home-manager, stylix, nixos-hardware, osladoc, ... }:
     let lib = nixpkgs.lib;
     in {
       # sd images
       images = {
         pi = (self.nixosConfigurations.pi.extendModules {
           modules = [
-            "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-raspberrypi.nix"
-            {
-              disabledModules = [ "profiles/base.nix" ];
-              nixpkgs.config.allowUnsupportedSystem = true;
-              nixpkgs.hostPlatform = {
-                system = "armv6l-linux";
-                gcc = {
-                  arch = "armv6k";
-                  fpu = "vfp";
+            "${nixpkgsMaster}/nixos/modules/installer/sd-card/sd-image-raspberrypi.nix"
+            ({ pkgs, ... }:
+              {
+                disabledModules = [ "profiles/base.nix" ];
+                nixpkgs.config.allowUnsupportedSystem = true;
+                nixpkgs.hostPlatform = {
+                  system = "armv6l-linux";
+                  gcc = {
+                    arch = "armv6k";
+                    fpu = "vfp";
+                  };
                 };
-              };
-              nixpkgs.buildPlatform.system = "x86_64-linux";
-            }
+                nixpkgs.buildPlatform.system = "x86_64-linux";
+              })
           ];
         }).config.system.build.sdImage;
       };
@@ -48,10 +50,10 @@
           extraSpecialArgs = {
             osladoc = osladoc.packages."x86_64-linux";
           };
-          modules = [ 
-            stylix.homeManagerModules.stylix 
-            ./stylix_common.nix 
-            ./home_oslandia.nix 
+          modules = [
+            stylix.homeManagerModules.stylix
+            ./stylix_common.nix
+            ./home_oslandia.nix
             ./home_android.nix
           ];
         };
@@ -122,7 +124,7 @@
             # }
           ];
         };
-        pi = nixpkgs.lib.nixosSystem {
+        pi = nixpkgsMaster.lib.nixosSystem {
           system = "armv6l-linux";
           modules = [
             # override the system, see README
