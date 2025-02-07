@@ -26,7 +26,7 @@
     # services.xserver.libinput.enable = true;
 
     programs.steam.enable = true;
-    
+
     # TODO I'd like this to be in home-manager...
     programs.ccache.enable = true;
 
@@ -35,10 +35,19 @@
 
     # Open ports in the firewall.
     # networking.firewall.allowedTCPPorts = [ ... ];
-    networking.firewall.allowedUDPPortRanges = [ 
+    networking.firewall.allowedUDPPortRanges = [
       # that's what fedora does (also for TCP) and I need this to make upnp work at home
       { from = 1025; to = 65535; }
     ];
     networking.firewall.enable = true;
+    programs.nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 30d --keep 20";
+      flake = "/home/augustin/dotFiles/nix";
+    };
+    environment.systemPackages = with pkgs; [
+      neovim
+    ];
   };
 }
