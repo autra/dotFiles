@@ -89,15 +89,12 @@
       tmux
 
       # editor
-      neovim
+      nano
 
       # git
       git
       git-extras
       tig
-
-
-
     ];
 
     # doc
