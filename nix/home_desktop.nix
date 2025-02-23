@@ -8,6 +8,8 @@ rec {
     "vscode"
     "code"
     "libsciter"
+    "steam"
+    "steam-unwrapped"
   ];
           
   home.packages = with pkgs; [
@@ -47,6 +49,10 @@ rec {
     vscode.fhs
     obs-studio
     rustdesk
+
+    # gaming
+    playonlinux
+    lutris
   ];
 
   home.file = {
