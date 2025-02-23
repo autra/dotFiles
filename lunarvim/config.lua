@@ -204,7 +204,7 @@ require'lspconfig'.solargraph.setup{}
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.cssls.setup{}
 require'lspconfig'.remark_ls.setup{}
-
+require'lspconfig'.ruby_lsp.setup{}
 
 -- config
 vim.g.coloresque_extra_filetypes = { "nix" }

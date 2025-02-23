@@ -86,6 +86,8 @@ in rec {
         # for sqls
         gcc 
         go
+        # for ruby :-O
+        ruby
       ];
     }))
 
