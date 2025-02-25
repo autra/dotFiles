@@ -33,7 +33,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(evalcache git gitfast git-extras mvn mercurial cp rsync screen svn debian docker vagrant pip repo timewarrior zsh-autosuggestions jq zsh-syntax-highlighting autojump direnv)
+plugins=(evalcache git gitfast git-extras mvn mercurial cp rsync screen svn debian docker vagrant pip repo timewarrior zsh-autosuggestions jq zsh-syntax-highlighting autojump direnv nix-shell)
 
 source $ZSH/oh-my-zsh.sh
 

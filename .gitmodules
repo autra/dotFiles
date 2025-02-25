@@ -16,3 +16,6 @@
 [submodule "nix-zsh-completions"]
 	path = zsh_custom/plugins/nix-zsh-completions
 	url = https://github.com/nix-community/nix-zsh-completions
+[submodule "zsh_custom/plugins/nix-shell"]
+	path = zsh_custom/plugins/nix-shell
+	url = https://github.com/chisui/zsh-nix-shell.git
