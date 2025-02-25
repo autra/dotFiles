@@ -11,9 +11,10 @@
     };
     stylix.url = "github:danth/stylix/release-24.11";
     osladoc.url = "git+ssh://git@git.oslandia.net:10022/Oslandia/technique/osladoc?ref=2-ajout-d-une-option-template-pour-specifier-un-template-custom-pour-projet-notamment";
+    flox.url = "github:flox/flox/v1.3.15";
   };
 
-  outputs = { self, nixpkgs, nixpkgsMaster, home-manager, stylix, nixos-hardware, osladoc, ... }:
+  outputs = { self, nixpkgs, nixpkgsMaster, home-manager, stylix, nixos-hardware, osladoc, flox, ... }:
     let lib = nixpkgs.lib;
     in {
       # sd images
@@ -49,10 +50,12 @@
           pkgs = import nixpkgs { system = "x86_64-linux"; };
           extraSpecialArgs = {
             osladoc = osladoc.packages."x86_64-linux";
+            flox = flox.packages."x86_64-linux";
           };
           modules = [
             stylix.homeManagerModules.stylix
             ./stylix_common.nix
+            ({config, flox, ...}: {config.home.packages = [flox.default]; })
             ./home_oslandia.nix
             ./home_android.nix
           ];
