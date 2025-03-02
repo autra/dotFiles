@@ -75,11 +75,11 @@
         nixos-vm = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./nixos-vm-config.nix
-            ./nixos_minimal.nix
-            ./nixos_common.nix
-            ./kde.nix
-            ./devops.nix
+            ./hardware/nixos-vm-config.nix
+            ./modules/nixos_minimal.nix
+            ./modules/nixos_common.nix
+            ./modules/kde.nix
+            ./modules/devops.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -93,10 +93,10 @@
         carlos = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./carlos-config.nix
-            ./nixos_minimal.nix
-            ./nixos_common.nix
-            ./devops.nix
+            ./hardware/carlos-config.nix
+            ./modules/nixos_minimal.nix
+            ./modules/nixos_common.nix
+            ./modules/devops.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -111,13 +111,13 @@
           modules = [
             nixos-hardware.nixosModules.framework-16-7040-amd
             stylix.nixosModules.stylix
-            ./stylix_common.nix
-            ./augustin-Oslandia2-config.nix
-            ./nixos_minimal.nix
-            ./nixos_common.nix
-            ./kde.nix
-            ./devops.nix
-            ./pg.nix
+            ./hardware/augustin-Oslandia2-config.nix
+            ./modules/stylix_common.nix
+            ./modules/nixos_minimal.nix
+            ./modules/nixos_common.nix
+            ./modules/kde.nix
+            ./modules/devops.nix
+            ./modules/pg.nix
             # home-manager.nixosModules.home-manager {
             #   home-manager.useGlobalPkgs = true;
             #   home-manager.useUserPackages = true;
@@ -132,8 +132,8 @@
           modules = [
             # override the system, see README
             # stylix.nixosModules.stylix
-            ./raspi-hardware.nix
-            ./nixos_minimal.nix
+            ./hardware/raspi-hardware.nix
+            ./modules/nixos_minimal.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
