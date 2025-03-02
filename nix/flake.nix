@@ -44,7 +44,7 @@
         augustin-Oslandia = home-manager.lib.homeManagerConfiguration {
           # pkgs = nixpkgs.legacyPackages.${system};
           pkgs = import nixpkgs { system = "x86_64-linux"; };
-          modules = [ ./other_os_common.nix ./home_cli.nix ];
+          modules = [ ./other_os_common.nix ./home-manager/cli.nix ];
         };
         "augustin@augustin-Oslandia2" = home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs { system = "x86_64-linux"; };
@@ -56,8 +56,8 @@
             stylix.homeManagerModules.stylix
             ./stylix_common.nix
             ({config, flox, ...}: {config.home.packages = [flox.default]; })
-            ./home_oslandia.nix
-            ./home_android.nix
+            ./home-manager/oslandia.nix
+            ./home-manager/android.nix
           ];
         };
         carlos = home-manager.lib.homeManagerConfiguration {
@@ -86,7 +86,7 @@
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
 
-              home-manager.users.augustin = import ./home_desktop.nix;
+              home-manager.users.augustin = import ./home-manager/desktop.nix;
             }
           ];
         };
@@ -102,7 +102,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.users.augustin = import ./home_cli.nix;
+              home-manager.users.augustin = import ./home-manager/cli.nix;
             }
           ];
         };
@@ -123,7 +123,7 @@
             #   home-manager.useUserPackages = true;
             #   home-manager.backupFileExtension = "backup";
 
-            #   home-manager.users.augustin = import ./home_oslandia.nix;
+            #   home-manager.users.augustin = import ./home-manager/oslandia.nix;
             # }
           ];
         };
@@ -140,7 +140,7 @@
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
 
-              home-manager.users.augustin = import ./home_cli.nix;
+              home-manager.users.augustin = import ./home-manager/cli.nix;
             }
           ];
         };

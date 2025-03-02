@@ -21,10 +21,10 @@ let
   tw_reports = map 
     create_python3_script_from_file 
     [
-      ../timewarrior/oslandia_report.py 
-      ../timewarrior/totals.py
-      ../timewarrior/totals2.py
-      ../timewarrior/catreport.py
+      ../../timewarrior/oslandia_report.py
+      ../../timewarrior/totals.py
+      ../../timewarrior/totals2.py
+      ../../timewarrior/catreport.py
     ]
   ;
   tw_extensions = pkgs.symlinkJoin {
@@ -33,7 +33,7 @@ let
   };
 in
 {
-  imports = [ ./home_desktop.nix ./home_3d.nix ];
+  imports = [ ./desktop.nix ./3d.nix ];
 
   home.file = {
     ".timewarrior/extensions/".source = "${tw_extensions}/bin";
