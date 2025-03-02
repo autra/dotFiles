@@ -1,11 +1,11 @@
 { config, lib, pkgs, ... }:
-
+let
+  common = import ../common/common.nix {};
+in
 {
   config = {
     boot.plymouth.enable = true;
     # Enable CUPS to print documents.
-    # for hplip
-    # nixpkgs.config.allowUnfree = true;
     services.printing = {
       enable = true;
       drivers = with pkgs; [ hplip hplipWithPlugin cnijfilter_4_00 ];
@@ -27,13 +27,7 @@
 
     programs.steam.enable = true;
 
-    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-      "hplip"
-      "cnijfilter"
-      "vagrant"
-      "steam"
-      "steam-unwrapped"
-    ];
+    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) common.unfreePkgs; 
 
     # TODO I'd like this to be in home-manager...
     programs.ccache.enable = true;

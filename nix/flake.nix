@@ -54,7 +54,7 @@
           };
           modules = [
             stylix.homeManagerModules.stylix
-            ./stylix_common.nix
+            ./common/stylix.nix
             ({config, flox, ...}: {config.home.packages = [flox.default]; })
             ./home-manager/oslandia.nix
             ./home-manager/android.nix
@@ -112,7 +112,7 @@
             nixos-hardware.nixosModules.framework-16-7040-amd
             stylix.nixosModules.stylix
             ./hardware/augustin-Oslandia2-config.nix
-            ./modules/stylix_common.nix
+            ./common/stylix.nix
             ./modules/nixos_minimal.nix
             ./modules/nixos_common.nix
             ./modules/kde.nix

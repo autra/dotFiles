@@ -1,16 +1,11 @@
 { config, pkgs, lib,... }:
-
+let common = import ../common/common.nix {};
+in
 rec {
   home.homeDirectory = "/home/augustin";
   imports = [ ./cli.nix ];
  
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "vscode"
-    "code"
-    "libsciter"
-    "steam"
-    "steam-unwrapped"
-  ];
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) common.unfreePkgs;
           
   home.packages = with pkgs; [
     xclip
