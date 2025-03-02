@@ -28,6 +28,10 @@
     programs.steam.enable = true;
 
     nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+      "hplip"
+      "cnijfilter"
+      "vagrant"
+      "steam"
       "steam-unwrapped"
     ];
 
