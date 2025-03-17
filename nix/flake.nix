@@ -77,17 +77,15 @@
           modules = [
             ./hardware/nixos-vm-config.nix
             ./modules/nixos_minimal.nix
-            ./modules/nixos_common.nix
-            ./modules/kde.nix
-            ./modules/devops.nix
+            # ./modules/nixos_common.nix
             home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
+            # {
+            #   home-manager.useGlobalPkgs = true;
+            #   home-manager.useUserPackages = true;
+            #   home-manager.backupFileExtension = "backup";
 
-              home-manager.users.augustin = import ./home-manager/desktop.nix;
-            }
+            #   home-manager.users.augustin = import ./home-manager/desktop.nix;
+            # }
           ];
         };
         carlos = lib.nixosSystem {

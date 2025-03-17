@@ -4,14 +4,24 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ ];
+  imports = [     
+    <nixpkgs/nixos/modules/profiles/qemu-guest.nix>
+    <nixpkgs/nixos/modules/virtualisation/qemu-vm.nix>
+  ];
 
   boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "ehci_pci" "ahci" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  boot.loader.grub.device = "/dev/sda";
+  boot.loader = {
+      grub = {
+        enable = true;
+        efiSupport = true;
+        device = "/dev/vda";
+      };
+      efi.canTouchEfiVariables = true;
+    };
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/631bde44-39c0-4a51-a076-96c6de3e9c53";
