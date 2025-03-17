@@ -16,6 +16,7 @@ let
     ref = "refs/tags/v3.1.0";
     allRefs = true;
   };
+  # TODO remove once https://github.com/NixOS/nixpkgs/pull/388935 is merged
   planExporterPath = fetchTarball {
     url = "https://github.com/agneum/plan-exporter/releases/download/v0.0.6/plan-exporter-0.0.6-${arch}.tar.gz";
     sha256 = if arch == "linux-amd64" then
@@ -25,15 +26,8 @@ let
       else
         "none";
   };
-  # osladoc = import /home/augustin/repos/Communication/pandoc;
 in rec {
 
-  # targets.genericLinux.enable = true;
-
-  # nix = {
-  #   package = pkgs.nix;
-  #   settings.experimental-features = [ "nix-command" "flakes" ];
-  # };
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "augustin";
@@ -133,8 +127,6 @@ in rec {
     gnupg
     gpg-tui
 
-    # python311Packages.pynvim
-    # node
     nodejs_20
 
     sieve-connect
