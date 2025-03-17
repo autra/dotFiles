@@ -72,6 +72,7 @@ else
     source /usr/share/doc/fzf/examples/completion.zsh
   fi
 fi
+BAT_THEME=ansi  # don't change colors
 # this, alongside .git in ~/.fdignore, allows fzf to show hidden files tracked by git.
 # it also shows *all* hidden files, but well...
 #
