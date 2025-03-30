@@ -14,7 +14,7 @@
     flox.url = "github:flox/flox/v1.3.15";
   };
 
-  outputs = { self, nixpkgs, nixpkgsMaster, home-manager, stylix, nixos-hardware, osladoc, flox, ... }:
+  outputs = inputs @ { self, nixpkgs, nixpkgsMaster, home-manager, stylix, nixos-hardware, ... }:
     let lib = nixpkgs.lib;
     in {
       # sd images
@@ -49,8 +49,8 @@
         "augustin@augustin-Oslandia2" = home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs { system = "x86_64-linux"; };
           extraSpecialArgs = {
-            osladoc = osladoc.packages."x86_64-linux";
-            flox = flox.packages."x86_64-linux";
+            osladoc = inputs.osladoc.packages."x86_64-linux";
+            flox = inputs.flox.packages."x86_64-linux";
           };
           modules = [
             stylix.homeManagerModules.stylix
