@@ -28,6 +28,9 @@
   config.virtualisation.lxc.enable = true;
   config.virtualisation.lxd.enable = true;
 
+
+  config.virtualisation.spiceUSBRedirection.enable = true;
+
   config.virtualisation.libvirtd = {
     enable = true;
     qemu = {
