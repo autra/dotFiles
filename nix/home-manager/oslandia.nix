@@ -31,6 +31,7 @@ let
     name = "My timewarrior extensions";
     paths = tw_reports;
   };
+  list_unworked_days = pkgs.writeShellScriptBin "list_unworked_days.sh" (builtins.readFile ../../scripts/list_unworked_days);
 in
 {
   imports = [ ./desktop.nix ./3d.nix ];
@@ -51,6 +52,7 @@ in
     blender
     osladoc.default
     seer
+    list_unworked_days
   ];
 
   systemd.user.services.pyrnotify = {
