@@ -58,6 +58,7 @@
             ({config, flox, ...}: {config.home.packages = [flox.default]; })
             ./home-manager/oslandia.nix
             ./home-manager/android.nix
+            ./home-manager/nix_niceties.nix
           ];
         };
         carlos = home-manager.lib.homeManagerConfiguration {
