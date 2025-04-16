@@ -40,7 +40,7 @@ in
     ".timewarrior/extensions/".source = "${tw_extensions}/bin";
   };
 
-  # TODO osladoc, oslcli
+  # TODO oslcli
   # TODO separate in different file ? Especially weechat
   home.packages = with pkgs; [
     pass
