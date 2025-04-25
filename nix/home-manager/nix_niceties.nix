@@ -1,7 +1,7 @@
 { config, pkgs, ...}:
 
 {
-  environment.systemPackages = with pkgs.kdePackages; [
+  home.packages = with pkgs; [
     nix-inspect
   ];
   
