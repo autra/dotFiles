@@ -9,17 +9,17 @@ let
   pyrnotify_port = "4321";
   # TODO is is really worthy? :-D
   # maybe I should just install python3 in system or home
-  create_python3_script_from_file = 
+  create_python3_script_from_file =
     (
-      path: 
-        (pkgs.writers.writePython3Bin (builtins.baseNameOf path) {
-          flakeIgnore = [ "E" "W" "F" ];
-        }) 
+      path:
+      (pkgs.writers.writePython3Bin (builtins.baseNameOf path) {
+        flakeIgnore = [ "E" "W" "F" ];
+      })
         (builtins.readFile path)
     );
   # derivation to install properly the different reports of timewarrior (with python)
-  tw_reports = map 
-    create_python3_script_from_file 
+  tw_reports = map
+    create_python3_script_from_file
     [
       ../../timewarrior/oslandia_report.py
       ../../timewarrior/totals.py
@@ -70,7 +70,7 @@ in
       Environment = "DISPLAY=:0";
     };
     Install = {
-      WantedBy=["default.target"];
+      WantedBy = [ "default.target" ];
     };
   };
 }
