@@ -26,6 +26,7 @@
   };
 
   programs.kdeconnect.enable = true;
+  programs.kclock.enable = true;
 
   environment.systemPackages = with pkgs.kdePackages; [
     kcalc
