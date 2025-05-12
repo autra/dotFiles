@@ -10,7 +10,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix.url = "github:danth/stylix/release-24.11";
-    osladoc.url = "git+ssh://git@git.oslandia.net:10022/Oslandia/technique/osladoc?ref=2-ajout-d-une-option-template-pour-specifier-un-template-custom-pour-projet-notamment";
+    osladoc = {
+      url = "git+ssh://git@git.oslandia.net:10022/Oslandia/technique/osladoc";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flox.url = "github:flox/flox/v1.3.15";
   };
 

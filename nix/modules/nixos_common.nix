@@ -48,7 +48,7 @@ in
     programs.nh = {
       enable = true;
       clean.enable = true;
-      clean.extraArgs = "--keep-since 30d --keep 10";
+      clean.extraArgs = "--keep-since 30d --keep 5";
       flake = "/home/augustin/dotFiles/nix";
     };
     environment.systemPackages = with pkgs; [

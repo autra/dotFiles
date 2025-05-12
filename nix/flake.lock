@@ -5,11 +5,11 @@
         "fromYaml": "fromYaml"
       },
       "locked": {
-        "lastModified": 1732200724,
-        "narHash": "sha256-+R1BH5wHhfnycySb7Sy5KbYEaTJZWm1h+LW1OtyhiTs=",
+        "lastModified": 1745523430,
+        "narHash": "sha256-EAYWV+kXbwsH+8G/8UtmcunDeKwLwSOyfcmzZUkWE/c=",
         "owner": "SenchoPens",
         "repo": "base16.nix",
-        "rev": "153d52373b0fb2d343592871009a286ec8837aec",
+        "rev": "58bfe2553d937d8af0564f79d5b950afbef69717",
         "type": "github"
       },
       "original": {
@@ -306,11 +306,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745557122,
-        "narHash": "sha256-eqSo9ugzsqhFgaDFYUZj943nurlX4L6f+AW0skJ4W+M=",
+        "lastModified": 1746171682,
+        "narHash": "sha256-EyXUNSa+H+YvGVuQJP1nZskXAowxKYp79RNUsNdQTj4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "dd26f75fb4ec1c731d4b1396eaf4439ce40a91c1",
+        "rev": "50eee705bbdbac942074a8c120e8194185633675",
         "type": "github"
       },
       "original": {
@@ -344,11 +344,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1745503349,
-        "narHash": "sha256-bUGjvaPVsOfQeTz9/rLTNLDyqbzhl0CQtJJlhFPhIYw=",
+        "lastModified": 1746814339,
+        "narHash": "sha256-hf2lICJzwACWuzHCmZn5NI6LUAOgGdR1yh8ip+duyhk=",
         "owner": "nixos",
         "repo": "nixos-hardware",
-        "rev": "f7bee55a5e551bd8e7b5b82c9bc559bc50d868d1",
+        "rev": "3c5e12673265dfb0de3d9121420c0c2153bf21e0",
         "type": "github"
       },
       "original": {
@@ -376,11 +376,11 @@
     },
     "nixpkgsMaster": {
       "locked": {
-        "lastModified": 1745656157,
-        "narHash": "sha256-ztVRQ8HwRwwQrhsne4r7rPThioA3pSYPHV92Z07QmEo=",
+        "lastModified": 1746999486,
+        "narHash": "sha256-v6JPw0IvjbN1ONJvbTpLjOavND7J0ZRFvmDQ4WWZTu8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "09d1d8ad157c2e1e50e0c2cee7a80a85d011fe3a",
+        "rev": "ebff69553a6eecc2d665934ce45bde44383445e4",
         "type": "github"
       },
       "original": {
@@ -391,11 +391,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1745487689,
-        "narHash": "sha256-FQoi3R0NjQeBAsEOo49b5tbDPcJSMWc3QhhaIi9eddw=",
+        "lastModified": 1746810718,
+        "narHash": "sha256-VljtYzyttmvkWUKTVJVW93qAsJsrBbgAzy7DdnJaQfI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5630cf13cceac06cefe9fc607e8dfa8fb342dde3",
+        "rev": "0c0bf9c057382d5f6f63d54fd61f1abd5e1c2f63",
         "type": "github"
       },
       "original": {
@@ -405,22 +405,6 @@
       }
     },
     "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1717179513,
-        "narHash": "sha256-vboIEwIQojofItm2xGCdZCzW96U85l9nDW3ifMuAIdM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "63dacb46bf939521bdc93981b4cbb7ecb58427a0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "24.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_4": {
       "locked": {
         "lastModified": 1743703532,
         "narHash": "sha256-s1KLDALEeqy+ttrvqV3jx9mBZEvmthQErTVOAzbjHZs=",
@@ -438,19 +422,20 @@
     },
     "osladoc": {
       "inputs": {
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
-        "lastModified": 1734181981,
-        "narHash": "sha256-HMIpVD/Mu5Y7VNHUhQcpAiA9L+1luYylsdC1ma5NV+0=",
-        "ref": "2-ajout-d-une-option-template-pour-specifier-un-template-custom-pour-projet-notamment",
-        "rev": "074b578f8ee63a461e5d009a9af819dd0d2afb50",
-        "revCount": 176,
+        "lastModified": 1740565363,
+        "narHash": "sha256-tg+HHePFD9i56lq7wYwQu1SgLlS/T9IMfq/DEHXWGZw=",
+        "ref": "refs/heads/main",
+        "rev": "ba4be2cb009bfb06f5d448d4bb52196b2c49fd3d",
+        "revCount": 196,
         "type": "git",
         "url": "ssh://git@git.oslandia.net:10022/Oslandia/technique/osladoc"
       },
       "original": {
-        "ref": "2-ajout-d-une-option-template-pour-specifier-un-template-custom-pour-projet-notamment",
         "type": "git",
         "url": "ssh://git@git.oslandia.net:10022/Oslandia/technique/osladoc"
       }
@@ -518,18 +503,18 @@
         "git-hooks": "git-hooks",
         "gnome-shell": "gnome-shell",
         "home-manager": "home-manager_2",
-        "nixpkgs": "nixpkgs_4",
+        "nixpkgs": "nixpkgs_3",
         "systems": "systems",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",
         "tinted-tmux": "tinted-tmux"
       },
       "locked": {
-        "lastModified": 1744152965,
-        "narHash": "sha256-LWUeN1+bH3k46fwtIv0bNgtmkqB0UduyX7T2i+230n0=",
+        "lastModified": 1746143246,
+        "narHash": "sha256-O8rZjqJUIkUva66XTOZy0wcgfBP2eaxU9+Xt7ZHtfhI=",
         "owner": "danth",
         "repo": "stylix",
-        "rev": "8748db082ca15d32243c86e5d785d5dfc8a65719",
+        "rev": "20ace60f9cb5e179cb2256abaee505780df8e804",
         "type": "github"
       },
       "original": {
