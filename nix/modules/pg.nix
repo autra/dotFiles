@@ -3,6 +3,7 @@
   config.environment.systemPackages = with pkgs; [
     pgadmin
     dbeaver-bin
+    rainfrog
   ];
   config.services.postgresql = {
     enable = true;
