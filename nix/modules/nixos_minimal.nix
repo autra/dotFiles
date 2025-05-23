@@ -72,7 +72,8 @@
       inotify-tools
       iotop
       jq
-      killall
+      # killall, fuser and others
+      psmisc
       lm_sensors
       lsb-release
       lshw
