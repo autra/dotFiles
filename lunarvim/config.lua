@@ -61,7 +61,19 @@ lvim.plugins = {
     config = true,
   },
   { "mfussenegger/nvim-dap-python" },
-  { "puremourning/vimspector" }
+  { "puremourning/vimspector" },
+  -- testing
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter"
+    }
+  },
+  { "nvim-neotest/neotest-python" },
+  { "andythigpen/nvim-coverage" },
 }
 lvim.builtin.dap.active = true
 require('dap-python').setup('~/.venvs/debugpy/bin/python')
@@ -208,3 +220,16 @@ require'lspconfig'.ruby_lsp.setup{}
 
 -- config
 vim.g.coloresque_extra_filetypes = { "nix" }
+
+-- tests
+require("neotest").setup({
+  adapters = {
+    require("neotest-python")
+  }
+})
+require("coverage").setup()
+
+
+lvim.builtin.which_key.mappings["tt"] = { "<cmd>lua require(\"neotest\").run.run()<cr>", "Run nearest test" }
+lvim.builtin.which_key.mappings["tT"] = { "<cmd>lua require(\"neotest\").run.run(vim.fn.expand(\"%\"))<cr>", "Run current file tests" }
+lvim.builtin.which_key.mappings["tc"] = { "<cmd>Coverage<cr>", "Display test coverage" }
