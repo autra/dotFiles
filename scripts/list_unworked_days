@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# scripts that checks unworked days at oslandia, so that I can check the monthly admin email
+# dependency:
+# - khal
+# - the "codeproj" command
+
 # Constants: Allowed URLs
 ALLOWED_URLS=(
   "0000_19_rtt"
