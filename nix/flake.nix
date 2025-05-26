@@ -56,7 +56,7 @@
           };
           modules = [
             stylix.homeModules.stylix
-            ./common/stylix.nix
+            ./home-manager/stylix.nix
             ({config, flox, ...}: {config.home.packages = [flox.default]; })
             ./home-manager/oslandia.nix
             ./home-manager/android.nix
