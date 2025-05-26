@@ -45,7 +45,7 @@ in rec {
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    fira-code-nerdfont 
+    nerd-fonts.fira-code
 
     # util
     autossh

@@ -16,7 +16,7 @@
   };
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -29,6 +29,7 @@
   programs.kclock.enable = true;
 
   environment.systemPackages = with pkgs.kdePackages; [
+    kate
     kcalc
     kcolorchooser
     plasma-browser-integration

@@ -9,7 +9,6 @@ rec {
           
   home.packages = with pkgs; [
     xclip
-    kate
     # desktop utilities
     libreoffice-qt
     hunspell

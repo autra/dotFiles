@@ -2,14 +2,13 @@
   description = "atr's config";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.11";
-    nixpkgsMaster.url = "nixpkgs/master";
+    nixpkgs.url = "nixpkgs/nixos-25.05";
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix.url = "github:danth/stylix/release-24.11";
+    stylix.url = "github:danth/stylix/release-25.05";
     osladoc = {
       url = "git+ssh://git@git.oslandia.net:10022/Oslandia/technique/osladoc";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,14 +16,14 @@
     flox.url = "github:flox/flox/v1.3.15";
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgsMaster, home-manager, stylix, nixos-hardware, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager, stylix, nixos-hardware, ... }:
     let lib = nixpkgs.lib;
     in {
       # sd images
       images = {
         pi = (self.nixosConfigurations.pi.extendModules {
           modules = [
-            "${nixpkgsMaster}/nixos/modules/installer/sd-card/sd-image-raspberrypi.nix"
+            "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-raspberrypi.nix"
             ({ pkgs, ... }:
               {
                 disabledModules = [ "profiles/base.nix" ];
@@ -56,7 +55,7 @@
             flox = inputs.flox.packages."x86_64-linux";
           };
           modules = [
-            stylix.homeManagerModules.stylix
+            stylix.homeModules.stylix
             ./common/stylix.nix
             ({config, flox, ...}: {config.home.packages = [flox.default]; })
             ./home-manager/oslandia.nix
@@ -129,7 +128,7 @@
             # }
           ];
         };
-        pi = nixpkgsMaster.lib.nixosSystem {
+        pi = nixpkgs.lib.nixosSystem {
           system = "armv6l-linux";
           modules = [
             # override the system, see README

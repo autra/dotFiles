@@ -13,7 +13,7 @@
 
     fonts.monospace = {
       name = "FiraCode Nerd Font";
-      package = pkgs.fira-code-nerdfont;
+      package = pkgs.nerd-fonts.fira-code;
     };
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
 # base16Scheme = "${pkgs.base16-schemes}/share/themes/github.yaml";
@@ -47,6 +47,7 @@
     cursor = {
       name = "breeze";
       size = 24;
+      package = pkgs.kdePackages.breeze;
     };
   };
 }
