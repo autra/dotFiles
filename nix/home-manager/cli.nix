@@ -74,6 +74,15 @@ in rec {
     # editors
     neovim
     (lunarvim.overrideAttrs(e: {
+      version = "1.5.0-beta1";
+
+      src = fetchFromGitHub {
+        owner = "autra";
+        repo = "LunarVim";
+        rev = "6046ab8107a9293ae9311c71b3a570c16e44b01c";
+        hash = "sha256-8MaFjaUQ/k+pH/mnzLD+o57wk9g6lpwqOLzXrWw08nA=";
+      };
+
       # for markdownpreview
       runtimeDeps = e.runtimeDeps ++ [ 
         # for markdownpreview
