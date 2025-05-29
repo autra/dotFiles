@@ -79,8 +79,8 @@ in rec {
       src = fetchFromGitHub {
         owner = "autra";
         repo = "LunarVim";
-        rev = "6046ab8107a9293ae9311c71b3a570c16e44b01c";
-        hash = "sha256-8MaFjaUQ/k+pH/mnzLD+o57wk9g6lpwqOLzXrWw08nA=";
+        rev = "db34eab551ba95aad1eb30b92e2a63791d7b9311";
+        hash = "sha256-86fPeJAeWgsC8QNgh91DWxp8h8AD6eA3Iif5PaP4hUQ=";
       };
 
       # for markdownpreview
@@ -92,6 +92,8 @@ in rec {
         go
         # for ruby :-O
         ruby
+        # rust
+        rustfmt
       ];
     }))
 

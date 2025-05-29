@@ -166,7 +166,7 @@ formatters.setup {
   { command = "black", filetypes = { "python" }},
   { command = "isort", filetypes = { "python" }},
   { command = "nixpkgs-fmt", filetypes = { "nix" }},
-  { command = "rustfmt", filetype = { "rust" }},
+  -- { command = "rustfmt", filetype = { "rust" }},
   -- { command = "sqlfluff", filetypes = { "sql" }}
 }
 local linters = require "lvim.lsp.null-ls.linters"
@@ -190,7 +190,7 @@ lvim.lsp.installer.setup.automatic_installation = {
   exclude = {}
 }
 require'lspconfig'.ansiblels.setup{}
-require'lspconfig'.tsserver.setup{}
+require'lspconfig'.ts_ls.setup{}
 require'lspconfig'.eslint.setup{}
 require'lspconfig'.sqls.setup{}
 require'lspconfig'.volar.setup{}
@@ -230,6 +230,12 @@ require("neotest").setup({
 require("coverage").setup()
 
 
-lvim.builtin.which_key.mappings["tt"] = { "<cmd>lua require(\"neotest\").run.run()<cr>", "Run nearest test" }
-lvim.builtin.which_key.mappings["tT"] = { "<cmd>lua require(\"neotest\").run.run(vim.fn.expand(\"%\"))<cr>", "Run current file tests" }
-lvim.builtin.which_key.mappings["tc"] = { "<cmd>Coverage<cr>", "Display test coverage" }
+-- lvim.builtin.which_key.mappings["tt"] = { "<cmd>lua require(\"neotest\").run.run()<cr>", "Run nearest test" }
+-- lvim.builtin.which_key.mappings["tT"] = { "<cmd>lua require(\"neotest\").run.run(vim.fn.expand(\"%\"))<cr>", "Run current file tests" }
+-- lvim.builtin.which_key.mappings["tc"] = { "<cmd>Coverage<cr>", "Display test coverage" }
+lvim.builtin.which_key.mappings["t"] = {
+  -- name = "+test",
+  t = { "<cmd>lua require(\"neotest\").run.run()<cr>", "Run nearest test" },
+  T = { "<cmd>lua require(\"neotest\").run.run(vim.fn.expand(\"%\"))<cr>", "Run current file tests" },
+  c = { "<cmd>Coverage<cr>", "Display test coverage" },
+}
