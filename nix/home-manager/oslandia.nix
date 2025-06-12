@@ -31,7 +31,11 @@ let
     name = "My timewarrior extensions";
     paths = tw_reports;
   };
-  list_unworked_days = pkgs.writeShellScriptBin "list_unworked_days.sh" (builtins.readFile ../../scripts/list_unworked_days);
+  list_unworked_days = pkgs.writeShellApplication {
+    name = "list_unworked_days";
+    runtimeInputs = with pkgs; [ util-linux coreutils bc khal ];
+    text = (builtins.readFile ../../scripts/list_month_unworked_days.sh);
+  };
 in
 {
   imports = [ ./desktop.nix ./3d.nix ];
