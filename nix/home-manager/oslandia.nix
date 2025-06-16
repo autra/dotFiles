@@ -36,6 +36,14 @@ let
     runtimeInputs = with pkgs; [ util-linux coreutils bc khal ];
     text = (builtins.readFile ../../scripts/list_month_unworked_days.sh);
   };
+  last_week_imputations = affairesRepertoire: pkgs.writeShellApplication {
+    name = "last_week_imputations";
+    runtimeInputs = with pkgs; [ coreutils khal fzf bat gnugrep gnused ];
+    text = (builtins.readFile ../../scripts/last_week_imputations.sh);
+    runtimeEnv = {
+      AFFAIRES_REPERTOIRE=affairesRepertoire;
+    };
+  };
 in
 {
   imports = [ ./desktop.nix ./3d.nix ];
@@ -57,6 +65,7 @@ in
     osladoc.default
     seer
     list_unworked_days
+    (last_week_imputations "${config.home.homeDirectory}/repos/oslandia/affaires")
   ];
 
   systemd.user.services.pyrnotify = {
@@ -66,7 +75,7 @@ in
 
     Service = {
       Type = "simple";
-      WorkingDirectory = "/home/augustin";
+      WorkingDirectory = config.home.homeDirectory;
       ExecStart = "${pkgs.python3}/bin/python ${pyrnotify} ${pyrnotify_port}";
       # I prefer not to have automatic restart because it will probably not work anyway
       # Restart = "on-failure";
