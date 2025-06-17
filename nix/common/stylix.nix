@@ -2,8 +2,6 @@
 {
   stylix = {
     enable = true;
-    # TODO remove that once it becomes optional (*or* switch to changing wallpaper if supported)
-    image = ./5120x2880.png;
     fonts.sizes = {
       applications = 10;
       desktop = 10;
