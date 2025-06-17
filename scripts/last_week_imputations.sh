@@ -8,7 +8,9 @@ fi
 
 codeproj () {
   pushd $AFFAIRES_REPERTOIRE > /dev/null
-  echo $(ls | fzf --query=$1 --preview="grep -v '^#' {}/project.meta | grep -v '^$' | bat --color=always --language=ini" | tr -d '\n')
+  # yeah, I know, but find is less easy to use and I don't really care ;-)
+	# shellcheck disable=SC2012
+  ls | fzf --query="$1" --preview="grep -v '^#' {}/project.meta | grep -v '^$' | bat --color=always --language=ini" | tr -d '\n'
   popd > /dev/null
 }
 
@@ -20,10 +22,10 @@ if [[ "$1" == "-n" ]]; then
 fi
 
 # Get last week's Monday and Friday
-if [ -z $MONDAY ]; then
+if [ -z "$MONDAY" ]; then
   MONDAY=$(date -d "monday last week" +%Y-%m-%d)
 fi
-if [ -z $FRIDAY ]; then
+if [ -z "$FRIDAY" ]; then
   FRIDAY=$(date -d "friday last week" +%Y-%m-%d)
 fi
 echo "Reviewing from $MONDAY to $FRIDAY"
@@ -42,15 +44,15 @@ for DAY in "${DATES[@]}"; do
     # Display existing events and replace ":clock1:" with ⏰
     khal list "$DAY" "$DAY" --format "{start} {title} {url} {description}" | sed 's/:clock1:/⏰/g' || echo "No full-day events found."
 
-    read -p "Is this day okay? (y/n) " OK
+    read -rp "Is this day okay? (y/n) " OK
     if [[ "$OK" == "y" ]]; then
         continue
     fi
 
-    read -p "Create 1 or 2 events? (1/2) " COUNT
+    read -rp "Create 1 or 2 events? (1/2) " COUNT
 
-    for i in $(seq 1 "$COUNT"); do
-        read -p "Enter event title: " TITLE
+    for _ in $(seq 1 "$COUNT"); do
+        read -rp "Enter event title: " TITLE
         URL=$(codeproj "$TITLE")
 
         DESC=""
