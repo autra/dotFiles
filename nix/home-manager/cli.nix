@@ -16,16 +16,6 @@ let
     ref = "refs/tags/v3.1.0";
     allRefs = true;
   };
-  # TODO remove once https://github.com/NixOS/nixpkgs/pull/388935 is merged
-  planExporterPath = fetchTarball {
-    url = "https://github.com/agneum/plan-exporter/releases/download/v0.0.6/plan-exporter-0.0.6-${arch}.tar.gz";
-    sha256 = if arch == "linux-amd64" then
-        "0lz2b4gpkbw0xriaqmcinscfscd57ixgy4x4y00jnqp59gx5mar0"
-      else if arch == "linux-arm64" then
-        "0crswadc3ds1xrn2knzh8p7x6g26lc8ahcxwyh4n81jcb336m3wi"
-      else
-        "none";
-  };
 in rec {
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -115,10 +105,7 @@ in rec {
     # pg
     pspg
     pgcli
-    # do I need:
-    # - pgxnclient
-    # - pgxn 
-    # with nix?
+    plan-exporter
 
     # c++
     llvmPackages.bintools
@@ -194,7 +181,6 @@ in rec {
     # pgclients
     ".psqlrc".source = home.homeDirectory + "/dotFiles/.psqlrc";
     ".pspgconf".source = home.homeDirectory + "/dotFiles/.pspgconf";
-    "bin/plan-exporter".source = "${planExporterPath}/plan-exporter";
 
     # rust
     ".rustup/settings.toml".source = home.homeDirectory + "/dotFiles/rustup_settings.toml";
