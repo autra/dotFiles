@@ -6,6 +6,11 @@ if [ -z $AFFAIRES_REPERTOIRE ]; then
   exit 1
 fi
 
+# Note: the nix writer use `set -nounset`
+ARGS=${1:-}
+MONDAY=${MONDAY:-}
+FRIDAY=${FRIDAY:-}
+
 codeproj () {
   pushd $AFFAIRES_REPERTOIRE > /dev/null
   # yeah, I know, but find is less easy to use and I don't really care ;-)
@@ -16,7 +21,7 @@ codeproj () {
 
 # Enable dry-run mode if -n is passed
 DRY_RUN=false
-if [[ "$1" == "-n" ]]; then
+if [[ "$ARGS" == "-n" ]]; then
     DRY_RUN=true
     echo "Dry run mode activated"
 fi
