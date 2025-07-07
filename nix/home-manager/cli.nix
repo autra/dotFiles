@@ -1,12 +1,6 @@
 { config, pkgs, ... }:
 # TODO param for refs?
 let
-  arch = if pkgs.system == "x86_64-linux" then 
-      "linux-amd64" 
-    else if pkgs.system == "aarch64-linux" then
-      "linux-arm64" 
-    else 
-      "unknown";
   ohMyZshPath = fetchGit { 
     url = "https://github.com/ohmyzsh/ohmyzsh.git";
     ref = "master";
