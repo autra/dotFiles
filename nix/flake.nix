@@ -48,6 +48,15 @@
 
       # Non nixos
       homeConfigurations = {
+        minimal = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs { system = "x86_64-linux"; };
+          modules = [
+            stylix.homeModules.stylix
+            ./home-manager/stylix.nix
+            ./home-manager/minimal.nix
+            # ./home-manager/nix_niceties.nix
+          ];
+        };
         augustin-Oslandia = home-manager.lib.homeManagerConfiguration {
           # pkgs = nixpkgs.legacyPackages.${system};
           pkgs = import nixpkgs { system = "x86_64-linux"; };
@@ -72,9 +81,6 @@
           system = "x86_64-linux";
           pkgs = import nixpkgs { system = "x86_64-linux"; };
           targets.genericLinux.enable = true;
-        };
-        augustin-perso = lib.nixosSystem {
-          system = "x86_64-linux";
         };
       };
 
