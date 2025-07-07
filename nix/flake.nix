@@ -3,17 +3,23 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.05";
-    nixos-hardware.url = "github:nixos/nixos-hardware/master";
+    nixos-hardware.url = "github:nixos/nixos-hardware?rev=11f2d9ea49c3e964315215d6baa73a8d42672f06";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix.url = "github:danth/stylix/release-25.05";
+    stylix = {
+      url = "github:nix-community/stylix/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     osladoc = {
       url = "git+ssh://git@git.oslandia.net:10022/Oslandia/technique/osladoc";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    flox.url = "github:flox/flox/v1.3.15";
+    flox = {
+      url = "github:flox/flox/v1.5.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ { self, nixpkgs, home-manager, stylix, nixos-hardware, ... }:
