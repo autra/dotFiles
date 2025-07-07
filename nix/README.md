@@ -1,5 +1,19 @@
 # How to use
 
+## Bootstraping
+
+The steps are:
+
+- install nix
+- if using only home-manager, configure nix to use nix-command and flakes by adding the following line in `/etc/nix/nix.conf`:
+  ```
+  experimental-features = nix-command flakes
+  ```
+- install home-manager (see official doc)
+- see next part for next iterations
+
+## Daily usage
+
 I use [nh](https://github.com/viperML/nh) but nixos-rebuild direct use is of course totally possible.
 
 To rebuild my system
