@@ -83,6 +83,7 @@
       ntfs3g
       p7zip
       pciutils
+      usbutils
       progress
       ripgrep
       tree

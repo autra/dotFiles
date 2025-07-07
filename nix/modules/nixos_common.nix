@@ -52,6 +52,7 @@ in
       flake = "/home/augustin/dotFiles/nix";
     };
     environment.systemPackages = with pkgs; [
+      dmidecode
       neovim
     ];
   };
