@@ -18,7 +18,6 @@
     };
     flox = {
       url = "github:flox/flox/v1.5.0";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
