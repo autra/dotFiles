@@ -79,6 +79,9 @@ in {
         clang-tools_17
       ];
     }))
+
+    # this should be installed at the same time as .gitconfig
+    delta
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

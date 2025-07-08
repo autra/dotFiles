@@ -28,7 +28,6 @@
     gnumake
     # git 
     git-lfs
-    delta
     glab
     gh
     lazygit
