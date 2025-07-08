@@ -26,8 +26,6 @@
     exiftool
 
     gnumake
-    # needed by clangd lsp server
-    clang-tools_17
     # git 
     git-lfs
     delta

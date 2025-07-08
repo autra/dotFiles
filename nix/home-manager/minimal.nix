@@ -75,6 +75,8 @@ in {
         ruby
         # rust
         rustfmt
+        # needed by clangd lsp server
+        clang-tools_17
       ];
     }))
   ];
