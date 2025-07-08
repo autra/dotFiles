@@ -49,7 +49,7 @@ in
       enable = true;
       clean.enable = true;
       clean.extraArgs = "--keep-since 30d --keep 5";
-      flake = "/home/augustin/dotFiles/nix";
+      flake = "/home/${config.mine.common.user}/dotFiles/nix";
     };
     environment.systemPackages = with pkgs; [
       dmidecode

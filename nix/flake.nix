@@ -46,17 +46,21 @@
         }).config.system.build.sdImage;
       };
 
-      # Non nixos
-      homeConfigurations = {
-        minimal = home-manager.lib.homeManagerConfiguration {
+      generateMinimalHomeConfig = username: home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs { system = "x86_64-linux"; };
           modules = [
+          ({config, ...}: { mine.common.user = username; })
             stylix.homeModules.stylix
             ./home-manager/stylix.nix
             ./home-manager/minimal.nix
             # ./home-manager/nix_niceties.nix
           ];
         };
+
+
+      # Non nixos
+      homeConfigurations = {
+        ubuntu-vm = self.outputs.generateMinimalHomeConfig "ubuntu";
         augustin-Oslandia = home-manager.lib.homeManagerConfiguration {
           # pkgs = nixpkgs.legacyPackages.${system};
           pkgs = import nixpkgs { system = "x86_64-linux"; };

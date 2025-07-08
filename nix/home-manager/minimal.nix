@@ -11,9 +11,10 @@ let
     allRefs = true;
   };
 in {
+  imports = [ ../common/options.nix ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "augustin";
+  home.username = config.mine.common.user;
   home.homeDirectory = "/home/${config.home.username}";
 
   # This value determines the Home Manager release that your configuration is

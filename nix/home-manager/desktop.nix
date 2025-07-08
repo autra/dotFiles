@@ -2,7 +2,6 @@
 let common = import ../common/common.nix {};
 in
 rec {
-  home.homeDirectory = "/home/augustin";
   imports = [ ./cli.nix ];
  
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) common.unfreePkgs;
@@ -17,7 +16,7 @@ rec {
     thunderbird
     signal-desktop
     firefox
-    firefox-devedition-bin
+    firefox-devedition
 
     brave
     vlc
@@ -50,8 +49,8 @@ rec {
   ];
 
   home.file = {
-    ".local/share/konsole/mine.profile".source = home.homeDirectory + "/dotFiles/konsole/mine.profile";
-    ".local/share/konsole/Kantix.colorscheme".source = home.homeDirectory + "/dotFiles/konsole/Kantix.colorscheme";
+    ".local/share/konsole/mine.profile".source = config.home.homeDirectory + "/dotFiles/konsole/mine.profile";
+    ".local/share/konsole/Kantix.colorscheme".source = config.home.homeDirectory + "/dotFiles/konsole/Kantix.colorscheme";
   };
 
   programs.kitty = {

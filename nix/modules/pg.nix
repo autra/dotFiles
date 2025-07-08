@@ -1,5 +1,6 @@
 { pkgs, config,...}:
 {
+  imports = [ ../common/common.nix ];
   config.environment.systemPackages = with pkgs; [
     pgadmin
     dbeaver-bin
