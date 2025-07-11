@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  imports = [ ../common/common.nix ];
+  imports = [ ../common/options.nix ];
   config.environment.systemPackages = with pkgs; [
     lxc
     lxd-lts

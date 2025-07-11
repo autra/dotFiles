@@ -1,6 +1,5 @@
 { config, lib, pkgs, ... }:
 {
-  imports = [ ../common/common.nix ];
   config = {
     # enable some shortcut with alt+print_scr+key. (h to get help in journalctl)
     boot.kernel.sysctl."kernel.sysrq" = 1;
