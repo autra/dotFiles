@@ -2,9 +2,9 @@
 
 My config files. License: do what you want.
 
-## Home-manager
+## nix
 
-home-manager -f ~/dotFiles/home.nix switch --impure  
+in ./nix folder
 
 ## To switch between light / dark theme
 
