@@ -181,7 +181,6 @@ linters.setup {
     filetypes = { "python" },
     extra_args = { "--follow-imports=silent" },
   },
-  { name = "flake8" },
 }
 
 -- language servers setup
