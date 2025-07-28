@@ -38,6 +38,7 @@ alias reviewthiscommit='nix run .#nixpkgs-review rev HEAD'
 
 # goodies
 alias meteo='curl http://fr.wttr.in/limoges'
+alias meteo2='curl http://v2.fr.wttr.in/limoges'
 alias text2json="jq -s --raw-input '. | split(\"\n\")'"
 
 alias tw='timew'

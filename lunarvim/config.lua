@@ -10,7 +10,11 @@
 -- automatically install python syntax highlighting
 lvim.builtin.treesitter.ensure_installed = {
   "python",
+  "ansible",
+  "bash",
+  "nix",
 }
+lvim.builtin.treesitter.context_commentstring = { enable = true }
 
 lvim.plugins = {
  -- { "lunarvim/colorschemes" },
