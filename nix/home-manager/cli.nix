@@ -29,6 +29,7 @@
     # git 
     git-lfs
     glab
+    gitlab-ci-local
     gh
     lazygit
     git-crypt
