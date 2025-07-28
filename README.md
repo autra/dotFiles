@@ -17,3 +17,8 @@ To switch (TODO complete that, it's not as simple as I'd like it to be, even th
 - switch the delta theme in .gitconfig
 - .tmux.conf: TODO
 
+## My TODO
+
+things I'd like to get done some day:
+
+- setup git maintenance. How to automatically add all my repo to it? Do I actually want this ?
