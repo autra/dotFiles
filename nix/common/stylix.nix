@@ -43,9 +43,9 @@
       };
     };
     cursor = {
-      name = "breeze";
+      name = "breeze-hacked";
       size = 24;
-      package = pkgs.kdePackages.breeze;
+      package = pkgs.breeze-hacked-cursor-theme;
     };
   };
 }
