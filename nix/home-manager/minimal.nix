@@ -72,9 +72,15 @@ in {
         gcc 
         go
         # for ruby :-O
-        ruby
+        (ruby.withPackages(ps: with ps; [ 
+          # for ruby-lsp
+          stringio 
+          rbs
+        ]))
         # rust
         rustfmt
+        # needed by various plugins
+        rustc
         # needed by clangd lsp server
         clang-tools_17
       ];
