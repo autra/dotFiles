@@ -1,7 +1,7 @@
 { pkgs, config,...}:
 {
   config.environment.systemPackages = with pkgs; [
-    pgadmin
+    pgadmin4-desktopmode
     dbeaver-bin
     rainfrog
   ];
