@@ -64,7 +64,7 @@
 ; 	prompt = false
 # define command which will be used when "lvim" is set as a merge tool
 [mergetool "nvim"]
-	cmd = "nvim -d -c \":split | edit $MERGED\" -c \":wincmd k\" -c \":vsplit | edit $BASE\" -c \":vsplit | edit $REMOTE\" $LOCAL"
+	cmd = "nvim -d -c \":set scrollbind\" -c \":split | edit $MERGED\" -c \":wincmd k\" -c \":vsplit | edit $BASE\" -c \":vsplit | edit $REMOTE\" -c \":wincmd j\" $LOCAL"
 # set "lvim" as tool for merging
 [merge]
   tool = nvim
