@@ -43,7 +43,7 @@ fi
 
 # Customize to your needs...
 HISTSIZE=500000
-SAVEHIST=100000
+SAVEHIST=2000000
 
 #some environment variable
 export PATH=$HOME/pgsql/bin:$PATH:$HOME/bin/:$HOME/.local/bin
