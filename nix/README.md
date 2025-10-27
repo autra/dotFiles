@@ -15,7 +15,7 @@ The bootstrap steps are:
   ```
 - install home-manager (see [official doc](https://nix-community.github.io/home-manager/index.xhtml#ch-installation))
 - source it: `source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh `
-- run directly `home-manager` the first time with `~/.nix-profile/bin/home-manager switch --flake .#augustin-Oslandia --impure`
+- run directly `home-manager` the first time with `~/.nix-profile/bin/home-manager switch --flake .#augustin-Oslandia --impure -b backup`
 
 The first generation is complete. See next part for subsequent generations.
 
