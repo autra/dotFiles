@@ -84,5 +84,7 @@
     # nix-search-tv when it reaches master
     superfile
 
+    glow
+
   ];
 }
