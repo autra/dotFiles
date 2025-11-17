@@ -20,7 +20,7 @@
     nix.settings.trusted-public-keys = [ "flox-cache-public-1:7F4OyH7ZCnFhcze3fJdfyXYLQw/aV7GEed86nQ7IsOs=" ];
 
     # test nix-ld
-    # programs.nix-ld.enable = true;
+    programs.nix-ld.enable = true;
 
     # Set your time zone.
     time.timeZone = "Europe/Paris";
