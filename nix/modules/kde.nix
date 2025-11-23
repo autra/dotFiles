@@ -38,7 +38,7 @@
     partitionmanager
     dolphin-plugins
     ktorrent
-    pkgs.kup
+    kup
     pkgs.wl-clipboard
     pkgs.networkmanager-fortisslvpn
   ];
