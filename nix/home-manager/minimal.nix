@@ -30,7 +30,6 @@ in {
   programs = {
     home-manager.enable = true;
     starship.enable = true;
-    zsh.enable = true;
 
     direnv = {
       enable = true;
@@ -46,6 +45,9 @@ in {
     nerd-fonts.fira-code
     # shell
     fzf
+    # note: home manager has a programs.zsh.enable options, but this generates a .zshrc according to the conf
+    # at the moment I have my own .zshrc
+    zsh
     oh-my-zsh
     autojump
     eza
