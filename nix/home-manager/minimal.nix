@@ -82,7 +82,7 @@ in {
         # needed by various plugins
         rustc
         # needed by clangd lsp server
-        clang-tools_17
+        clang-tools
       ];
     }))
 
