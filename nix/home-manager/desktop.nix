@@ -30,7 +30,6 @@ rec {
     keepassxc
     meld
     qgis
-    openshot-qt
     kdePackages.kdenlive
     tlp
 
