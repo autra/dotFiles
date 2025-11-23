@@ -31,13 +31,13 @@ rec {
     meld
     qgis
     openshot-qt
-    libsForQt5.kdenlive
+    kdePackages.kdenlive
     tlp
 
     showmethekey
     peek
     zeal
-    libsForQt5.kamoso
+    kdePackages.kamoso
     github-desktop
     vscode.fhs
     obs-studio
