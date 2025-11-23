@@ -372,11 +372,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1762756533,
-        "narHash": "sha256-HiRDeUOD1VLklHeOmaKDzf+8Hb7vSWPVFcWwaTrpm+U=",
+        "lastModified": 1763622513,
+        "narHash": "sha256-1jQnuyu82FpiSxowrF/iFK6Toh9BYprfDqfs4BB+19M=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c2448301fb856e351aab33e64c33a3fc8bcf637d",
+        "rev": "c58bc7f5459328e4afac201c5c4feb7c818d604b",
         "type": "github"
       },
       "original": {
@@ -418,11 +418,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1761834208,
-        "narHash": "sha256-L9rh8rQC31kLzc1ppheIEv9ZMjrx0E+BBLyqm5EBMgA=",
+        "lastModified": 1763660762,
+        "narHash": "sha256-A+IunAET4HmqixbxGf8pmZpfxOmfFGhq3vlbxSfOjlM=",
         "ref": "refs/heads/main",
-        "rev": "3a16f07d2151366787406dde9348a5861f540c7d",
-        "revCount": 204,
+        "rev": "2d7b9c5827a6afa3991f38f486aca0d20f15f568",
+        "revCount": 218,
         "type": "git",
         "url": "ssh://git@git.oslandia.net:10022/Oslandia/technique/osladoc"
       },
@@ -502,11 +502,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1762295027,
-        "narHash": "sha256-5z5cGrp9F8g8iyQrM8WkB6pAwP4AaicljKZ15gx+X9Y=",
+        "lastModified": 1763845106,
+        "narHash": "sha256-S3HH655nydKoLTuqX8qcJidZH0PiWGB/YcoPomH1DaQ=",
         "owner": "nix-community",
         "repo": "stylix",
-        "rev": "91b9a270523361268ba6a8772152fde31103869f",
+        "rev": "b9b8173a6e31c6d06f328307ddbdf7d6af82b7ad",
         "type": "github"
       },
       "original": {
