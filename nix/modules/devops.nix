@@ -3,7 +3,6 @@
   imports = [ ../common/options.nix ];
   config.environment.systemPackages = with pkgs; [
     lxc
-    lxd-lts
     vagrant
     ansible
     virt-manager
@@ -26,9 +25,8 @@
   config.virtualisation.docker.enable = true;
 
   # lxc/lxd
-  config.virtualisation.lxc.enable = true;
-  config.virtualisation.lxd.enable = true;
-
+  config.virtualisation.incus.enable = true;
+  config.networking.nftables.enable = true;
 
   config.virtualisation.spiceUSBRedirection.enable = true;
 
@@ -38,16 +36,6 @@
       package = pkgs.qemu_kvm;
       runAsRoot = true;
       swtpm.enable = true;
-      vhostUserPackages = with pkgs; [ virtiofsd ];
-      ovmf = {
-        enable = true;
-        packages = [
-          (pkgs.OVMF.override {
-            secureBoot = true;
-            tpmSupport = true;
-          }).fd
-        ];
-      };
     };
   };
 
