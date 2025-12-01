@@ -418,11 +418,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763660762,
-        "narHash": "sha256-A+IunAET4HmqixbxGf8pmZpfxOmfFGhq3vlbxSfOjlM=",
+        "lastModified": 1763981014,
+        "narHash": "sha256-l1DoYvz8mBVRrnixRoflIKDvm0EBq+93FN188p055L0=",
         "ref": "refs/heads/main",
-        "rev": "2d7b9c5827a6afa3991f38f486aca0d20f15f568",
-        "revCount": 218,
+        "rev": "26bd21d3c00adbb401f680e756fb51c1bcbc99bc",
+        "revCount": 219,
         "type": "git",
         "url": "ssh://git@git.oslandia.net:10022/Oslandia/technique/osladoc"
       },
