@@ -38,6 +38,7 @@
       package = pkgs.qemu_kvm;
       runAsRoot = true;
       swtpm.enable = true;
+      vhostUserPackages = with pkgs; [ virtiofsd ];
       ovmf = {
         enable = true;
         packages = [
