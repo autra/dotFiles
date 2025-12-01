@@ -8,8 +8,8 @@
       # following configuration is added only when building VM with build-vm
       virtualisation = {
         useEFIBoot = true;
-        memorySize =  2048; # Use 2048MiB memory.
-        cores = 3;         
+        memorySize =  6128;
+        cores = 4;
       };
     };
 
