@@ -147,13 +147,14 @@
             # stylix.nixosModules.stylix
             ./hardware/raspi-hardware.nix
             ./modules/nixos_minimal.nix
+            ./common/options.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
 
-              home-manager.users.augustin = import ./home-manager/cli.nix;
+              home-manager.users.augustin = import ./home-manager/minimal.nix;
             }
           ];
         };
