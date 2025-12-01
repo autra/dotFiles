@@ -78,12 +78,14 @@ in
       WorkingDirectory = config.home.homeDirectory;
       ExecStart = "${pkgs.python3}/bin/python ${pyrnotify} ${pyrnotify_port}";
       # I prefer not to have automatic restart because it will probably not work anyway
-      # Restart = "on-failure";
       SyslogIdentifier = "pyrnotify";
       Environment = "DISPLAY=:0";
     };
     Install = {
-      WantedBy = [ "default.target" ];
+      # for some reasons, notifications are broken when the computer resume from sleep
+      # a restart solves that. 
+      # It's probably either how socket behaves or something with the reverse ssh tunneling, but I didn't figure this out yet
+      WantedBy = [ "default.target" "suspend.target" ];
     };
   };
 }
