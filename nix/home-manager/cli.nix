@@ -43,9 +43,6 @@
     pgcli
     plan-exporter
 
-    # c++
-    llvmPackages.bintools
-
     # rust
     rustup
 
