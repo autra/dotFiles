@@ -22,7 +22,7 @@ let
 
       install -d -m 0700 -o postgres -g postgres "$NEWDATA"
       cd "$NEWDATA"
-      sudo -u postgres "$NEWBIN/initdb" -D "$NEWDATA" ${lib.escapeShellArgs cfg.initdbArgs}
+      sudo -u postgres "$NEWBIN/initdb" -D "$NEWDATA" ${pkgs.lib.escapeShellArgs cfg.initdbArgs}
 
       sudo -u postgres "$NEWBIN/pg_upgrade" \
         --old-datadir "$OLDDATA" --new-datadir "$NEWDATA" \
