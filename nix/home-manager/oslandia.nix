@@ -31,17 +31,36 @@ let
     name = "My timewarrior extensions";
     paths = tw_reports;
   };
-  list_unworked_days = pkgs.writeShellApplication {
-    name = "list_unworked_days";
-    runtimeInputs = with pkgs; [ util-linux coreutils bc khal ];
-    text = (builtins.readFile ../../scripts/list_month_unworked_days.sh);
-  };
+  list_unworked_days =
+    pkgs.stdenv.mkDerivation {
+      pname = "ls_unworked_days";
+      version = "1.0";
+
+      src = ../../scripts; # directory containing conges.py
+
+      buildInputs = [
+        (pkgs.python3.withPackages(ps: with ps; [tabulate]))
+        pkgs.khal
+        pkgs.makeWrapper
+      ];
+
+      installPhase = ''
+        mkdir -p $out/bin
+        install -m755 list_unworked_days.py $out/bin/list_unworked_days
+
+        wrapProgram $out/bin/list_unworked_days \
+          --prefix PATH : ${pkgs.lib.makeBinPath [
+            pkgs.python3
+            pkgs.khal
+          ]}
+      '';
+    };
   last_week_imputations = affairesRepertoire: pkgs.writeShellApplication {
     name = "last_week_imputations";
     runtimeInputs = with pkgs; [ coreutils khal fzf bat gnugrep gnused ];
     text = (builtins.readFile ../../scripts/last_week_imputations.sh);
     runtimeEnv = {
-      AFFAIRES_REPERTOIRE=affairesRepertoire;
+      AFFAIRES_REPERTOIRE = affairesRepertoire;
     };
   };
 in
