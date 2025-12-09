@@ -23,8 +23,6 @@ rec {
     calibre
     gimp
     inkscape
-    shutter
-    flameshot
     liferea
     musescore
     keepassxc
@@ -37,9 +35,7 @@ rec {
     peek
     zeal
     kdePackages.kamoso
-    github-desktop
     vscode.fhs
-    obs-studio
     rustdesk
 
     # gaming
