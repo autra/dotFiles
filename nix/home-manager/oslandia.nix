@@ -38,11 +38,7 @@ let
 
       src = ../../scripts; # directory containing conges.py
 
-      buildInputs = [
-        (pkgs.python3.withPackages(ps: with ps; [tabulate]))
-        pkgs.khal
-        pkgs.makeWrapper
-      ];
+      nativeBuildInputs = [ pkgs.makeWrapper ];
 
       installPhase = ''
         mkdir -p $out/bin
@@ -50,7 +46,7 @@ let
 
         wrapProgram $out/bin/list_unworked_days \
           --prefix PATH : ${pkgs.lib.makeBinPath [
-            pkgs.python3
+            (pkgs.python3.withPackages(ps: with ps; [tabulate]))
             pkgs.khal
           ]}
       '';
