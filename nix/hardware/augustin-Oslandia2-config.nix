@@ -1,5 +1,4 @@
 { config, lib, pkgs, modulesPath, ... }:
-
 {
   imports =
     [
@@ -72,6 +71,6 @@ ACTION=="add", SUBSYSTEM=="serio", DRIVERS=="atkbd", ATTR{power/wakeup}="disable
 ACTION=="add", SUBSYSTEM=="i2c", DRIVERS=="i2c_hid_acpi", ATTRS{name}=="PIXA3854:00", ATTR{power/wakeup}="disabled"
 '';
 
-#TODO
-# and disable on kernel 6.7
+  # specific stylix config for this machine
+  stylix.targets.grub.enable = false;
 }

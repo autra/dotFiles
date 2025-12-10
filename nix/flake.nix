@@ -17,6 +17,10 @@
       url = "git+ssh://git@git.oslandia.net:10022/Oslandia/technique/osladoc";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    oslandiaGrubTheme = {
+      url = "gitlab:Oslandia/oslandia-grub-theme";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flox = { url = "github:flox/flox/v1.5.0"; };
   };
 
@@ -123,6 +127,7 @@
           system = "x86_64-linux";
           modules = [
             nixos-hardware.nixosModules.framework-16-7040-amd
+            inputs.oslandiaGrubTheme.nixosModules.default
             stylix.nixosModules.stylix
             ./hardware/augustin-Oslandia2-config.nix
             ./common/stylix.nix
