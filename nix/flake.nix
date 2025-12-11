@@ -62,8 +62,8 @@
 
       # Non nixos
       homeConfigurations = {
-        ubuntu-vm = self.outputs.generateMinimalHomeConfig "ubuntu" [];
-        augustin-Oslandia = self.outputs.generateMinimalHomeConfig "atr" [ ./home-manager/cli.nix ] ;
+        ubuntu-vm = self.outputs.generateMinimalHomeConfig "ubuntu" [ ];
+        augustin-Oslandia = self.outputs.generateMinimalHomeConfig "atr" [ ./home-manager/cli.nix ];
         "augustin@augustin-Oslandia2" =
           home-manager.lib.homeManagerConfiguration {
             pkgs = import nixpkgs { system = "x86_64-linux"; };
