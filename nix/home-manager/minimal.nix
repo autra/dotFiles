@@ -85,7 +85,7 @@ in {
         rustc
         # needed by clangd lsp server
         clang-tools
-        debugpy
+        (python3.withPackages(ps: with ps; [ debugpy ]))
       ];
     }))
 
