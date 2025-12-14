@@ -7,6 +7,7 @@
 
   boot = {
     initrd = {
+      systemd.enable = true;
       availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "usbhid" "sd_mod" ];
       kernelModules = [ "dm-snapshot" ];
       luks.devices."cryptroot".device = "/dev/disk/by-uuid/e732018a-166e-4a7b-a3af-214c6eb78acf";
