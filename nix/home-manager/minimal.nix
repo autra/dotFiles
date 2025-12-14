@@ -85,6 +85,7 @@ in {
         rustc
         # needed by clangd lsp server
         clang-tools
+        debugpy
       ];
     }))
 

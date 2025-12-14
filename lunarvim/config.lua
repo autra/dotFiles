@@ -79,7 +79,7 @@ lvim.plugins = {
   { "andythigpen/nvim-coverage" },
 }
 lvim.builtin.dap.active = true
-require('dap-python').setup('~/.venvs/debugpy/bin/python')
+require('dap-python').setup("python3")
 
 -- colors !!
 -- lvim.colorscheme = "base16-github"
