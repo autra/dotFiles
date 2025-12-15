@@ -56,7 +56,7 @@ in
     programs.nh = {
       enable = true;
       clean.enable = true;
-      clean.extraArgs = "--keep-since 15d --keep 5";
+      clean.extraArgs = "--keep-since 15d --keep 4";
       flake = "/home/${config.mine.common.user}/dotFiles/nix";
     };
     environment.systemPackages = with pkgs; [
