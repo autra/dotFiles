@@ -1,10 +1,18 @@
 { config, lib, pkgs, ... }:
 let
-  common = import ../common/common.nix {};
+  common = import ../common/common.nix { };
 in
 {
   config = {
-    boot.plymouth.enable = true;
+    boot.plymouth = {
+      enable = true;
+      theme = "cybernetic";
+      themePackages = [ (pkgs.adi1090x-plymouth-themes.override { selected_themes = [ "cybernetic" "circuit" "glitch" "hud_space" ]; }) ];
+      # I'd love that with a different logo!
+      # theme = "proxzima";
+      # themePackages = [pkgs.plymouth-proxzima-theme ];
+    };
+    stylix.targets.plymouth.enable = false;
     # Enable CUPS to print documents.
     services.printing = {
       enable = true;
@@ -27,7 +35,7 @@ in
 
     programs.steam.enable = true;
 
-    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) common.unfreePkgs; 
+    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) common.unfreePkgs;
 
     # TODO I'd like this to be in home-manager...
     programs.ccache.enable = true;
