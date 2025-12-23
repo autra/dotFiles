@@ -74,4 +74,12 @@ ACTION=="add", SUBSYSTEM=="i2c", DRIVERS=="i2c_hid_acpi", ATTRS{name}=="PIXA3854
 
   # specific stylix config for this machine
   stylix.targets.grub.enable = false;
+
+  # a test user
+  users.users.test = {
+    shell = pkgs.zsh;
+    isNormalUser = true;
+    # extraGroups = [ "networkmanager" "wheel" "scanner" "lp" "cdrom"];
+    initialPassword = "test";
+  };
 }
