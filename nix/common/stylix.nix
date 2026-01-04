@@ -2,6 +2,8 @@
 {
   stylix = {
     enable = true;
+    # I use custom plymouth theme
+    targets.plymouth.enable = false;
     fonts.sizes = {
       applications = 10;
       desktop = 10;

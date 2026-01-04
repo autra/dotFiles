@@ -12,7 +12,6 @@ in
       # theme = "proxzima";
       # themePackages = [pkgs.plymouth-proxzima-theme ];
     };
-    stylix.targets.plymouth.enable = false;
     # Enable CUPS to print documents.
     services.printing = {
       enable = true;
