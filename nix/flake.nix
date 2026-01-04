@@ -130,7 +130,7 @@
             inputs.oslandiaGrubTheme.nixosModules.default
             stylix.nixosModules.stylix
             ./hardware/augustin-Oslandia2-config.nix
-            ./common/stylix.nix
+            ./modules/stylix.nix
             ./modules/nixos_minimal.nix
             ./modules/nixos_common.nix
             ./modules/kde.nix
