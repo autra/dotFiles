@@ -26,6 +26,15 @@
     pulse.enable = true;
   };
 
+  # Enable networkmanager
+  networking.networkmanager = {
+    enable = true;
+    plugins = [
+      networkmanager-fortisslvpn
+      networkmanager-openvpn
+    ];
+  };
+
   programs.kdeconnect.enable = true;
   programs.kclock.enable = true;
 
@@ -41,8 +50,5 @@
     ktorrent
     kup
     pkgs.wl-clipboard
-    pkgs.networkmanager-fortisslvpn
   ];
-    
-
 }
