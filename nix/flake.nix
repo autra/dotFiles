@@ -119,7 +119,10 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.users.augustin = import ./home-manager/cli.nix;
+              home-manager.users.augustin = { pkgs, ...}:
+              {
+                imports = [ ./home-manager/cli.nix ./home-manager/android.nix ];
+              };
             }
           ];
         };
