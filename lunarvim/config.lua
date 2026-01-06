@@ -19,7 +19,7 @@ lvim.plugins = {
  -- { "lunarvim/colorschemes" },
   { "ap/vim-css-color"},
   -- { "chriskempson/base16-vim" },
-  { dir = "~/repos/base16-vim"},
+  { "autra/base16-vim" },
   { "tpope/vim-abolish" },
   { "tpope/vim-fugitive" },
   {
