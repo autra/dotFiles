@@ -191,11 +191,11 @@ linters.setup {
 lvim.lsp.installer.setup.automatic_installation = {
   exclude = {}
 }
-require'lspconfig'.ansiblels.setup{}
-require'lspconfig'.ts_ls.setup{}
-require'lspconfig'.eslint.setup{}
-require'lspconfig'.sqls.setup{}
-require'lspconfig'.volar.setup{}
+vim.lsp.enable('ansiblels')
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('eslint')
+vim.lsp.enable('sqls')
+vim.lsp.enable('volar')
 -- require'lspconfig'.pylsp.setup{
 --   configurationSources = {"flake8"},
 --   plugins = {
@@ -206,15 +206,15 @@ require'lspconfig'.volar.setup{}
 --     pycodestyle = { enabled = false },
 --   }
 -- }
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.mypy.setup{}
-require'lspconfig'.dockerls.setup{}
-require'lspconfig'.bashls.setup{}
-require'lspconfig'.rnix.setup{}
-require'lspconfig'.clangd.setup{}
-require'lspconfig'.solargraph.setup{}
-require'lspconfig'.rust_analyzer.setup{}
-require'lspconfig'.cssls.setup{}
+vim.lsp.enable('pyright')
+vim.lsp.enable('mypy')
+vim.lsp.enable('dockerls')
+vim.lsp.enable('bashls')
+vim.lsp.enable('rnix')
+vim.lsp.enable('clangd')
+vim.lsp.enable('solargraph')
+vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('cssls')
 require'lspconfig'.remark_ls.setup{
   settings = {
     remark = {
@@ -222,7 +222,7 @@ require'lspconfig'.remark_ls.setup{
     }
   }
 }
-require'lspconfig'.ruby_lsp.setup{}
+vim.lsp.enable('ruby_lsp')
 
 -- config
 vim.g.coloresque_extra_filetypes = { "nix" }
