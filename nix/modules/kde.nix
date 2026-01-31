@@ -29,8 +29,7 @@
   # Enable networkmanager
   networking.networkmanager = {
     enable = true;
-    plugins = [
-      networkmanager-fortisslvpn
+    plugins = with pkgs; [
       networkmanager-openvpn
     ];
   };
