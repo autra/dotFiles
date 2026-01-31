@@ -53,7 +53,9 @@ in
       #type database  DBuser    address       auth-method
       local all       all                     peer
       host  all       all  127.0.0.1/32  scram-sha-256
+      host  all       all  172.17.0.1/16 scram-sha-256
       host  all       all  ::1/128       scram-sha-256
     '';
   };
+  config.networking.firewall.interfaces.docker0.allowedTCPPorts = [ 5432 ];
 }
