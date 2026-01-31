@@ -215,13 +215,14 @@ vim.lsp.enable('clangd')
 vim.lsp.enable('solargraph')
 vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('cssls')
-require'lspconfig'.remark_ls.setup{
+vim.lsp.config('remark_ls', {
   settings = {
     remark = {
       requireConfig = true
     }
   }
-}
+})
+vim.lsp.enable('remark_ls')
 vim.lsp.enable('ruby_lsp')
 
 -- config
