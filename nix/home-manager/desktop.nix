@@ -12,6 +12,7 @@ rec {
     libreoffice-qt
     hunspell
     hunspellDicts.fr-moderne
+    hunspellDicts.fr-reforme1990
     nextcloud-client
     thunderbird
     signal-desktop
