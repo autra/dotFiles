@@ -102,8 +102,8 @@
 [delta]
 	features = line-numbers decorations
 	whitespace-error-style = 22 reverse
-	features = kantix
-	; features = gruvmax-fang
+	; features = kantix
+	features = gruvmax-fang
 	side-by-side = true
 [delta "kantix"]
 	# author: myself ;-)

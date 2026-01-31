@@ -84,11 +84,11 @@ require('dap-python').setup("python3")
 -- colors !!
 -- lvim.colorscheme = "base16-github"
 -- require("themes.kantix").load_syntax()
--- lvim.colorscheme = "base16-gruvbox-dark-hard"
-lvim.colorscheme = "base16-kantix"
+lvim.colorscheme = "base16-gruvbox-dark-hard"
+-- lvim.colorscheme = "base16-kantix"
 
--- vim.opt.background="dark"
-vim.opt.background="light"
+vim.opt.background="dark"
+-- vim.opt.background="light"
 vim.opt.wrap=true
 
 -- lualine
