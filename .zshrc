@@ -107,8 +107,8 @@ export PATH="$HOME/.npm-global/bin/:$PATH"
 # customize pager for glab
 export GLAB_PAGER="less -FX"
 # TODO kantix theme
-export GLAMOUR_STYLE="light"
-export GLAB_GLAMOUR_STYLE="light"
+export GLAMOUR_STYLE="dark"
+export GLAB_GLAMOUR_STYLE="dark"
 # doesn't work...
 # autoload -U compinit
 # compinit -i

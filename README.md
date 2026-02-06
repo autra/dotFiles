@@ -14,8 +14,9 @@ To switch (TODO complete that, it's not as simple as I'd like it to be, even th
 
 - lunarvim: switch the colorscheme
 - stylix, switch the theme declaration
-- switch the delta theme in .gitconfig
+- switch the delta theme in .gitconfig -> TODO how to use term colors?
 - .tmux.conf: TODO
+- .zshrc: edit GLAMOUR_STYLE + GLAB_GLAMOUR_STYLE -> TODO PR to use term colors
 
 ## My TODO
 
