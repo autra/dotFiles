@@ -85,7 +85,8 @@ in {
         rustc
         # needed by clangd lsp server
         clang-tools
-        (python3.withPackages(ps: with ps; [ debugpy ]))
+        # this clashes with the python in venvs
+        # (python3.withPackages(ps: with ps; [ debugpy ]))
       ];
     }))
 
