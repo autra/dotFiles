@@ -9,6 +9,10 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid/prerelease-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     stylix = {
       url = "github:nix-community/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,7 +28,7 @@
     flox = { url = "github:flox/flox/v1.5.0"; };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, stylix, nixos-hardware, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nix-on-droid, stylix, nixos-hardware, ... }:
     let lib = nixpkgs.lib;
     in {
       # sd images
@@ -166,6 +170,11 @@
             }
           ];
         };
+      };
+
+      nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
+        pkgs = import nixpkgs { system = "aarch64-linux"; };
+        modules = [ ./nix-on-droid/nix-on-droid.nix ];
       };
     };
 }
