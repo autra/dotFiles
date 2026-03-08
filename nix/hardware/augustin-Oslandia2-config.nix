@@ -82,4 +82,6 @@
     # extraGroups = [ "networkmanager" "wheel" "scanner" "lp" "cdrom"];
     initialPassword = "test";
   };
+
+  environment.systemPackages = with pkgs; [ framework-tool-tui ];
 }
