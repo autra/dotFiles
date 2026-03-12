@@ -40,7 +40,7 @@
     };
   };
 
-  config.virtualisation.waydroid.enable = true;
+  # config.virtualisation.waydroid.enable = true;
 
   config.users.users.${config.mine.common.user}.extraGroups = [ "docker" "libvirtd" ];
 }
