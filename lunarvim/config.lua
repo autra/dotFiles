@@ -168,7 +168,7 @@ formatters.setup {
   { command = "prettier", filetypes = { "html", "css", "less", "sass", "typescript", "typescriptreact", "javascript", "javascriptreact", "vue", "yaml" }},
   { command = "black", filetypes = { "python" }},
   { command = "isort", filetypes = { "python" }},
-  { command = "nixpkgs-fmt", filetypes = { "nix" }},
+  { command = "nixfmt", filetypes = { "nix" }},
   -- { command = "rustfmt", filetype = { "rust" }},
   -- { command = "sqlfluff", filetypes = { "sql" }}
 }
