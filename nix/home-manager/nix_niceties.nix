@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    nix-index
     nix-inspect
     nix-update
     # nix-search-tv?
