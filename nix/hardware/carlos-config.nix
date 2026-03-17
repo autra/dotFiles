@@ -53,8 +53,9 @@
               size = "16G";
               content = {
                 type = "swap";
-                # ?
+                # I think this is the default anymay, see man swapon
                 discardPolicy = "both";
+                priority = 100;
               };
             };
             root = {
@@ -71,15 +72,15 @@
     };
   };
 
-  # fileSystems."/" = {
-  #   device = "/dev/disk/by-label/NIXROOT";
-  #   fsType = "ext4";
-  # };
+  fileSystems."/mnt/storage1" = {
+    device = "/dev/disk/by-label/storage1";
+    fsType = "ext4";
+  };
 
-  # fileSystems."/boot" = {
-  #   device = "/dev/disk/by-label/NIXBOOT";
-  #   fsType = "vfat";
-  # };
+  fileSystems."/mnt/storage2" = {
+    device = "/dev/disk/by-label/storage2";
+    fsType = "ext4";
+  };
 
   swapDevices = [
     { device = "/dev/disk/by-label/swap"; }
