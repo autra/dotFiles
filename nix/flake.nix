@@ -22,6 +22,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flox = { url = "github:flox/flox/v1.5.0"; };
+    disko = {
+      url = "github:nix-community/disko/v1.12.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, stylix, nixos-hardware, ... }:
@@ -110,6 +114,7 @@
         carlos = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
+            inputs.disko.nixosModules.disko
             ./hardware/carlos-config.nix
             ./modules/nixos_minimal.nix
             ./modules/nixos_common.nix

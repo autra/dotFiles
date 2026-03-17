@@ -15,22 +15,64 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-label/NIXROOT";
-      fsType = "ext4";
+  # disks config
+  # /dev/sdb is the fastest disk for now
+  disko.devices = {
+    disk = {
+      my-disk = {
+        device = "/dev/sdb";
+        type = "disk";
+        content = {
+          type = "gpt";
+          partitions = {
+            esp = {
+              type = "EF00";
+              size = "700M";
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+                mountOptions = [ "umask=0077" ];
+              };
+            };
+            swap = {
+              size = "16G";
+              content = {
+                type = "swap";
+                # ?
+                discardPolicy = "both";
+              };
+            };
+            root = {
+              size = "100%";
+              content = {
+                type = "filesystem";
+                format = "ext4";
+                mountpoint = "/";
+              };
+            };
+          };
+        };
+      };
     };
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-label/NIXBOOT";
-      fsType = "vfat";
-    };
+  # fileSystems."/" = {
+  #   device = "/dev/disk/by-label/NIXROOT";
+  #   fsType = "ext4";
+  # };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-label/swap"; }
-    ];
+  # fileSystems."/boot" = {
+  #   device = "/dev/disk/by-label/NIXBOOT";
+  #   fsType = "vfat";
+  # };
+
+  swapDevices = [
+    { device = "/dev/disk/by-label/swap"; }
+  ];
 
   networking = {
-    hostName = "carlos"; 
+    hostName = "carlos";
     # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
     # (the default) this is the recommended approach. When using systemd-networkd it's
     # still possible to use this option, but it's recommended to use it in conjunction
@@ -38,9 +80,14 @@
     # networking.interfaces.enp4s0.useDHCP = lib.mkDefault true;
     # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
     useDHCP = lib.mkDefault true;
-    interfaces.enp4s0.wakeOnLan.enable = true;
+    interfaces.enp3s0.wakeOnLan.enable = true;
   };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  users.users.root.openssh.authorizedKeys.keys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUzxDj+u7pOaKpxOlm1B9MeSKXGfG/T7ME8gXFQqk6Uptrms8N6XAr5sUrfEItNdrXEpsARLKpinCJJTAhXACdtQ8XFDip/WMooLbM6zhN0hGCx06bQlk9l1VNqjs6vYp+LU5vcv37r+1Sc5x12v23nkmyQ7cIhZ6oZgyDWevsOjxmTh5y1ceX+/OSizddHEIMkn3rS4jCKGYZ2Tt174OEtdRiDoZvYFPimm8QrFUMG5TDEpZKo/n/CbYH1vBQprF8na7dPGgMYrG5XCQcRYZ7Xu8O23j3LRmNtacLZj4dyOyDr9Uyfqfl5c2j/mwrSBuR8d5ahGnalYh17RkRmy9H augustin@augustin-Oslandia"
+  ];
+  nix.settings.trusted-users = ["augustin"];
 }
