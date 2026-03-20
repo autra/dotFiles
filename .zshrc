@@ -6,7 +6,7 @@ THEME_BG=light
 # THEME_BG=dark
 # Path to your oh-my-zsh configuration.
 #zmodload zsh/zprof
-ZSH=$HOME/.oh-my-zsh
+ZSH=$HOME/.oh-my-zsh/share/oh-my-zsh/
 ZSH_CUSTOM=~/dotFiles/zsh_custom
 
 # Set name of the theme to load.

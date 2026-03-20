@@ -1,10 +1,6 @@
 # basic cli and editor setup that I'm likely to *always* need
 { config, pkgs, ... }:
 let
-  ohMyZshPath = fetchGit { 
-    url = "https://github.com/ohmyzsh/ohmyzsh.git";
-    ref = "master";
-  };
   tpmPath = builtins.fetchGit {
     url = "https://github.com/tmux-plugins/tpm.git";
     ref = "refs/tags/v3.1.0";
@@ -48,7 +44,6 @@ in {
     # note: home manager has a programs.zsh.enable options, but this generates a .zshrc according to the conf
     # at the moment I have my own .zshrc
     zsh
-    oh-my-zsh
     autojump
     eza
     # powerline
@@ -116,7 +111,7 @@ in {
     ".aliases".source = ../../.aliases;
     ".bashrc".source = ../../.bashrc;
     ".zshrc".source = ../../.zshrc;
-    ".oh-my-zsh".source = ohMyZshPath;
+    ".oh-my-zsh".source = pkgs.oh-my-zsh;
     ".config/starship.toml".source = ../../starship.toml;
     ".tmux.conf".source = ../../.tmux.conf;
     ".tmux/plugins/tpm".source = tpmPath;
