@@ -19,3 +19,7 @@
 [submodule "zsh_custom/plugins/nix-shell"]
 	path = zsh_custom/plugins/nix-shell
 	url = https://github.com/chisui/zsh-nix-shell.git
+[submodule "zsh_custom/plugins/tpm"]
+	path = tmux_custom/tpm
+	url = https://github.com/tmux-plugins/tpm.git
+	branch = tags/v3.1.0

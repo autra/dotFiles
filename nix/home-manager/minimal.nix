@@ -1,12 +1,6 @@
 # basic cli and editor setup that I'm likely to *always* need
 { config, pkgs, ... }:
-let
-  tpmPath = builtins.fetchGit {
-    url = "https://github.com/tmux-plugins/tpm.git";
-    ref = "refs/tags/v3.1.0";
-    allRefs = true;
-  };
-in {
+{
   imports = [ ../common/options.nix ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -114,7 +108,7 @@ in {
     ".oh-my-zsh".source = pkgs.oh-my-zsh;
     ".config/starship.toml".source = ../../starship.toml;
     ".tmux.conf".source = ../../.tmux.conf;
-    ".tmux/plugins/tpm".source = tpmPath;
+    ".tmux/plugins/tpm".source = ../../tmux_custom/tpm;
 
 
     # pgclients
