@@ -86,11 +86,6 @@
               ./home-manager/nix_niceties.nix
             ];
           };
-        carlos = home-manager.lib.homeManagerConfiguration {
-          system = "x86_64-linux";
-          pkgs = import nixpkgs { system = "x86_64-linux"; };
-          targets.genericLinux.enable = true;
-        };
       };
 
       # nixos
