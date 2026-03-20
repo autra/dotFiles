@@ -54,7 +54,7 @@ rec {
     settings = {
       enable_audio_bell = false;
       modify_font = "cell_height 97%";
-      text_composition_strategy = "1.0 30";
+      text_composition_strategy = "1.5 30";
       disable_ligature = "cursor";
     };
     extraConfig = "cursor none";
