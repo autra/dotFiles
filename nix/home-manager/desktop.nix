@@ -45,8 +45,8 @@ rec {
   ];
 
   home.file = {
-    ".local/share/konsole/mine.profile".source = config.home.homeDirectory + "/dotFiles/konsole/mine.profile";
-    ".local/share/konsole/Kantix.colorscheme".source = config.home.homeDirectory + "/dotFiles/konsole/Kantix.colorscheme";
+    ".local/share/konsole/mine.profile".source = ../../konsole/mine.profile;
+    ".local/share/konsole/Kantix.colorscheme".source = ../../konsole/Kantix.colorscheme;
   };
 
   programs.kitty = {

@@ -102,34 +102,34 @@ in {
     # # symlink to the Nix store copy.
 
     # SCMS
-    ".gitconfig".source = config.home.homeDirectory + "/dotFiles/.gitconfig";
-    ".git_commit_msg.txt".source = config.home.homeDirectory + "/dotFiles/.git_commit_msg.txt";
-    ".hgrc".source = config.home.homeDirectory + "/dotFiles/.hgrc";
+    ".gitconfig".source = ../../.gitconfig;
+    ".git_commit_msg.txt".source = ../../.git_commit_msg.txt;
+    ".hgrc".source = ../../.hgrc;
     # git scripts
-    "bin/git-sw".source = config.home.homeDirectory + "/dotFiles/git_scripts/git-sw";
-    "bin/git-delete-branches".source = config.home.homeDirectory + "/dotFiles/git_scripts/git-delete-branches";
+    "bin/git-sw".source = ../../git_scripts/git-sw;
+    "bin/git-delete-branches".source = ../../git_scripts/git-delete-branches;
 
     # Editor
-    ".config/lvim/config.lua".source = config.home.homeDirectory + "/dotFiles/lunarvim/config.lua";
+    ".config/lvim/config.lua".source = ../../lunarvim/config.lua;
 
     # shells
-    ".aliases".source = config.home.homeDirectory + "/dotFiles/.aliases";
-    ".bashrc".source = config.home.homeDirectory + "/dotFiles/.bashrc";
-    ".zshrc".source = config.home.homeDirectory + "/dotFiles/.zshrc";
+    ".aliases".source = ../../.aliases;
+    ".bashrc".source = ../../.bashrc;
+    ".zshrc".source = ../../.zshrc;
     ".oh-my-zsh".source = ohMyZshPath;
-    ".config/starship.toml".source = config.home.homeDirectory + "/dotFiles/starship.toml";
-    ".tmux.conf".source = config.home.homeDirectory + "/dotFiles/.tmux.conf";
+    ".config/starship.toml".source = ../../starship.toml;
+    ".tmux.conf".source = ../../.tmux.conf;
     ".tmux/plugins/tpm".source = tpmPath;
 
 
     # pgclients
-    ".psqlrc".source = config.home.homeDirectory + "/dotFiles/.psqlrc";
-    ".pspgconf".source = config.home.homeDirectory + "/dotFiles/.pspgconf";
+    ".psqlrc".source = ../../.psqlrc;
+    ".pspgconf".source = ../../.pspgconf;
 
     # rust
-    ".rustup/settings.toml".source = config.home.homeDirectory + "/dotFiles/rustup_settings.toml";
+    ".rustup/settings.toml".source = ../../rustup_settings.toml;
 
     # npm
-    ".npmrc".source = config.home.homeDirectory + "/dotFiles/.npmrc";
+    ".npmrc".source = ../../.npmrc;
   };
 }
