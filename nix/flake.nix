@@ -2,6 +2,7 @@
   description = "atr's config";
 
   inputs = {
+    self.submodules = true;
     nixpkgs.url = "nixpkgs/nixos-25.11";
     nixos-hardware.url =
       "github:nixos/nixos-hardware?rev=11f2d9ea49c3e964315215d6baa73a8d42672f06";
