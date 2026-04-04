@@ -70,7 +70,7 @@ in
   # TODO oslcli
   # TODO separate in different file ? Especially weechat
   home.packages = with pkgs; [
-    pass
+    (pass.withExtensions (ps: with ps; [ pass-otp ]))
     qtpass
     pwgen
     timewarrior
