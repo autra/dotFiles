@@ -395,11 +395,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1776434932,
-        "narHash": "sha256-gyqXNMgk3sh+ogY5svd2eNLJ6oEwzbAeaoBrrxD0lKk=",
+        "lastModified": 1777077449,
+        "narHash": "sha256-AIiMJiqvGrN4HyLEbKAoCSRRYn0rnlW5VbKNIMIYqm4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c7f47036d3df2add644c46d712d14262b7d86c0c",
+        "rev": "a4bf06618f0b5ee50f14ed8f0da77d34ecc19160",
         "type": "github"
       },
       "original": {
@@ -440,11 +440,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763981014,
-        "narHash": "sha256-l1DoYvz8mBVRrnixRoflIKDvm0EBq+93FN188p055L0=",
+        "lastModified": 1776952098,
+        "narHash": "sha256-qVm/cywgtGZodi7PBoRgKZIeJ+LUdqxKojgwGqfyjaA=",
         "ref": "refs/heads/main",
-        "rev": "26bd21d3c00adbb401f680e756fb51c1bcbc99bc",
-        "revCount": 219,
+        "rev": "be8da55efac2dd81043986c25e13a3fc3d6dd753",
+        "revCount": 220,
         "type": "git",
         "url": "ssh://git@git.oslandia.net:10022/Oslandia/technique/osladoc"
       },
@@ -460,11 +460,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765453116,
-        "narHash": "sha256-rKNZh9ToVQhUE9Cd/iOa8OarO+zAU6YAqQzN5qsu3bg=",
+        "lastModified": 1777213504,
+        "narHash": "sha256-NaO5U4iiAhTO+ruGM2cUMBEn3XSZa9E6q6eKOD/vnE4=",
         "owner": "Oslandia",
         "repo": "oslandia-grub-theme",
-        "rev": "8e5a9e576d2447dbb4af5604dd03095d8169928a",
+        "rev": "6235b01c1cd0890e08f573831cf78135d0b6c23b",
         "type": "gitlab"
       },
       "original": {
@@ -546,11 +546,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1775935110,
-        "narHash": "sha256-twTHKUFXjNNsaAvX0KoaIClt+923jXDRbfCd9PC/f0o=",
+        "lastModified": 1776894428,
+        "narHash": "sha256-wuT915MyCtMTfLj+uo9y8wtCwkEgJXiXvcbSleFrlN0=",
         "owner": "nix-community",
         "repo": "stylix",
-        "rev": "14f248ad1a7668e7858c6d9163608c208b7daf02",
+        "rev": "f34be27ce83efaa1c85ad1e5b1f8b6dea65b147d",
         "type": "github"
       },
       "original": {
