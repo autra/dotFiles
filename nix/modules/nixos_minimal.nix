@@ -3,6 +3,10 @@
   config = {
     # enable some shortcut with alt+print_scr+key. (h to get help in journalctl)
     boot.kernel.sysctl."kernel.sysrq" = 1;
+    # temporary fix for copy.fail
+    boot.kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "6.18.22") (
+      lib.mkDefault pkgs.linuxPackages_6_18
+    );
     # for nixos build-vms
     virtualisation.vmVariant = {
       # following configuration is added only when building VM with build-vm
