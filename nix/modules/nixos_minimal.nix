@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   config = {
     # enable some shortcut with alt+print_scr+key. (h to get help in journalctl)
@@ -12,16 +17,21 @@
       # following configuration is added only when building VM with build-vm
       virtualisation = {
         useEFIBoot = true;
-        memorySize =  6128;
+        memorySize = 6128;
         cores = 4;
       };
     };
 
     # configure nix itself
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    nix.settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     # for flox
     nix.settings.trusted-substituters = [ "https://cache.flox.dev" ];
-    nix.settings.trusted-public-keys = [ "flox-cache-public-1:7F4OyH7ZCnFhcze3fJdfyXYLQw/aV7GEed86nQ7IsOs=" ];
+    nix.settings.trusted-public-keys = [
+      "flox-cache-public-1:7F4OyH7ZCnFhcze3fJdfyXYLQw/aV7GEed86nQ7IsOs="
+    ];
 
     # test nix-ld
     programs.nix-ld.enable = true;
@@ -98,7 +108,7 @@
     ];
 
     # doc
-    documentation = { 
+    documentation = {
       dev.enable = true;
       man.enable = true;
       info.enable = true;
@@ -110,7 +120,13 @@
       shell = pkgs.zsh;
       isNormalUser = true;
       description = config.mine.common.user;
-      extraGroups = [ "networkmanager" "wheel" "scanner" "lp" "cdrom"];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "scanner"
+        "lp"
+        "cdrom"
+      ];
       initialPassword = "test";
     };
     programs.zsh.enable = true;
