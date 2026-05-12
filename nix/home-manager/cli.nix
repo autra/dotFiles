@@ -47,7 +47,8 @@
     rustup
 
     # python
-    virtualenv
+    python3
+    # virtualenv
 
     # sig
     gdal
