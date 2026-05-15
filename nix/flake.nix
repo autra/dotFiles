@@ -22,7 +22,10 @@
       url = "gitlab:Oslandia/oslandia-grub-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    flox = { url = "github:flox/flox/v1.5.0"; };
+    flox = { 
+      url = "github:flox/flox/v1.12.0"; 
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     disko = {
       url = "github:nix-community/disko/v1.12.0";
       inputs.nixpkgs.follows = "nixpkgs";
