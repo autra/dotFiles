@@ -4,7 +4,7 @@
   inputs = {
     self.submodules = true;
     nixpkgs.url = "nixpkgs/nixos-25.11";
-    nixos-hardware.url = "github:nixos/nixos-hardware?rev=11f2d9ea49c3e964315215d6baa73a8d42672f06";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
