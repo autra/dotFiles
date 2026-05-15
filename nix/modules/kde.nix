@@ -41,16 +41,6 @@
   };
   services.strongswan = {
     enable = true;
-    strongswanConf = ''
-      charon {
-        load = random nonce aes md5 sha1 sha2 pem pkcs1 curve25519 x509 revocation constraints pubkey openssl sqlite
-        plugins {
-          stroke {
-            load = yes
-          }
-        }
-      }
-    '';
   };
 
   programs.kdeconnect.enable = true;
