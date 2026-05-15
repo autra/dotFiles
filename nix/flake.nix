@@ -4,8 +4,7 @@
   inputs = {
     self.submodules = true;
     nixpkgs.url = "nixpkgs/nixos-25.11";
-    nixos-hardware.url =
-      "github:nixos/nixos-hardware?rev=11f2d9ea49c3e964315215d6baa73a8d42672f06";
+    nixos-hardware.url = "github:nixos/nixos-hardware?rev=11f2d9ea49c3e964315215d6baa73a8d42672f06";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,8 +21,8 @@
       url = "gitlab:Oslandia/oslandia-grub-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    flox = { 
-      url = "github:flox/flox/v1.12.0"; 
+    flox = {
+      url = "github:flox/flox/v1.12.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     disko = {
@@ -32,64 +31,87 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, stylix, nixos-hardware, ... }:
-    let lib = nixpkgs.lib;
-    in {
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      stylix,
+      nixos-hardware,
+      ...
+    }:
+    let
+      lib = nixpkgs.lib;
+    in
+    {
       # sd images
       images = {
-        pi = (self.nixosConfigurations.pi.extendModules {
-          modules = [
-            "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-raspberrypi.nix"
-            ({ pkgs, ... }: {
-              disabledModules = [ "profiles/base.nix" ];
-              nixpkgs.config.allowUnsupportedSystem = true;
-              nixpkgs.hostPlatform = {
-                system = "armv6l-linux";
-                gcc = {
-                  arch = "armv6k";
-                  fpu = "vfp";
-                };
-              };
-              nixpkgs.buildPlatform.system = "x86_64-linux";
-            })
-          ];
-        }).config.system.build.sdImage;
+        pi =
+          (self.nixosConfigurations.pi.extendModules {
+            modules = [
+              "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-raspberrypi.nix"
+              (
+                { pkgs, ... }:
+                {
+                  disabledModules = [ "profiles/base.nix" ];
+                  nixpkgs.config.allowUnsupportedSystem = true;
+                  nixpkgs.hostPlatform = {
+                    system = "armv6l-linux";
+                    gcc = {
+                      arch = "armv6k";
+                      fpu = "vfp";
+                    };
+                  };
+                  nixpkgs.buildPlatform.system = "x86_64-linux";
+                }
+              )
+            ];
+          }).config.system.build.sdImage;
       };
 
-      generateMinimalHomeConfig = username: modules:
+      generateMinimalHomeConfig =
+        username: modules:
         home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs { system = "x86_64-linux"; };
           modules = [
-            ({ config, ... }: { mine.common.user = username; })
+            (
+              { config, ... }:
+              {
+                mine.common.user = username;
+              }
+            )
             stylix.homeModules.stylix
             ./home-manager/stylix.nix
             ./home-manager/minimal.nix
             # ./home-manager/nix_niceties.nix
-          ] ++ modules;
+          ]
+          ++ modules;
         };
 
       # Non nixos
       homeConfigurations = {
         ubuntu-vm = self.outputs.generateMinimalHomeConfig "ubuntu" [ ];
         augustin-Oslandia = self.outputs.generateMinimalHomeConfig "atr" [ ./home-manager/cli.nix ];
-        "augustin@augustin-Oslandia2" =
-          home-manager.lib.homeManagerConfiguration {
-            pkgs = import nixpkgs { system = "x86_64-linux"; };
-            extraSpecialArgs = {
-              osladoc = inputs.osladoc.packages."x86_64-linux";
-              flox = inputs.flox.packages."x86_64-linux";
-            };
-            modules = [
-              stylix.homeModules.stylix
-              ./home-manager/stylix.nix
-              ({ config, flox, ... }: {
-                config.home.packages = [ flox.default ];
-              })
-              ./home-manager/oslandia.nix
-              ./home-manager/android.nix
-              ./home-manager/nix_niceties.nix
-            ];
+        "augustin@augustin-Oslandia2" = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs { system = "x86_64-linux"; };
+          extraSpecialArgs = {
+            osladoc = inputs.osladoc.packages."x86_64-linux";
+            flox = inputs.flox.packages."x86_64-linux";
           };
+          modules = [
+            stylix.homeModules.stylix
+            ./home-manager/stylix.nix
+            (
+              { config, flox, ... }:
+              {
+                config.home.packages = [ flox.default ];
+              }
+            )
+            ./home-manager/oslandia.nix
+            ./home-manager/android.nix
+            ./home-manager/nix_niceties.nix
+          ];
+        };
       };
 
       # nixos
@@ -123,10 +145,14 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.users.augustin = { pkgs, ...}:
-              {
-                imports = [ ./home-manager/cli.nix ./home-manager/android.nix ];
-              };
+              home-manager.users.augustin =
+                { pkgs, ... }:
+                {
+                  imports = [
+                    ./home-manager/cli.nix
+                    ./home-manager/android.nix
+                  ];
+                };
             }
           ];
         };
