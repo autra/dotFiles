@@ -21,7 +21,7 @@
 
     # utils
     tokei
-    dogdns
+    doggo
     imagemagick
     exiftool
 
@@ -58,13 +58,13 @@
     gnupg
     gpg-tui
 
-    nodejs_20
+    nodejs
 
     sieve-connect
 
     ffmpeg
     pdftk
-    pkgs.nodePackages."http-server"
+    http-server
 
     # search duckduckgo from cli
     ddgr
