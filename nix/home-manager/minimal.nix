@@ -44,40 +44,58 @@
     powerline
     powerline-symbols
     # editors
-    neovim
-    (lunarvim.overrideAttrs(e: {
-      version = "1.5.0-beta1";
-
-      src = fetchFromGitHub {
-        owner = "autra";
-        repo = "LunarVim";
-        rev = "db34eab551ba95aad1eb30b92e2a63791d7b9311";
-        hash = "sha256-86fPeJAeWgsC8QNgh91DWxp8h8AD6eA3Iif5PaP4hUQ=";
-      };
-
-      # for markdownpreview
-      runtimeDeps = e.runtimeDeps ++ [ 
-        # for markdownpreview
-        yarn 
-        # for sqls
-        gcc 
-        go
-        # for ruby :-O
-        (ruby.withPackages(ps: with ps; [ 
-          # for ruby-lsp
-          stringio 
-          rbs
-        ]))
-        # rust
-        rustfmt
-        # needed by various plugins
-        rustc
-        # needed by clangd lsp server
-        clang-tools
-        # this clashes with the python in venvs
-        # (python3.withPackages(ps: with ps; [ debugpy ]))
-      ];
+    (neovim.overrideAttrs (e: {
+      postFixup = ''
+        wrapProgram $out/bin/nvim --prefix PATH : ${
+          lib.makeBinPath (
+            with pkgs;
+            [
+              # dependencies for various plugins, lsp etc.
+              gcc
+              go
+              rustc
+              cargo
+              clang-tools
+              (python3.withPackages(ps: with ps; [pip]))
+              mermaid-cli
+            ]
+          )
+        }
+      '';
     }))
+    # (lunarvim.overrideAttrs(e: {
+    #   version = "1.5.0-beta1";
+
+    #   src = fetchFromGitHub {
+    #     owner = "autra";
+    #     repo = "LunarVim";
+    #     rev = "db34eab551ba95aad1eb30b92e2a63791d7b9311";
+    #     hash = "sha256-86fPeJAeWgsC8QNgh91DWxp8h8AD6eA3Iif5PaP4hUQ=";
+    #   };
+
+    #   # for markdownpreview
+    #   runtimeDeps = e.runtimeDeps ++ [
+    #     # for markdownpreview
+    #     yarn
+    #     # for sqls
+    #     gcc
+    #     go
+    #     # for ruby :-O
+    #     (ruby.withPackages(ps: with ps; [
+    #       # for ruby-lsp
+    #       stringio
+    #       rbs
+    #     ]))
+    #     # rust
+    #     rustfmt
+    #     # needed by various plugins
+    #     rustc
+    #     # needed by clangd lsp server
+    #     clang-tools
+    #     # this clashes with the python in venvs
+    #     # (python3.withPackages(ps: with ps; [ debugpy ]))
+    #   ];
+    # }))
 
     # this should be installed at the same time as .gitconfig
     delta
@@ -99,7 +117,7 @@
     "bin/git-delete-branches".source = ../../git_scripts/git-delete-branches;
 
     # Editor
-    ".config/lvim/config.lua".source = ../../lunarvim/config.lua;
+    # ".config/lvim/config.lua".source = ../../lunarvim/config.lua;
 
     # shells
     ".aliases".source = ../../.aliases;
@@ -109,7 +127,6 @@
     ".config/starship.toml".source = ../../starship.toml;
     ".tmux.conf".source = ../../.tmux.conf;
     ".tmux/plugins/tpm".source = ../../tmux_custom/tpm;
-
 
     # pgclients
     ".psqlrc".source = ../../.psqlrc;

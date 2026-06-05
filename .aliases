@@ -3,8 +3,9 @@
 # TODO find better way ? 
 # see https://unix.stackexchange.com/a/67541/65188
 alias ssh='TERM=screen-256color ssh'
-alias vim='lvim'
-alias vi='lvim'
+alias vim='nvim'
+alias vi='nvim'
+alias v='nvim'
 
 #alias git
 alias g='git'

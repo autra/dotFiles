@@ -48,7 +48,7 @@ SAVEHIST=2000000
 #some environment variable
 export PATH=$HOME/pgsql/bin:$PATH:$HOME/bin/:$HOME/.local/bin
 
-export EDITOR=lvim
+export EDITOR=nvim
 
 # rbenv
 if [[ -d "$HOME/.rbenv/bin" ]]; then
