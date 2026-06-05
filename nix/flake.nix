@@ -21,10 +21,6 @@
       url = "gitlab:Oslandia/oslandia-grub-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    flox = {
-      url = "github:flox/flox/v1.12.0";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     disko = {
       url = "github:nix-community/disko/v1.13.0";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -96,17 +92,10 @@
           pkgs = import nixpkgs { system = "x86_64-linux"; };
           extraSpecialArgs = {
             osladoc = inputs.osladoc.packages."x86_64-linux";
-            flox = inputs.flox.packages."x86_64-linux";
           };
           modules = [
             stylix.homeModules.stylix
             ./home-manager/stylix.nix
-            (
-              { config, flox, ... }:
-              {
-                config.home.packages = [ flox.default ];
-              }
-            )
             ./home-manager/oslandia.nix
             ./home-manager/android.nix
             ./home-manager/nix_niceties.nix

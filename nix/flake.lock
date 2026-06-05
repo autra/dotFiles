@@ -68,21 +68,6 @@
         "type": "github"
       }
     },
-    "crane": {
-      "locked": {
-        "lastModified": 1774313767,
-        "narHash": "sha256-hy0XTQND6avzGEUFrJtYBBpFa/POiiaGBr2vpU6Y9tY=",
-        "owner": "ipetkov",
-        "repo": "crane",
-        "rev": "3d9df76e29656c679c744968b17fbaf28f0e923d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ipetkov",
-        "repo": "crane",
-        "type": "github"
-      }
-    },
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -104,28 +89,6 @@
         "type": "github"
       }
     },
-    "fenix": {
-      "inputs": {
-        "nixpkgs": [
-          "flox",
-          "nixpkgs"
-        ],
-        "rust-analyzer-src": "rust-analyzer-src"
-      },
-      "locked": {
-        "lastModified": 1774857716,
-        "narHash": "sha256-z05BKQ6F9/6H2/ecIYEXuq54JCUEiOpdYXTQIijB/wM=",
-        "owner": "nix-community",
-        "repo": "fenix",
-        "rev": "9ad9c53e902485e006c07ae54a7dd4ad55a8c4d8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "fenix",
-        "type": "github"
-      }
-    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -139,22 +102,6 @@
       "original": {
         "owner": "rafaelmardojai",
         "repo": "firefox-gnome-theme",
-        "type": "github"
-      }
-    },
-    "flake-compat": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1761588595,
-        "narHash": "sha256-XKUZz9zewJNUj46b4AJdiRZJAvSZ0Dqj2BNfXvFlJC4=",
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "rev": "f387cd2afec9419c8ee37694406ca490c3f34ee5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "edolstra",
-        "repo": "flake-compat",
         "type": "github"
       }
     },
@@ -179,30 +126,6 @@
         "type": "github"
       }
     },
-    "flox": {
-      "inputs": {
-        "crane": "crane",
-        "fenix": "fenix",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "pre-commit-hooks": "pre-commit-hooks"
-      },
-      "locked": {
-        "lastModified": 1778002469,
-        "narHash": "sha256-Q4Qi/0vRsZNEIGHR1ULcMT2azex+bQFGQDtuvdF2W8g=",
-        "owner": "flox",
-        "repo": "flox",
-        "rev": "dab5625212523e787ce6cf9b467829a72133b68d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "flox",
-        "ref": "v1.12.0",
-        "repo": "flox",
-        "type": "github"
-      }
-    },
     "fromYaml": {
       "flake": false,
       "locked": {
@@ -216,28 +139,6 @@
       "original": {
         "owner": "SenchoPens",
         "repo": "fromYaml",
-        "type": "github"
-      }
-    },
-    "gitignore": {
-      "inputs": {
-        "nixpkgs": [
-          "flox",
-          "pre-commit-hooks",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1709087332,
-        "narHash": "sha256-HG2cCnktfHsKV0s4XW83gU3F57gaTljL9KNSuG6bnQs=",
-        "owner": "hercules-ci",
-        "repo": "gitignore.nix",
-        "rev": "637db329424fd7e46cf4185293b9cc8c88c95394",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "gitignore.nix",
         "type": "github"
       }
     },
@@ -390,56 +291,15 @@
         "type": "gitlab"
       }
     },
-    "pre-commit-hooks": {
-      "inputs": {
-        "flake-compat": "flake-compat",
-        "gitignore": "gitignore",
-        "nixpkgs": [
-          "flox",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1765911976,
-        "narHash": "sha256-t3T/xm8zstHRLx+pIHxVpQTiySbKqcQbK+r+01XVKc0=",
-        "owner": "cachix",
-        "repo": "pre-commit-hooks.nix",
-        "rev": "b68b780b69702a090c8bb1b973bab13756cc7a27",
-        "type": "github"
-      },
-      "original": {
-        "owner": "cachix",
-        "repo": "pre-commit-hooks.nix",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "disko": "disko",
-        "flox": "flox",
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "osladoc": "osladoc",
         "oslandiaGrubTheme": "oslandiaGrubTheme",
         "stylix": "stylix"
-      }
-    },
-    "rust-analyzer-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1774787924,
-        "narHash": "sha256-Cbpmf0+1pqi/zbpub2vkp5lTPx3QdVtDkkagDwQzHHg=",
-        "owner": "rust-lang",
-        "repo": "rust-analyzer",
-        "rev": "f1297b21119565c626320c1ffc248965fffb2527",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rust-lang",
-        "ref": "nightly",
-        "repo": "rust-analyzer",
-        "type": "github"
       }
     },
     "stylix": {
