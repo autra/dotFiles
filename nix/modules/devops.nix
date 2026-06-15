@@ -15,10 +15,18 @@
   # Minimal configuration for NFS support with Vagrant.
   config.services.nfs.server.enable = true;
 
-  # Add firewall exception for libvirt provider when using NFSv4 
+  # Add firewall exception for libvirt provider when using NFSv4
   config.networking.firewall = {
-    allowedTCPPorts = [ 53 2049 ];
-    allowedUDPPorts = [ 53 67 68 2049 ];
+    allowedTCPPorts = [
+      53
+      2049
+    ];
+    allowedUDPPorts = [
+      53
+      67
+      68
+      2049
+    ];
   };
 
   # docker
@@ -36,7 +44,7 @@
       package = pkgs.qemu_kvm;
       runAsRoot = true;
       swtpm.enable = true;
-      vhostUserPackages = [pkgs.virtiofsd ];
+      vhostUserPackages = [ pkgs.virtiofsd ];
     };
   };
 

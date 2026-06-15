@@ -169,7 +169,7 @@
           system = "x86_64-linux";
           modules = [
             # pin nixpkgs registry to my current flake input
-            ({config, ...}: {nix.registry.nixpkgs.flake = nixpkgs;})
+            ({ config, ... }: { nix.registry.nixpkgs.flake = nixpkgs; })
             nixos-hardware.nixosModules.framework-16-7040-amd
             inputs.oslandiaGrubTheme.nixosModules.default
             stylix.nixosModules.stylix

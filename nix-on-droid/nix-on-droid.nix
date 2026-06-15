@@ -26,7 +26,7 @@
     #xz
     zip
     unzip
-	
+
     openssh
     inetutils
     curl
