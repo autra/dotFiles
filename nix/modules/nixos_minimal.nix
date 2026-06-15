@@ -23,10 +23,13 @@
     };
 
     # configure nix itself
-    nix.settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
+    nix.settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      extra-sandbox-paths = [ "/var/cache/ccache" ];
+    };
 
     # test nix-ld
     programs.nix-ld.enable = true;
