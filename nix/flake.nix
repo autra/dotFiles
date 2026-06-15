@@ -25,16 +25,17 @@
       url = "github:nix-community/disko/v1.13.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    robotnix.url = "github:nix-community/robotnix";
   };
 
   outputs =
-    inputs@{
-      self,
-      nixpkgs,
-      home-manager,
-      stylix,
-      nixos-hardware,
-      ...
+    inputs@{ self
+    , nixpkgs
+    , home-manager
+    , stylix
+    , nixos-hardware
+    , robotnix
+    , ...
     }:
     let
       lib = nixpkgs.lib;
@@ -63,6 +64,25 @@
               )
             ];
           }).config.system.build.sdImage;
+
+        # nix build .#images.FP4.releaseScript -o release
+        # ./release <path-to-keys> 
+        FP4 = robotnix.lib.robotnixSystem {
+          stateVersion = "3";
+          flavor = "lineageos";
+          device = "FP4";
+          variant = "userdebug"; # Other options are userdebug, or eng. Builds used in production should use "user"
+          flavorVersion = "23.2";
+          apps.fdroid.enable = true;
+          microg.enable = true;
+          apps.updater.enable = true;
+          apps.updater.url = "https://ota.trancart.eu/lineageos";
+          signing.avb.size = 4096;
+
+          # Enables ccache for the build process. Remember to add /var/cache/ccache as
+          # an additional sandbox path to your Nix config.
+          ccache.enable = false;
+        };
       };
 
       generateMinimalHomeConfig =
