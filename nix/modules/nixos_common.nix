@@ -51,7 +51,7 @@ in
     networking.firewall.allowedTCPPortRanges = [
       { from = 15432; to = 15600; }
     ];
-    networking.firewall.enable = true;
+    networking.firewall.enable = false;
     programs.nh = {
       enable = true;
       clean.enable = true;
