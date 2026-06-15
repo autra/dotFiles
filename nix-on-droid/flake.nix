@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
     nix-on-droid = {
-      url = "github:nix-community/nix-on-droid/prerelease-25.11";
+      url = "github:autra/nix-on-droid/prerelease-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
