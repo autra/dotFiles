@@ -7,6 +7,7 @@
   config = {
     # enable some shortcut with alt+print_scr+key. (h to get help in journalctl)
     boot.kernel.sysctl."kernel.sysrq" = 1;
+    boot.tmp.cleanOnBoot = true;
     # temporary fix for copy.fail
     boot.kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "6.18.22") (
       lib.mkDefault pkgs.linuxPackages_6_18
