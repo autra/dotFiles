@@ -9,5 +9,6 @@
     "steam-unwrapped"
     "vagrant"
     "vscode"
+    "virtualbox-extpack"
   ];
 }

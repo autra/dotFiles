@@ -39,7 +39,7 @@
   config.virtualisation.spiceUSBRedirection.enable = true;
 
   config.virtualisation.libvirtd = {
-    enable = true;
+    enable = false;
     qemu = {
       package = pkgs.qemu_kvm;
       runAsRoot = true;
@@ -50,5 +50,21 @@
 
   # config.virtualisation.waydroid.enable = true;
 
-  config.users.users.${config.mine.common.user}.extraGroups = [ "docker" "libvirtd" ];
+  config.virtualisation.virtualbox = {
+    host = {
+      enable = true;
+      enableExtensionPack = true;
+    };
+    guest = {
+      enable = true;
+      clipboard = true;
+      dragAndDrop = true;
+
+    };
+  };
+  config.users.users.${config.mine.common.user}.extraGroups = [
+    "docker"
+    "libvirtd"
+    "vboxusers"
+  ];
 }
