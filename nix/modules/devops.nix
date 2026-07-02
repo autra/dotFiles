@@ -39,7 +39,7 @@
   config.virtualisation.spiceUSBRedirection.enable = true;
 
   config.virtualisation.libvirtd = {
-    enable = false;
+    enable = true;
     qemu = {
       package = pkgs.qemu_kvm;
       runAsRoot = true;
@@ -52,11 +52,11 @@
 
   config.virtualisation.virtualbox = {
     host = {
-      enable = true;
+      enable = false;
       enableExtensionPack = true;
     };
     guest = {
-      enable = true;
+      enable = false;
       clipboard = true;
       dragAndDrop = true;
 
