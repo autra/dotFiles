@@ -1,16 +1,23 @@
-{ config, pkgs, ... }:
+{ config
+, pkgs
+, lib
+, ...
+}:
 {
   imports = [ ../common/options.nix ];
-  config.environment.systemPackages = with pkgs; [
-    lxc
-    vagrant
-    ansible
-    virt-manager
-    libvirt
-
-    # for vagrant shared folders
-    # nfs-utils
-  ];
+  config.environment.systemPackages =
+    with pkgs;
+    [
+      lxc
+      vagrant
+      ansible
+      # for vagrant shared folders
+      # nfs-utils
+    ]
+    ++ lib.optionals (config.specialisation != { }) [
+      virt-manager
+      libvirt
+    ];
 
   # Minimal configuration for NFS support with Vagrant.
   config.services.nfs.server.enable = true;
@@ -38,7 +45,7 @@
 
   config.virtualisation.spiceUSBRedirection.enable = true;
 
-  config.virtualisation.libvirtd = {
+  config.virtualisation.libvirtd = lib.mkIf (config.specialisation != { }) {
     enable = true;
     qemu = {
       package = pkgs.qemu_kvm;
@@ -49,22 +56,30 @@
   };
 
   # config.virtualisation.waydroid.enable = true;
+  config.specialisation = {
+    virtualbox.configuration = {
 
-  config.virtualisation.virtualbox = {
-    host = {
-      enable = false;
-      enableExtensionPack = true;
-    };
-    guest = {
-      enable = false;
-      clipboard = true;
-      dragAndDrop = true;
+      config.virtualisation.virtualbox = {
+        host = {
+          enable = true;
+          enableExtensionPack = true;
+        };
+        guest = {
+          enable = true;
+          clipboard = true;
+          dragAndDrop = true;
 
+        };
+      };
+      config.users.users.${config.mine.common.user}.extraGroups = [
+        "vboxusers"
+      ];
     };
+
   };
+
   config.users.users.${config.mine.common.user}.extraGroups = [
     "docker"
-    "libvirtd"
-    "vboxusers"
-  ];
+  ]
+  ++ lib.optionals (config.specialisation != { }) [ "libvirtd" ];
 }
