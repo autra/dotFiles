@@ -58,5 +58,6 @@
     ktorrent
     kup
     pkgs.wl-clipboard
+    pkgs.digikam
   ];
 }
