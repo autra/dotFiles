@@ -60,7 +60,7 @@ alias cvpn='nmcli -c yes connection show | grep --color=no vpn | cut -d" " -f1 |
 # workarounds
 alias fix_damn_touchpad='sudo modprobe -r psmouse && sudo modprobe psmouse'
 
-alias dys=dysk -a --filter 'mount==/ | mount==/boot'
+alias dys='dysk -a --filter "mount==/ | mount==/boot"'
 
 function s {
     if [ -e package.json ]; then
