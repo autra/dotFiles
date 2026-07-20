@@ -13,8 +13,8 @@
       ansible
       # for vagrant shared folders
       # nfs-utils
-    ]
-    ++ lib.optionals (config.specialisation != { }) [
+    # ]
+    # ++ lib.optionals (config.specialisation != { }) [
       virt-manager
       libvirt
     ];
@@ -45,7 +45,8 @@
 
   config.virtualisation.spiceUSBRedirection.enable = true;
 
-  config.virtualisation.libvirtd = lib.mkIf (config.specialisation != { }) {
+  # config.virtualisation.libvirtd = lib.mkIf (config.specialisation != { }) {
+  config.virtualisation.libvirtd = {
     enable = true;
     qemu = {
       package = pkgs.qemu_kvm;
@@ -56,30 +57,31 @@
   };
 
   # config.virtualisation.waydroid.enable = true;
-  config.specialisation = {
-    virtualbox.configuration = {
-
-      config.virtualisation.virtualbox = {
-        host = {
-          enable = true;
-          enableExtensionPack = true;
-        };
-        guest = {
-          enable = true;
-          clipboard = true;
-          dragAndDrop = true;
-
-        };
-      };
-      config.users.users.${config.mine.common.user}.extraGroups = [
-        "vboxusers"
-      ];
-    };
-
-  };
-
+  # config.specialisation = {
+  #   virtualbox.configuration = {
+  #
+  #     config.virtualisation.virtualbox = {
+  #       host = {
+  #         enable = true;
+  #         enableExtensionPack = true;
+  #       };
+  #       guest = {
+  #         enable = true;
+  #         clipboard = true;
+  #         dragAndDrop = true;
+  #
+  #       };
+  #     };
+  #     config.users.users.${config.mine.common.user}.extraGroups = [
+  #       "vboxusers"
+  #     ];
+  #   };
+  #
+  # };
+  #
   config.users.users.${config.mine.common.user}.extraGroups = [
     "docker"
-  ]
-  ++ lib.optionals (config.specialisation != { }) [ "libvirtd" ];
+    "libvirtd"
+  ];
+  # ++ lib.optionals (config.specialisation != { }) [ "libvirtd" ];
 }
