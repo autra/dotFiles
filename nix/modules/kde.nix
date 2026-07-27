@@ -59,5 +59,6 @@
     kup
     pkgs.wl-clipboard
     pkgs.digikam
+    pkgs.remmina
   ];
 }
