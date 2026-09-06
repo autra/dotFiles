@@ -29,13 +29,14 @@
   };
 
   outputs =
-    inputs@{ self
-    , nixpkgs
-    , home-manager
-    , stylix
-    , nixos-hardware
-    , robotnix
-    , ...
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      stylix,
+      nixos-hardware,
+      robotnix,
+      ...
     }:
     let
       lib = nixpkgs.lib;
@@ -66,7 +67,7 @@
           }).config.system.build.sdImage;
 
         # nix build .#images.FP4.releaseScript -o release
-        # ./release <path-to-keys> 
+        # ./release <path-to-keys>
         FP4 = robotnix.lib.robotnixSystem {
           stateVersion = "3";
           flavor = "lineageos";
