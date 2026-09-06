@@ -131,7 +131,7 @@
           modules = [
             ./hardware/nixos-vm-config.nix
             ./modules/nixos_minimal.nix
-            # ./modules/nixos_common.nix
+            ./modules/nixos_common.nix
             home-manager.nixosModules.home-manager
             # {
             #   home-manager.useGlobalPkgs = true;

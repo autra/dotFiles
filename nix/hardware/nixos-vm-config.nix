@@ -5,8 +5,8 @@
 
 {
   imports = [     
-    <nixpkgs/nixos/modules/profiles/qemu-guest.nix>
-    <nixpkgs/nixos/modules/virtualisation/qemu-vm.nix>
+    (modulesPath + "/virtualisation/qemu-guest-agent.nix")
+    (modulesPath + "/virtualisation/qemu-vm.nix")
   ];
 
   boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "ehci_pci" "ahci" "sd_mod" "sr_mod" ];
@@ -44,5 +44,5 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   # my user
-  mine.common.user = "augustin";
+  # mine.common.user = "augustin";
 }

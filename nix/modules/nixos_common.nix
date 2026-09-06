@@ -3,6 +3,7 @@ let
   common = import ../common/common.nix { };
 in
 {
+  imports = [ ../common/options.nix ];
   config = {
     boot.plymouth = {
       enable = true;
