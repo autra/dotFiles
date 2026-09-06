@@ -25,6 +25,13 @@
     # allows to test cross-compilation sometimes
     binfmt.emulatedSystems = [ "aarch64-linux" ];
 
+    kernelPatches = [
+
+      {
+        name = "Revert commit ";
+        patch = ./revert_490ceacd2162de919a142bcb4eff363bb493b1de.patch;
+      }
+    ];
   };
 
   fileSystems."/" =
