@@ -35,7 +35,8 @@
     enable = true;
     plugins = with pkgs; [
       networkmanager-openvpn
-      networkmanager-fortisslvpn
+      # marked as insecure currently
+      # networkmanager-fortisslvpn
       networkmanager-strongswan
     ];
   };
