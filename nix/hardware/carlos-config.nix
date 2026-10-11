@@ -33,7 +33,7 @@
   disko.devices = {
     disk = {
       my-disk = {
-        device = "/dev/sdb";
+        device = "/dev/sda";
         type = "disk";
         content = {
           type = "gpt";
@@ -68,22 +68,39 @@
           };
         };
       };
+      hard-disk = {
+        device = "/dev/sdb";
+        type = "disk";
+        content = {
+          type = "gpt";
+          partitions = {
+            data = {
+              size = "100%";
+              content = {
+                type = "filesystem";
+                format = "ext4";
+                mountpoint = "/mnt/storage";
+              };
+            };
+          };
+        };
+      };
     };
   };
 
-  fileSystems."/mnt/storage1" = {
-    device = "/dev/disk/by-label/storage1";
-    fsType = "ext4";
-  };
+  # fileSystems."/mnt/storage1" = {
+  #   device = "/dev/disk/by-label/storage1";
+  #   fsType = "ext4";
+  # };
 
-  fileSystems."/mnt/storage2" = {
-    device = "/dev/disk/by-label/storage2";
-    fsType = "ext4";
-  };
-
-  swapDevices = [
-    { device = "/dev/disk/by-label/swap"; }
-  ];
+  # fileSystems."/mnt/storage2" = {
+  #   device = "/dev/disk/by-label/storage2";
+  #   fsType = "ext4";
+  # };
+  #
+  # swapDevices = [
+  #   { device = "/dev/disk/by-label/swap"; }
+  # ];
 
   networking = {
     hostName = "carlos";
