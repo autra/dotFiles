@@ -139,16 +139,16 @@
     whitespace-error-style = "#ec831f" reverse
     # Commit hash
     commit-decoration-style = normal box
-    commit-style = "#ffffff" bold
+    commit-style = "#005f87" bold
     # Blame
     blame-code-style = syntax
     blame-format = "{author:>18} ({commit:>8}) {timestamp:<13} "
-    blame-palette = "#000000" "#1d2021" "#282828" "#3c3836"
+    blame-palette = "#b31765" "#1d2021" "#282828" "#3c3836"
     # Merge conflicts
     merge-conflict-begin-symbol = ⌃
     merge-conflict-end-symbol = ⌄
-    merge-conflict-ours-diff-header-style = "#FABD2F" bold
-    merge-conflict-theirs-diff-header-style = "#FABD2F" bold overline
+    merge-conflict-ours-diff-header-style = "#2a9d8f" bold
+    merge-conflict-theirs-diff-header-style = "#2a9d8f" bold overline
     merge-conflict-ours-diff-header-decoration-style = ''
     merge-conflict-theirs-diff-header-decoration-style = ''
 [delta "hoopoe"]

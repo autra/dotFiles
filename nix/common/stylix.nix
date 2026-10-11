@@ -37,7 +37,7 @@
         base0A = "ec831f"; # #EC831F #ec831f # Yellow/Highlight
         base0B = "17b36f"; # #17B36F #8AB17D #18b249 # Green/Success
         base0C = "2A9D8F"; # #2a9d8f #159a9a # Cyan/Special
-        base0D = "005F87"; # #264653 #005f87 # Blue/Information
+        base0D = "005F87"; # #005f87 #264653 # Blue/Information
         base0E = "B31765"; # #b31765 #b218b2 # Purple/Keywords
         base0F = "aa5e16"; # #e2b33c #aa5e16 # Brown/Deprecated
       };
