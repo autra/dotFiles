@@ -40,6 +40,11 @@
     }:
     let
       lib = nixpkgs.lib;
+      fix_khal_overlay = final: prev: {
+        khal = prev.khal.overrideAttrs (oldAttrs: {
+          patches = (oldAttrs.patches or []) ++ [ ./patches/fix_khal.patch ];
+        });
+      };
     in
     {
       # sd images
@@ -110,7 +115,7 @@
         ubuntu-vm = self.outputs.generateMinimalHomeConfig "ubuntu" [ ];
         augustin-Oslandia = self.outputs.generateMinimalHomeConfig "atr" [ ./home-manager/cli.nix ];
         "augustin@augustin-Oslandia2" = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs { system = "x86_64-linux"; };
+          pkgs = import nixpkgs { system = "x86_64-linux"; overlays = [ fix_khal_overlay ]; };
           extraSpecialArgs = {
             osladoc = inputs.osladoc.packages."x86_64-linux";
           };

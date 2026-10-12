@@ -1,0 +1,19 @@
+# inspired by https://github.com/pimutils/khal/pull/1479/
+diff --git i/khal/khalendar/event.py w/khal/khalendar/event.py
+index d4bca659..78f139c1 100644
+--- i/khal/khalendar/event.py
++++ w/khal/khalendar/event.py
+@@ -744,8 +744,11 @@ class Event:
+             fmt: Callable[[str], str] = list(formatters)[0]
+         else:
+ 
+-            def fmt(s: str) -> str:
+-                return s.strip()
++            def fmt(s: str|list[str]) -> str:
++                if type(s) is list:
++                    return ''.join([e.strip() for e in s])
++                else:
++                    return s.strip()
+ 
+         attributes["description"] = fmt(self.description)
+         attributes["description-separator"] = ""
