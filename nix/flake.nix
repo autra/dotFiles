@@ -18,7 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     oslandiaGrubTheme = {
-      url = "gitlab:Oslandia/oslandia-grub-theme";
+      url = "git+https://gitlab.com/Oslandia/oslandia-grub-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     disko = {
