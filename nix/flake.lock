@@ -242,11 +242,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792438572,
-        "narHash": "sha256-5mQQOcggBRBXB7NlzUxO0dbvQN4euJOISjNybrtfxPk=",
+        "lastModified": 1792818383,
+        "narHash": "sha256-199i7ubVSXTMl+0AAlL7cVCXSjcI+jWByMcimYjeMX0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "24f8f8e786f87d6a818e1746cb2389bf922afdab",
+        "rev": "24f2190587513b9c2f73db112a17844ae912d965",
         "type": "github"
       },
       "original": {
@@ -261,11 +261,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1792697326,
-        "narHash": "sha256-2UBK0jdmPANGaeAIoVOZY+hSPB2Gy13ZuZeSxP3vF8k=",
+        "lastModified": 1793236063,
+        "narHash": "sha256-jGFe4xdrCw6xpgH2zgKwslACyt/NGuPwGILPEMFxmcQ=",
         "owner": "nixos",
         "repo": "nixos-hardware",
-        "rev": "1b418b8f203e49a92f250f8babdd19af1b6f7a7f",
+        "rev": "b6754c901c21478fd8450d62101e712b2a4f0d75",
         "type": "github"
       },
       "original": {
@@ -305,11 +305,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1792615934,
-        "narHash": "sha256-q1ku4ygV7tdmv5Q9QYwhVDsNMZRJcRYjVczoX5+XWBo=",
-        "rev": "da6dc0e7b26060f2f71ce3ef7088fb56ee44fa36",
+        "lastModified": 1793294725,
+        "narHash": "sha256-X+Mp4wtwS+b17lw2puLuzn9e63ZrMKFucvlIUG7xf8I=",
+        "rev": "6f06d204d8f2d8761d9da78778745974a3216381",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.12400.da6dc0e7b260/nixexprs.tar.zst"
+        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.13164.6f06d204d8f2/nixexprs.tar.zst"
       },
       "original": {
         "id": "nixpkgs",
@@ -381,11 +381,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791882612,
-        "narHash": "sha256-+5zF87dRsSZ0lhHCFwX9S0BFfu7vjJ6IFNKelCmSHWI=",
+        "lastModified": 1793197710,
+        "narHash": "sha256-GvGb/rcnAMbPTmjQkPb8MJBKWRWsHu+5Vpl/YzvWaVY=",
         "ref": "refs/heads/main",
-        "rev": "706a610ba6b0c014dbb85f035c558bcc949c7ce6",
-        "revCount": 225,
+        "rev": "4b1c39bae13eda198b40145dd695c65ca07ebeec",
+        "revCount": 226,
         "type": "git",
         "url": "ssh://git@git.oslandia.net:10022/Oslandia/technique/osladoc"
       },
