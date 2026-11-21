@@ -4,6 +4,7 @@
   inputs = {
     self.submodules = true;
     nixpkgs.url = "nixpkgs/nixos-26.05";
+    unstable-nixpkgs.url = "nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
@@ -118,6 +119,7 @@
           pkgs = import nixpkgs { system = "x86_64-linux"; overlays = [ fix_khal_overlay ]; };
           extraSpecialArgs = {
             osladoc = inputs.osladoc.packages."x86_64-linux";
+            unstable-pkgs = import inputs.unstable-nixpkgs { system = "x86_64-linux"; };
           };
           modules = [
             stylix.homeModules.stylix
@@ -125,6 +127,7 @@
             ./home-manager/oslandia.nix
             ./home-manager/android.nix
             ./home-manager/nix_niceties.nix
+            ./home-manager/pg.nix
           ];
         };
       };

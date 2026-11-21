@@ -34,9 +34,6 @@ in
 {
   config.environment.systemPackages = with pkgs; [
     upgrade_script
-    pgadmin4-desktopmode
-    dbeaver-bin
-    rainfrog
   ];
   config.services.postgresql = {
     enable = true;
